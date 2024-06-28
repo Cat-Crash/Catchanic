@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c2j74ifvul0pg"]
 
-[ext_resource type="Texture2D" uid="uid://dfypk3m8mp0ev" path="res://assets/brackeys_platformer_assets/sprites/Cat_closedmouth.PNG" id="1_rrtsq"]
+[ext_resource type="Texture2D" uid="uid://b3eit0jcgc11x" path="res://assets/art/Sprites/Cat_closedmouth.PNG" id="1_vcv4y"]
 
 [sub_resource type="GDScript" id="GDScript_thsqe"]
 resource_name = "PlayerMovement"
@@ -51,17 +51,18 @@ func _physics_process(delta):
 	move_and_slide()
 "
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ddrom"]
-radius = 14.9204
-height = 62.4101
+[sub_resource type="BoxShape3D" id="BoxShape3D_ji6i7"]
+size = Vector3(1.62, 1.385, 0.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sldy3"]
-atlas = ExtResource("1_rrtsq")
 region = Rect2(0, 0, 2120, 1550)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7rpr"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vcv4y")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sldy3")
 }],
@@ -77,12 +78,13 @@ script = SubResource("GDScript_thsqe")
 script = SubResource("GDScript_o7uto")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(0.0349986, 0.000302135, -6.1863e-05, -0.000302124, 0.0349987, 6.61457e-06, 6.19179e-05, -6.08073e-06, 0.0349999, 0.00553884, 0.00362815, -6.07039e-05)
-shape = SubResource("CapsuleShape3D_ddrom")
+transform = Transform3D(0.999961, 0.00863245, -0.00176752, -0.00863212, 0.999963, 0.000189, 0.00176908, -0.000173735, 0.999998, 0.00553884, 0.00362815, -6.07039e-05)
+shape = SubResource("BoxShape3D_ji6i7")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -0.000127912, 2.9963, 2.00396)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_y7rpr")
