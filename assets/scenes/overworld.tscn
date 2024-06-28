@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsi8pcwnyubgw"]
+[gd_scene load_steps=7 format=3 uid="uid://nysqqwonpiho"]
 
-[ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://scenes/cat_3d.tscn" id="1_mqhey"]
-[ext_resource type="PackedScene" uid="uid://ccosa7y6x01a3" path="res://assets/Crow.tscn" id="2_lkwgw"]
+[ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
+[ext_resource type="PackedScene" uid="uid://ccosa7y6x01a3" path="res://assets/scenes/characters/crow.tscn" id="2_lkwgw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lln8w"]
 
@@ -26,7 +26,7 @@ mesh = SubResource("PlaneMesh_mftkq")
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.075, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265, 0)
 shape = SubResource("BoxShape3D_f4s0x")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
