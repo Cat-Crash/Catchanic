@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://demakvrdx5qr8"]
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle_part.gd" id="1_68t0x"]
-[ext_resource type="Texture2D" uid="uid://bqf0rxql0t207" path="res://assets/sprites/gear_placeholder.png" id="1_q6ens"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw8bf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_il85d"]
 
@@ -11,8 +12,8 @@ script = ExtResource("1_68t0x")
 snap = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_q6ens")
+scale = Vector2(100, 100)
+texture = SubResource("PlaceholderTexture2D_mw8bf")
 
 [node name="Button" type="Button" parent="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0)
@@ -29,8 +30,9 @@ action_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(9, 9)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_il85d")
+debug_color = Color(1, 1, 1, 1)
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]

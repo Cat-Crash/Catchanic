@@ -1,13 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://uonn7pg0xbyj"]
+[gd_scene load_steps=11 format=3 uid="uid://uonn7pg0xbyj"]
 
+[ext_resource type="Script" path="res://assets/scripts/puzzle.gd" id="1_fo14a"]
 [ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle_part.tscn" id="1_hg3m7"]
+[ext_resource type="Script" path="res://assets/scripts/Goal.gd" id="3_qebt2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqko"]
+size = Vector2(750, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v0g1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrih1"]
+size = Vector2(20, 500)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ul3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kcj3"]
+size = Vector2(20, 150)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6hdhx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_te3ef"]
+normal = Vector2(-1, 0)
 
 [node name="Puzzle" type="Node2D"]
+script = ExtResource("1_fo14a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PuzzlePart2" parent="." instance=ExtResource("1_hg3m7")]
-position = Vector2(224, -32)
+position = Vector2(112, -24)
 
 [node name="PuzzlePart" parent="." instance=ExtResource("1_hg3m7")]
-position = Vector2(-176, -24)
+position = Vector2(-96, -24)
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="Roof" type="StaticBody2D" parent="Border"]
+position = Vector2(0, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Roof"]
+shape = SubResource("RectangleShape2D_6jqko")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border/Roof"]
+scale = Vector2(750, 20)
+texture = SubResource("PlaceholderTexture2D_v0g1q")
+
+[node name="Left Wall" type="StaticBody2D" parent="Border"]
+position = Vector2(-360, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Left Wall"]
+shape = SubResource("RectangleShape2D_yrih1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border/Left Wall"]
+scale = Vector2(20, 500)
+texture = SubResource("PlaceholderTexture2D_4ul3c")
+
+[node name="Right Upper Wall" type="StaticBody2D" parent="Border"]
+position = Vector2(360, -170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Right Upper Wall"]
+shape = SubResource("RectangleShape2D_4kcj3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border/Right Upper Wall"]
+scale = Vector2(20, 150)
+texture = SubResource("PlaceholderTexture2D_6hdhx")
+
+[node name="Right Lower Wall" type="StaticBody2D" parent="Border"]
+position = Vector2(360, 170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Right Lower Wall"]
+shape = SubResource("RectangleShape2D_4kcj3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border/Right Lower Wall"]
+scale = Vector2(20, 150)
+texture = SubResource("PlaceholderTexture2D_6hdhx")
+
+[node name="Floor" type="StaticBody2D" parent="Border"]
+position = Vector2(0, -250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Floor"]
+shape = SubResource("RectangleShape2D_6jqko")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border/Floor"]
+scale = Vector2(750, 20)
+texture = SubResource("PlaceholderTexture2D_v0g1q")
+
+[node name="Goals" type="Node2D" parent="."]
+
+[node name="Goal" type="Area2D" parent="Goals"]
+position = Vector2(370, 0)
+script = ExtResource("3_qebt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/Goal"]
+shape = SubResource("WorldBoundaryShape2D_te3ef")
+
+[connection signal="body_entered" from="Goals/Goal" to="Goals/Goal" method="_on_body_entered"]
+[connection signal="part_complete" from="Goals/Goal" to="." method="_on_goal_part_complete"]
