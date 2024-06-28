@@ -12,7 +12,6 @@ material = SubResource("StandardMaterial3D_lln8w")
 size = Vector3(1.9834, 0.534302, 1.97632)
 
 [sub_resource type="Environment" id="Environment_r2l7l"]
-background_mode = 3
 
 [node name="Overworld" type="Node3D"]
 
@@ -33,7 +32,7 @@ shape = SubResource("BoxShape3D_f4s0x")
 environment = SubResource("Environment_r2l7l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59333, 3.99903, -0.0460261)
+transform = Transform3D(1, 0, 0, 0, 0.528438, 0.848972, 0, -0.848972, 0.528438, 3.59333, 3.99903, -0.0460261)
 
 [node name="Crow" parent="." instance=ExtResource("2_lkwgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.941, 0, -4.16366)
