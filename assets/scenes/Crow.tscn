@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccosa7y6x01a3"]
+
+[ext_resource type="Texture2D" uid="uid://bgwvo8oogyvcf" path="res://assets/brackeys_platformer_assets/sprites/Crow_closed mouth.PNG" id="1_dm2k7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7db16"]
+atlas = ExtResource("1_dm2k7")
+region = Rect2(0, 0, 2109, 1454)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h32an"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7db16")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3lr5e"]
+radius = 0.548209
+
+[node name="Area3D" type="Area3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_h32an")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.14389, 0, 0, 0, 3.7591, 0, 0, 0, 1.00404, 0, 0, 0)
+shape = SubResource("SphereShape3D_3lr5e")
