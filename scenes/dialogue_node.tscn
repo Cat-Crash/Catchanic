@@ -3,27 +3,24 @@
 [ext_resource type="Script" path="res://scripts/DialogueNode.gd" id="1_ixcqf"]
 [ext_resource type="Script" path="res://scripts/DialogueArea.gd" id="2_1jkka"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sp4ft"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gupek"]
 
 [node name="DialogueNode" type="Node"]
 script = ExtResource("1_ixcqf")
 speakerName = "Bingus the tester"
 
 [node name="DialogueArea" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 400.0
-offset_bottom = 230.0
+offset_right = 300.0
+offset_bottom = 130.0
 script = ExtResource("2_1jkka")
 
 [node name="DialogueBox" type="NinePatchRect" parent="DialogueArea"]
 layout_mode = 1
 offset_right = 300.0
 offset_bottom = 130.0
-texture = SubResource("PlaceholderTexture2D_sp4ft")
+texture = SubResource("PlaceholderTexture2D_gupek")
 
 [node name="NameTag" type="RichTextLabel" parent="DialogueArea"]
 layout_mode = 1
