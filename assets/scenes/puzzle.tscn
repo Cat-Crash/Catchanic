@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://uonn7pg0xbyj"]
+[gd_scene load_steps=2 format=3 uid="uid://uonn7pg0xbyj"]
+
+[ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle_part.tscn" id="1_hg3m7"]
 
 [node name="Puzzle" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PuzzlePart2" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(224, -32)
+
+[node name="PuzzlePart" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(-176, -24)
