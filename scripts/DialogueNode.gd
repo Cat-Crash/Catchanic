@@ -43,6 +43,9 @@ func backupFunc() -> void: # if not subbed, warns that you forgot to give it an 
 @onready var dialogueText : RichTextLabel = $DialogueArea/DialogueText # The text displaying the
 	# current dialogue
 	
+signal repositionDialogueArea # A signal for the 3dSpeaker this is attached to to position the dialogue
+	# box over itself
+	
 # NOTE FIGURE OUT A BETTER WAY TO STORE THIS LATER
 var testDialoguePath : Array[DialogueState] = [
 	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Hello there, can you hear me?"),
@@ -60,7 +63,7 @@ func _ready() -> void: # NOTE just doing this on _ready() for now to make testin
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
 	pathPosition = 0
-	updateDialogueDisplay(dialoguePath[pathPosition])
+	repositionDialogueArea.emit()
 
 func _on_dialogue_area_next_dialogue_signal() -> void: # When it receives the signal from DialogueArea,
 	# calls nextDialogueState()
