@@ -18,7 +18,7 @@ func _on_dialogue_node_reposition_dialogue_area():
 		# that it knows the proper player and speaker positions, have it update its display
 
 func _input(event):
-	if event.is_action_pressed('interact') and playerInRange and (not gameManager.inDialogue):
+	if event.is_action_pressed('interact') and playerInRange and (gameManager.currentGameState == gameManager.GameState.OVERWORLD ):
 		beginDialogue.emit()
 		dialogueNode.beginDialoguePath()
 

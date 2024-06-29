@@ -75,8 +75,11 @@ func beginDialoguePath() -> void:
 	repositionDialogueArea.emit()
 
 func _on_dialogue_area_next_dialogue_signal() -> void: # When it receives the signal from DialogueArea,
-	# calls nextDialogueState()
+	# calls nextDialogueState() (when the window is clicked on)
 	nextDialogueState()
+#func _input(event) -> void: #NOTE code to change how inputs are processed to go to the next dialogue
+#	if event.is_action_pressed('nextDialogue') and (gameManager.currentGameState == gameManager.GameState.DIALOGUE ):
+#		nextDialogueState()
 
 func nextDialogueState() -> void: # Moves to the next line of dialogue in the dialoguePath. If there are no
 		# more lines, runs the end function
@@ -85,8 +88,10 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 		updateDialogueDisplay(dialoguePath[pathPosition])
 	else: # if at the end of the dialoguePath, hide the dialogue window and call the endFunction
 		dialogueArea.visible = false # hides the dialogue box
-		call(endFunction)
 		endOfDialogue.emit()
+		call(endFunction) # NOTE if you're having a problem with endFunctions that change the
+			# game state not going, it's probably because these two lines are executing in the wrong
+			# order
 		
 func updateDialogueDisplay(newState : DialogueState) -> void:
 	dialogueArea.grab_focus() # Shift the focus to the dialogueArea so that it can receive inputs
