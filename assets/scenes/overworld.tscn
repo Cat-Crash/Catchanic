@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://nysqqwonpiho"]
+[gd_scene load_steps=12 format=3 uid="uid://nysqqwonpiho"]
 
+[ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_8u4wf"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
 [ext_resource type="PackedScene" uid="uid://ccosa7y6x01a3" path="res://assets/scenes/characters/crow.tscn" id="2_lkwgw"]
 [ext_resource type="Script" path="res://assets/scripts/dialogue/3dSpeaker.gd" id="3_h1l2o"]
@@ -19,6 +20,7 @@ size = Vector3(1.9834, 0.534302, 1.97632)
 [sub_resource type="SphereShape3D" id="SphereShape3D_xbpe5"]
 
 [node name="Overworld" type="Node3D"]
+script = ExtResource("1_8u4wf")
 
 [node name="Cat" parent="." instance=ExtResource("1_mqhey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36244, 1, 3.58374)
