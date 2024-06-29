@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Cat-crash-mvp"
-run/main_scene="res://scenes/dialogue/dialogue_node.tscn"
+run/main_scene="res://assets/scenes/dialogue/dialogue_node.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEnums="*res://scripts/globals/global_enums.gd"
-GlobalVariables="*res://scripts/globals/global_variables.gd"
+GlobalEnums="*res://assets/scripts/globals/global_enums.gd"
+GlobalState="*res://assets/scripts/globals/global_state.gd"
 
 [debug]
 

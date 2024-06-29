@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cly2pwnf886wn"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/DialogueNode.gd" id="1_ixcqf"]
-[ext_resource type="Script" path="res://scripts/dialogue/DialogueArea.gd" id="2_1jkka"]
+[ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueNode.gd" id="1_ixcqf"]
+[ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueArea.gd" id="2_1jkka"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gupek"]
 

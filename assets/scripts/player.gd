@@ -15,7 +15,7 @@ func _physics_process(_delta : float) -> void:
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
 
-	if Vars.currentGameState == Enums.GameState.OVERWORLD:
+	if ProjectState.currentGameState == ProjectEnums.GameState.OVERWORLD:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir : Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -28,4 +28,4 @@ func _physics_process(_delta : float) -> void:
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 		move_and_slide()
-		Vars.playerPosition = global_transform.origin # set the global player position to the new one
+		ProjectState.playerPosition = global_transform.origin # set the global player position to the new one
