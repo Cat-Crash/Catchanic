@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3eit0jcgc11x"
-path.s3tc="res://.godot/imported/Cat_closedmouth.PNG-94b49143600414ebd944f43b967e511b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Cat_closedmouth.PNG-1ede7d286aefb917fa7851af5febc9e7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/Sprites/Cat_closedmouth.PNG"
-dest_files=["res://.godot/imported/Cat_closedmouth.PNG-94b49143600414ebd944f43b967e511b.s3tc.ctex"]
+source_file="res://assets/art/sprites/Cat_closedmouth.PNG"
+dest_files=["res://.godot/imported/Cat_closedmouth.PNG-1ede7d286aefb917fa7851af5febc9e7.s3tc.ctex"]
 
 [params]
 

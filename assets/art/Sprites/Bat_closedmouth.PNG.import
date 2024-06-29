@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8xnu08u2byex"
-path="res://.godot/imported/Bat_closedmouth.PNG-7555f2e332f435ca7373f939ad605206.ctex"
+path="res://.godot/imported/Bat_closedmouth.PNG-3bb69d9825c0c20786f1f98b45955e60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Sprites/Bat_closedmouth.PNG"
-dest_files=["res://.godot/imported/Bat_closedmouth.PNG-7555f2e332f435ca7373f939ad605206.ctex"]
+source_file="res://assets/art/sprites/Bat_closedmouth.PNG"
+dest_files=["res://.godot/imported/Bat_closedmouth.PNG-3bb69d9825c0c20786f1f98b45955e60.ctex"]
 
 [params]
 

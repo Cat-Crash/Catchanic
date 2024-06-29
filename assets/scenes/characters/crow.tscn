@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccosa7y6x01a3"]
 
-[ext_resource type="Texture2D" uid="uid://ls41n70j1cc0" path="res://assets/art/Sprites/Crow_closed mouth.PNG" id="1_4qtg2"]
+[ext_resource type="Texture2D" uid="uid://ls41n70j1cc0" path="res://assets/art/sprites/Crow_closed mouth.PNG" id="1_4qtg2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7db16"]
 region = Rect2(0, 0, 2109, 1454)

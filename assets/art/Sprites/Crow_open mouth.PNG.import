@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5fs4jo1vqwsu"
-path="res://.godot/imported/Crow_open mouth.PNG-70e6f5c4e331c0b206f9876fa54fa738.ctex"
+path="res://.godot/imported/Crow_open mouth.PNG-9f8cae6958b563d8568fe4982086e25a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Sprites/Crow_open mouth.PNG"
-dest_files=["res://.godot/imported/Crow_open mouth.PNG-70e6f5c4e331c0b206f9876fa54fa738.ctex"]
+source_file="res://assets/art/sprites/Crow_open mouth.PNG"
+dest_files=["res://.godot/imported/Crow_open mouth.PNG-9f8cae6958b563d8568fe4982086e25a.ctex"]
 
 [params]
 
