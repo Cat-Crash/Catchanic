@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nysqqwonpiho"]
+[gd_scene load_steps=12 format=3 uid="uid://nysqqwonpiho"]
 
 [ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_8u4wf"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
@@ -7,18 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_sajw2"]
 [ext_resource type="PackedScene" uid="uid://uonn7pg0xbyj" path="res://assets/scenes/puzzle/puzzle.tscn" id="5_h6d2n"]
 [ext_resource type="AudioStream" uid="uid://c7h56kjphwgnn" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.wav" id="7_xb4u5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lln8w"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_mftkq"]
-material = SubResource("StandardMaterial3D_lln8w")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f4s0x"]
-size = Vector3(1.9834, 0.534302, 1.97632)
+[ext_resource type="PackedScene" uid="uid://o8q33sxbqa6i" path="res://assets/art/models/first level forest/first level forest.glb" id="8_r3sec"]
 
 [sub_resource type="Environment" id="Environment_r2l7l"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xbpe5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q3who"]
 
 [node name="Overworld" type="Node3D"]
 script = ExtResource("1_8u4wf")
@@ -26,15 +21,8 @@ script = ExtResource("1_8u4wf")
 [node name="Cat" parent="." instance=ExtResource("1_mqhey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36244, 1, 3.58374)
 
-[node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("PlaneMesh_mftkq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265, 0)
-shape = SubResource("BoxShape3D_f4s0x")
+[node name="Camera3D" parent="Cat" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.971134, 0.238533, 0, -0.238533, 0.971134, -0.000128031, 2.03921, 3.84179)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r2l7l")
@@ -64,6 +52,16 @@ next_scene = NodePath("../..")
 stream = ExtResource("7_xb4u5")
 autoplay = true
 
+[node name="first level forest" parent="." instance=ExtResource("8_r3sec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="first level forest"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="first level forest/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_q3who")
+
 [connection signal="body_entered" from="Crow" to="Crow" method="_on_body_entered"]
 [connection signal="body_exited" from="Crow" to="Crow" method="_on_body_exited"]
 [connection signal="repositionDialogueArea" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_reposition_dialogue_area"]
+
+[editable path="Cat"]
