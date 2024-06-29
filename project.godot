@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEnums="*res://assets/scripts/global_enums.gd"
+GlobalEnums="*res://scripts/globals/global_enums.gd"
+GlobalVariables="*res://scripts/globals/global_variables.gd"
 
 [debug]
 

@@ -58,6 +58,10 @@ var testDialoguePath : Array[DialogueState] = [
 	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see."),
 	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "If you find it, return it to me, and I can deliver it to the human."),
 ]
+signal puzzleStart
+func introPuzzle() -> void:
+	print('puzzle beginning')
+	puzzleStart.emit()
 #func _ready() -> void: # NOTE just doing this on _ready() for now to make testing simpler
 	#speakerPos = Vector2i(100, 100)
 	#playerPos = Vector2i(300, 100)
@@ -68,6 +72,7 @@ var testDialoguePath : Array[DialogueState] = [
 func _ready() -> void:
 	dialogueArea.visible = false # hides the dialogue box until we talk to someone
 	dialoguePath = testDialoguePath # NOTE just doing this on _ready() for now to make testing simpler
+	endFunction = 'introPuzzle' # NOTE just doing this on _ready() for now to make demo simpler
 
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
