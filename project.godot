@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Cat-crash-mvp"
+config/name="Cat Crash MVP"
+config/version="0.1"
 run/main_scene="res://assets/scenes/overworld.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
