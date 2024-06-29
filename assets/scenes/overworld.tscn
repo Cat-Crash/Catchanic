@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nysqqwonpiho"]
+[gd_scene load_steps=13 format=3 uid="uid://nysqqwonpiho"]
 
 [ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_8u4wf"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://assets/scripts/dialogue/3dSpeaker.gd" id="3_h1l2o"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_sajw2"]
 [ext_resource type="PackedScene" uid="uid://uonn7pg0xbyj" path="res://assets/scenes/puzzle/puzzle.tscn" id="5_h6d2n"]
+[ext_resource type="AudioStream" uid="uid://c7h56kjphwgnn" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.wav" id="7_xb4u5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lln8w"]
 
@@ -57,6 +58,10 @@ shape = SubResource("SphereShape3D_xbpe5")
 [node name="Puzzle" parent="Crow" instance=ExtResource("5_h6d2n")]
 process_mode = 4
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xb4u5")
+autoplay = true
 
 [connection signal="body_entered" from="Crow" to="Crow" method="_on_body_entered"]
 [connection signal="body_exited" from="Crow" to="Crow" method="_on_body_exited"]
