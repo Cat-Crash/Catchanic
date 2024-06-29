@@ -65,3 +65,4 @@ shape = SubResource("WorldBoundaryShape3D_q3who")
 [connection signal="repositionDialogueArea" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_reposition_dialogue_area"]
 
 [editable path="Cat"]
+[editable path="Crow/DialogueNode"]
