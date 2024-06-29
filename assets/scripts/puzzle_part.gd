@@ -7,8 +7,9 @@ extends CharacterBody2D
 @export var snap: int
 
 @export_category("Part Behavior")
-@export var target_piece: bool = false
+@export var type: Enums.PartType = Enums.PartType.NEUTRAL
 @export var target_goal: int = -1
+
 
 var snap_vect: Vector2
 var selected: bool = false
@@ -28,11 +29,11 @@ func _process(delta):
 	
 	move_and_slide()
 
-func complete(remove: bool):
+func complete():
 	move_x = false
 	move_y = false
 	
-	if remove: queue_free()
+	if type == Enums.PartType.UNINSTALL: queue_free()
 
 func _on_button_button_down():
 	selected = true

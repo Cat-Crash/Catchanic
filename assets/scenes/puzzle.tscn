@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle.gd" id="1_fo14a"]
 [ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle_part.tscn" id="1_hg3m7"]
-[ext_resource type="Script" path="res://assets/scripts/Goal.gd" id="3_qebt2"]
+[ext_resource type="Script" path="res://assets/scripts/goal.gd" id="3_qebt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqko"]
 size = Vector2(750, 20)
@@ -24,6 +24,7 @@ normal = Vector2(-1, 0)
 
 [node name="Puzzle" type="Node2D"]
 script = ExtResource("1_fo14a")
+installing = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -87,12 +88,11 @@ texture = SubResource("PlaceholderTexture2D_v0g1q")
 
 [node name="Goals" type="Node2D" parent="."]
 
-[node name="Goal" type="Area2D" parent="Goals"]
+[node name="ExitGoal" type="Area2D" parent="Goals"]
 position = Vector2(370, 0)
 script = ExtResource("3_qebt2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/Goal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/ExitGoal"]
 shape = SubResource("WorldBoundaryShape2D_te3ef")
 
-[connection signal="body_entered" from="Goals/Goal" to="Goals/Goal" method="_on_body_entered"]
-[connection signal="part_complete" from="Goals/Goal" to="." method="_on_goal_part_complete"]
+[connection signal="body_entered" from="Goals/ExitGoal" to="Goals/ExitGoal" method="_on_body_entered"]
