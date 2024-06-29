@@ -46,20 +46,29 @@ func backupFunc() -> void: # if not subbed, warns that you forgot to give it an 
 signal repositionDialogueArea # A signal for the 3dSpeaker this is attached to to position the dialogue
 	# box over itself
 	
+signal endOfDialogue # A signal that the dialogue is over and the overworld should be interactable again
+	
 # NOTE FIGURE OUT A BETTER WAY TO STORE THIS LATER
 var testDialoguePath : Array[DialogueState] = [
-	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Hello there, can you hear me?"),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "A little far from home, aren't you?"),
+	DialogueState.new(DialogueState.SpeakingParty.PLAYER, "Meow."),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Well, if home is in the city, then the train is headed that way."),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Or rather, it was headed that way. This racket is interrupting my business."),
 	DialogueState.new(DialogueState.SpeakingParty.PLAYER, "Meow?"),
-	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Ah right. You're a cat"),
-	DialogueState.new(DialogueState.SpeakingParty.PLAYER, "Meow meow!"),
-	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "And a mechanic, yes, I know"),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see."),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "If you find it, return it to me, and I can deliver it to the human."),
 ]
-func _ready() -> void: # NOTE just doing this on _ready() for now to make testing simpler
-	speakerPos = Vector2i(100, 100)
-	playerPos = Vector2i(300, 100)
-	dialoguePath = testDialoguePath
-	beginDialoguePath()
+#func _ready() -> void: # NOTE just doing this on _ready() for now to make testing simpler
+	#speakerPos = Vector2i(100, 100)
+	#playerPos = Vector2i(300, 100)
+	#dialoguePath = testDialoguePath
+	#beginDialoguePath()
 	
+
+func _ready() -> void:
+	dialogueArea.visible = false # hides the dialogue box until we talk to someone
+	dialoguePath = testDialoguePath # NOTE just doing this on _ready() for now to make testing simpler
+
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
 	pathPosition = 0
@@ -77,6 +86,7 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 	else: # if at the end of the dialoguePath, hide the dialogue window and call the endFunction
 		dialogueArea.visible = false # hides the dialogue box
 		call(endFunction)
+		endOfDialogue.emit()
 		
 func updateDialogueDisplay(newState : DialogueState) -> void:
 	dialogueArea.grab_focus() # Shift the focus to the dialogueArea so that it can receive inputs
