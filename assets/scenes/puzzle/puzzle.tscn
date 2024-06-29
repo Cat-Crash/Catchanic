@@ -308,6 +308,8 @@ offset_bottom = -85.0
 [node name="CollisionShape2D" parent="Parts/PuzzlePart" index="1"]
 shape = SubResource("RectangleShape2D_pubrl")
 
+[connection signal="part_complete" from="Goals/ExitGoal" to="." method="_on_exit_goal_part_complete"]
+
 [editable path="Parts/PuzzlePart2"]
 [editable path="Parts/PuzzlePart3"]
 [editable path="Parts/PuzzlePart4"]
