@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cat-crash-mvp"
-run/main_scene="res://assets/scenes/dialogue/dialogue_node.tscn"
+run/main_scene="res://assets/scenes/overworld.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalEnums="*res://assets/scripts/globals/global_enums.gd"
 GlobalState="*res://assets/scripts/globals/global_state.gd"
+GlobalUtilities="*res://assets/scripts/globals/global_utilities.gd"
 
 [debug]
 

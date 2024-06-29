@@ -1,27 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://uonn7pg0xbyj"]
+[gd_scene load_steps=12 format=3 uid="uid://uonn7pg0xbyj"]
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle.gd" id="1_fo14a"]
 [ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/puzzle_part.tscn" id="1_hg3m7"]
-[ext_resource type="PackedScene" uid="uid://cmfxinvnngj0x" path="res://assets/scenes/puzzle/puzzle_exit_goal.tscn" id="3_c2wkm"]
-[ext_resource type="PackedScene" uid="uid://bp76ltqcwbpfm" path="res://assets/scenes/puzzle/puzzle_goal.tscn" id="4_x317q"]
+[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/puzzle_exit_goal.tscn" id="3_c2wkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqko"]
-size = Vector2(750, 20)
+size = Vector2(512, 32)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v0g1q"]
-size = Vector2(750, 20)
+size = Vector2(512, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrih1"]
-size = Vector2(20, 500)
+size = Vector2(32, 448)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ul3c"]
-size = Vector2(20, 500)
+size = Vector2(32, 448)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kcj3"]
-size = Vector2(20, 150)
+size = Vector2(32, 160)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6hdhx"]
-size = Vector2(20, 150)
+size = Vector2(32, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae1f4"]
+size = Vector2(32, 224)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_moiwo"]
+size = Vector2(32, 224)
 
 [node name="Puzzle" type="Node2D"]
 script = ExtResource("1_fo14a")
@@ -29,15 +34,70 @@ script = ExtResource("1_fo14a")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PuzzlePart2" parent="." instance=ExtResource("1_hg3m7")]
-position = Vector2(112, -24)
+position = Vector2(-288, 128)
+scale = Vector2(1, 2)
+move_x = false
+
+[node name="PuzzlePart3" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(-160, 64)
+scale = Vector2(1, 2)
+move_x = false
+
+[node name="PuzzlePart4" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(-96, 128)
+scale = Vector2(1, 2)
+move_x = false
+
+[node name="PuzzlePart9" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(-32, -128)
+scale = Vector2(1, 2)
+move_x = false
+
+[node name="PuzzlePart10" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(32, 32)
+scale = Vector2(1, 3)
+move_x = false
+
+[node name="PuzzlePart5" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(-64, 32)
+scale = Vector2(2, 1)
+move_y = false
+
+[node name="PuzzlePart6" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(64, 160)
+scale = Vector2(2, 1)
+move_y = false
+
+[node name="PuzzlePart7" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(64, -96)
+scale = Vector2(2, 1)
+move_y = false
+
+[node name="PuzzlePart8" parent="." instance=ExtResource("1_hg3m7")]
+position = Vector2(64, -160)
+scale = Vector2(2, 1)
+move_y = false
 
 [node name="PuzzlePart" parent="." instance=ExtResource("1_hg3m7")]
-position = Vector2(-96, -24)
+position = Vector2(-192, -32)
+scale = Vector2(4, 1)
+move_y = false
+type = 1
+target_goal = 1
 
 [node name="Border" type="Node2D" parent="."]
 
+[node name="Floor" type="StaticBody2D" parent="Border"]
+position = Vector2(-96, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Floor"]
+shape = SubResource("RectangleShape2D_6jqko")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border/Floor"]
+texture = SubResource("PlaceholderTexture2D_v0g1q")
+
 [node name="Roof" type="StaticBody2D" parent="Border"]
-position = Vector2(0, 250)
+position = Vector2(-96, -208)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Roof"]
 shape = SubResource("RectangleShape2D_6jqko")
@@ -46,7 +106,7 @@ shape = SubResource("RectangleShape2D_6jqko")
 texture = SubResource("PlaceholderTexture2D_v0g1q")
 
 [node name="Left Wall" type="StaticBody2D" parent="Border"]
-position = Vector2(-360, 0)
+position = Vector2(-336, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Left Wall"]
 shape = SubResource("RectangleShape2D_yrih1")
@@ -55,7 +115,7 @@ shape = SubResource("RectangleShape2D_yrih1")
 texture = SubResource("PlaceholderTexture2D_4ul3c")
 
 [node name="Right Upper Wall" type="StaticBody2D" parent="Border"]
-position = Vector2(360, -170)
+position = Vector2(144, -144)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Right Upper Wall"]
 shape = SubResource("RectangleShape2D_4kcj3")
@@ -64,25 +124,14 @@ shape = SubResource("RectangleShape2D_4kcj3")
 texture = SubResource("PlaceholderTexture2D_6hdhx")
 
 [node name="Right Lower Wall" type="StaticBody2D" parent="Border"]
-position = Vector2(360, 170)
+position = Vector2(144, 112)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Right Lower Wall"]
-shape = SubResource("RectangleShape2D_4kcj3")
+shape = SubResource("RectangleShape2D_ae1f4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Border/Right Lower Wall"]
-texture = SubResource("PlaceholderTexture2D_6hdhx")
-
-[node name="Floor" type="StaticBody2D" parent="Border"]
-position = Vector2(0, -250)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Floor"]
-shape = SubResource("RectangleShape2D_6jqko")
-
-[node name="Sprite2D" type="Sprite2D" parent="Border/Floor"]
-texture = SubResource("PlaceholderTexture2D_v0g1q")
+texture = SubResource("PlaceholderTexture2D_moiwo")
 
 [node name="Goals" type="Node2D" parent="."]
 
 [node name="ExitGoal" parent="Goals" instance=ExtResource("3_c2wkm")]
-
-[node name="Goal" parent="Goals" instance=ExtResource("4_x317q")]

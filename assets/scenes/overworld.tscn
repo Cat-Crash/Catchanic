@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://nysqqwonpiho"]
+[gd_scene load_steps=11 format=3 uid="uid://nysqqwonpiho"]
 
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
 [ext_resource type="PackedScene" uid="uid://ccosa7y6x01a3" path="res://assets/scenes/characters/crow.tscn" id="2_lkwgw"]
 [ext_resource type="Script" path="res://assets/scripts/dialogue/3dSpeaker.gd" id="3_h1l2o"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_sajw2"]
+[ext_resource type="PackedScene" uid="uid://uonn7pg0xbyj" path="res://assets/scenes/puzzle/puzzle.tscn" id="5_h6d2n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lln8w"]
 
@@ -43,14 +44,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.941, 1.23355, -4.16366)
 collision_mask = 2
 script = ExtResource("3_h1l2o")
 
-[node name="DialogueNode" parent="Crow" instance=ExtResource("4_sajw2")]
+[node name="DialogueNode" parent="Crow" node_paths=PackedStringArray("next_scene") instance=ExtResource("4_sajw2")]
+next_scene = NodePath("../Puzzle")
 speakerName = "Crow"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Crow"]
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_xbpe5")
 
+[node name="Puzzle" parent="Crow" instance=ExtResource("5_h6d2n")]
+process_mode = 4
+visible = false
+
 [connection signal="body_entered" from="Crow" to="Crow" method="_on_body_entered"]
 [connection signal="body_exited" from="Crow" to="Crow" method="_on_body_exited"]
-[connection signal="endOfDialogue" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_end_of_dialogue"]
 [connection signal="repositionDialogueArea" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_reposition_dialogue_area"]

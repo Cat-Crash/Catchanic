@@ -18,12 +18,14 @@ func _ready():
 	snap_vect = Vector2(snap, snap)
 
 func _process(delta):
+
 	if not selected: return
 	
 	var currPos: Vector2 = self.global_position
 	var mousePos: Vector2 = get_global_mouse_position().snapped(snap_vect)
 	
 	velocity = (mousePos - currPos) / delta
+
 	if not move_x: velocity.x = 0
 	if not move_y: velocity.y = 0
 	
