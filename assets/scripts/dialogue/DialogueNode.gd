@@ -57,12 +57,13 @@ func introPuzzle() -> void:
 	
 
 func _ready() -> void:
-	dialogueArea.visible = false # hides the dialogue box until we talk to someone
+	#dialogueArea.visible = false # hides the dialogue box until we talk to someone
 	dialoguePath = testDialoguePath # NOTE just doing this on _ready() for now to make testing simpler
 	endFunction = 'introPuzzle' # NOTE just doing this on _ready() for now to make demo simpler
 
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
+	print(dialogueArea.visible)
 	pathPosition = 0
 	repositionDialogueArea.emit()
 

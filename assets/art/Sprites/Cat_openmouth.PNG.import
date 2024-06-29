@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2jiohf0wkbm4"
-path="res://.godot/imported/Cat_openmouth.PNG-7cf75e2192239fec219d725351a63f1a.ctex"
+path="res://.godot/imported/Cat_openmouth.PNG-024d7aa98fcf06eed0b4728285804701.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/Cat_openmouth.PNG"
-dest_files=["res://.godot/imported/Cat_openmouth.PNG-7cf75e2192239fec219d725351a63f1a.ctex"]
+source_file="res://assets/art/Sprites/Cat_openmouth.PNG"
+dest_files=["res://.godot/imported/Cat_openmouth.PNG-024d7aa98fcf06eed0b4728285804701.ctex"]
 
 [params]
 

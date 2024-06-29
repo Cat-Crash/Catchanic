@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ls41n70j1cc0"
-path.s3tc="res://.godot/imported/Crow_closed mouth.PNG-7af804161c364c1fe967c6c579b65eab.s3tc.ctex"
+path.s3tc="res://.godot/imported/Crow_closed mouth.PNG-d4829504e371aa9128ea5f5e6b12ff3c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/sprites/Crow_closed mouth.PNG"
-dest_files=["res://.godot/imported/Crow_closed mouth.PNG-7af804161c364c1fe967c6c579b65eab.s3tc.ctex"]
+source_file="res://assets/art/Sprites/Crow_closed mouth.PNG"
+dest_files=["res://.godot/imported/Crow_closed mouth.PNG-d4829504e371aa9128ea5f5e6b12ff3c.s3tc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b36h5dtehi3ra"
-path="res://.godot/imported/Beaver_openmouth.PNG-dbdc2fd32ba5a3323ac0e38dc761c830.ctex"
+path="res://.godot/imported/Beaver_openmouth.PNG-0f383927228fe0e06458fa3968e73dd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/Beaver_openmouth.PNG"
-dest_files=["res://.godot/imported/Beaver_openmouth.PNG-dbdc2fd32ba5a3323ac0e38dc761c830.ctex"]
+source_file="res://assets/art/Sprites/Beaver_openmouth.PNG"
+dest_files=["res://.godot/imported/Beaver_openmouth.PNG-0f383927228fe0e06458fa3968e73dd0.ctex"]
 
 [params]
 
