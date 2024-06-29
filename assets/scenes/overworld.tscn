@@ -55,9 +55,10 @@ speakerName = "Crow"
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_xbpe5")
 
-[node name="Puzzle" parent="Crow" instance=ExtResource("5_h6d2n")]
+[node name="Puzzle" parent="Crow" node_paths=PackedStringArray("next_scene") instance=ExtResource("5_h6d2n")]
 process_mode = 4
 visible = false
+next_scene = NodePath("../..")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_xb4u5")
