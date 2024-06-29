@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
 [ext_resource type="PackedScene" uid="uid://ccosa7y6x01a3" path="res://assets/scenes/characters/crow.tscn" id="2_lkwgw"]
-[ext_resource type="Script" path="res://scripts/dialogue/3dSpeaker.gd" id="3_h1l2o"]
-[ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://scenes/dialogue/dialogue_node.tscn" id="4_sajw2"]
+[ext_resource type="Script" path="res://assets/scripts/dialogue/3dSpeaker.gd" id="3_h1l2o"]
+[ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_sajw2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lln8w"]
 

@@ -1,4 +1,4 @@
-class_name Enums
+class_name ProjectEnums
 extends Node
 
 enum PartType {INSTALL, UNINSTALL, NEUTRAL}
