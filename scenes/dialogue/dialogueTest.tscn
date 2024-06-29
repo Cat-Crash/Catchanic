@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhubidhdvpwlp"]
+
+[ext_resource type="Script" path="res://scripts/dialogue/3dSpeaker.gd" id="1_fvv4n"]
+[ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://scenes/dialogue/dialogue_node.tscn" id="2_1qgit"]
+
+[sub_resource type="Environment" id="Environment_jur85"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjy2j"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bxdjo"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.25105)
+environment = SubResource("Environment_jur85")
+
+[node name="3dSpeaker" type="StaticBody3D" parent="."]
+script = ExtResource("1_fvv4n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3dSpeaker"]
+shape = SubResource("CapsuleShape3D_jjy2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="3dSpeaker"]
+mesh = SubResource("CapsuleMesh_bxdjo")
+
+[node name="DialogueNode" parent="." instance=ExtResource("2_1qgit")]
+
+[connection signal="repositionDialogueArea" from="DialogueNode" to="3dSpeaker" method="_on_dialogue_node_reposition_dialogue_area"]

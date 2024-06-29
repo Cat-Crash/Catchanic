@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccosa7y6x01a3"]
+
+[ext_resource type="Texture2D" uid="uid://ls41n70j1cc0" path="res://assets/art/Sprites/Crow_closed mouth.PNG" id="1_4qtg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7db16"]
+region = Rect2(0, 0, 2109, 1454)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h32an"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4qtg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7db16")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjnp5"]
+size = Vector3(3.5, 2.8, 0.25)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_h32an")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rjnp5")
