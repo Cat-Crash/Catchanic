@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqf0rxql0t207"
-path="res://.godot/imported/gear_placeholder.png-30d258b9fe739e8937f96a610ffe3ab0.ctex"
+uid="uid://bifj55ktux5uq"
+path="res://.godot/imported/p5.png-704ba4eb5f6595f990d8477eb1428271.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/gear_placeholder.png"
-dest_files=["res://.godot/imported/gear_placeholder.png-30d258b9fe739e8937f96a610ffe3ab0.ctex"]
+source_file="res://assets/art/sprites/puzzle/p5.png"
+dest_files=["res://.godot/imported/p5.png-704ba4eb5f6595f990d8477eb1428271.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b36h5dtehi3ra"
-path="res://.godot/imported/Beaver_openmouth.PNG-dbdc2fd32ba5a3323ac0e38dc761c830.ctex"
+uid="uid://bqf0rxql0t207"
+path="res://.godot/imported/gear_placeholder.png-953b19627714fddccf546e4c444108f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/Beaver_openmouth.PNG"
-dest_files=["res://.godot/imported/Beaver_openmouth.PNG-dbdc2fd32ba5a3323ac0e38dc761c830.ctex"]
+source_file="res://assets/art/sprites/gear_placeholder.png"
+dest_files=["res://.godot/imported/gear_placeholder.png-953b19627714fddccf546e4c444108f2.ctex"]
 
 [params]
 

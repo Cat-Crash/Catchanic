@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc2gbokm2j5hk"
-path="res://.godot/imported/Beaver_closedmouth.PNG-de75713649f5da8aea7af628e9ed4fc2.ctex"
+uid="uid://dcob2orupodjt"
+path="res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/Beaver_closedmouth.PNG"
-dest_files=["res://.godot/imported/Beaver_closedmouth.PNG-de75713649f5da8aea7af628e9ed4fc2.ctex"]
+source_file="res://assets/art/sprites/vehicles/moped.png"
+dest_files=["res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.ctex"]
 
 [params]
 
