@@ -29,9 +29,8 @@ size = Vector2(32, 224)
 size = Vector2(32, 224)
 
 [node name="Puzzle" type="Node2D"]
+position = Vector2(680, 324)
 script = ExtResource("1_fo14a")
-
-[node name="Camera2D" type="Node2D" parent="."]
 
 [node name="PuzzlePart2" parent="." instance=ExtResource("1_hg3m7")]
 position = Vector2(-288, 128)
