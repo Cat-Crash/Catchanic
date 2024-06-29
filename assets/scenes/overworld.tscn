@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://nysqqwonpiho"]
+[gd_scene load_steps=10 format=3 uid="uid://nysqqwonpiho"]
 
-[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_5k15v"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="1_mqhey"]
 [ext_resource type="PackedScene" uid="uid://ccosa7y6x01a3" path="res://assets/scenes/characters/crow.tscn" id="2_lkwgw"]
 [ext_resource type="Script" path="res://scripts/dialogue/3dSpeaker.gd" id="3_h1l2o"]
@@ -18,46 +17,40 @@ size = Vector3(1.9834, 0.534302, 1.97632)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xbpe5"]
 
-[node name="GameManager" type="Node"]
-script = ExtResource("1_5k15v")
+[node name="Overworld" type="Node3D"]
 
-[node name="Overworld" type="Node3D" parent="."]
-
-[node name="Cat" parent="Overworld" instance=ExtResource("1_mqhey")]
+[node name="Cat" parent="." instance=ExtResource("1_mqhey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36244, 1, 3.58374)
 
-[node name="Plane" type="MeshInstance3D" parent="Overworld"]
+[node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("PlaneMesh_mftkq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Overworld/Plane"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Overworld/Plane/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265, 0)
 shape = SubResource("BoxShape3D_f4s0x")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Overworld"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r2l7l")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Overworld"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.528438, 0.848972, 0, -0.848972, 0.528438, 3.59333, 3.99903, -0.0460261)
 
-[node name="Crow" parent="Overworld" instance=ExtResource("2_lkwgw")]
+[node name="Crow" parent="." instance=ExtResource("2_lkwgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.941, 1.23355, -4.16366)
 collision_mask = 2
 script = ExtResource("3_h1l2o")
 
-[node name="DialogueNode" parent="Overworld/Crow" instance=ExtResource("4_sajw2")]
+[node name="DialogueNode" parent="Crow" instance=ExtResource("4_sajw2")]
 speakerName = "Crow"
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Overworld/Crow"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Crow"]
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_xbpe5")
 
-[connection signal="playerPositionChanged" from="Overworld/Cat" to="." method="_on_cat_player_position_changed"]
-[connection signal="beginDialogue" from="Overworld/Crow" to="." method="_on_crow_begin_dialogue"]
-[connection signal="body_entered" from="Overworld/Crow" to="Overworld/Crow" method="_on_body_entered"]
-[connection signal="body_exited" from="Overworld/Crow" to="Overworld/Crow" method="_on_body_exited"]
-[connection signal="endDialogue" from="Overworld/Crow" to="." method="_on_crow_end_dialogue"]
-[connection signal="endOfDialogue" from="Overworld/Crow/DialogueNode" to="Overworld/Crow" method="_on_dialogue_node_end_of_dialogue"]
-[connection signal="repositionDialogueArea" from="Overworld/Crow/DialogueNode" to="Overworld/Crow" method="_on_dialogue_node_reposition_dialogue_area"]
+[connection signal="body_entered" from="Crow" to="Crow" method="_on_body_entered"]
+[connection signal="body_exited" from="Crow" to="Crow" method="_on_body_exited"]
+[connection signal="endOfDialogue" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_end_of_dialogue"]
+[connection signal="repositionDialogueArea" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_reposition_dialogue_area"]
