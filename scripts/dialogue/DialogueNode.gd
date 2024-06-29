@@ -46,28 +46,45 @@ func backupFunc() -> void: # if not subbed, warns that you forgot to give it an 
 signal repositionDialogueArea # A signal for the 3dSpeaker this is attached to to position the dialogue
 	# box over itself
 	
+signal endOfDialogue # A signal that the dialogue is over and the overworld should be interactable again
+	
 # NOTE FIGURE OUT A BETTER WAY TO STORE THIS LATER
 var testDialoguePath : Array[DialogueState] = [
-	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Hello there, can you hear me?"),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "A little far from home, aren't you?"),
+	DialogueState.new(DialogueState.SpeakingParty.PLAYER, "Meow."),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Well, if home is in the city, then the train is headed that way."),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Or rather, it was headed that way. This racket is interrupting my business."),
 	DialogueState.new(DialogueState.SpeakingParty.PLAYER, "Meow?"),
-	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "Ah right. You're a cat"),
-	DialogueState.new(DialogueState.SpeakingParty.PLAYER, "Meow meow!"),
-	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "And a mechanic, yes, I know"),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see."),
+	DialogueState.new(DialogueState.SpeakingParty.SPEAKER, "If you find it, return it to me, and I can deliver it to the human."),
 ]
-func _ready() -> void: # NOTE just doing this on _ready() for now to make testing simpler
-	speakerPos = Vector2i(100, 100)
-	playerPos = Vector2i(300, 100)
-	dialoguePath = testDialoguePath
-	beginDialoguePath()
+signal puzzleStart
+func introPuzzle() -> void:
+	print('puzzle beginning')
+	puzzleStart.emit()
+#func _ready() -> void: # NOTE just doing this on _ready() for now to make testing simpler
+	#speakerPos = Vector2i(100, 100)
+	#playerPos = Vector2i(300, 100)
+	#dialoguePath = testDialoguePath
+	#beginDialoguePath()
 	
+
+func _ready() -> void:
+	dialogueArea.visible = false # hides the dialogue box until we talk to someone
+	dialoguePath = testDialoguePath # NOTE just doing this on _ready() for now to make testing simpler
+	endFunction = 'introPuzzle' # NOTE just doing this on _ready() for now to make demo simpler
+
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
 	pathPosition = 0
 	repositionDialogueArea.emit()
 
 func _on_dialogue_area_next_dialogue_signal() -> void: # When it receives the signal from DialogueArea,
-	# calls nextDialogueState()
+	# calls nextDialogueState() (when the window is clicked on)
 	nextDialogueState()
+#func _input(event) -> void: #NOTE code to change how inputs are processed to go to the next dialogue
+#	if event.is_action_pressed('nextDialogue') and (gameManager.currentGameState == gameManager.GameState.DIALOGUE ):
+#		nextDialogueState()
 
 func nextDialogueState() -> void: # Moves to the next line of dialogue in the dialoguePath. If there are no
 		# more lines, runs the end function
@@ -76,7 +93,10 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 		updateDialogueDisplay(dialoguePath[pathPosition])
 	else: # if at the end of the dialoguePath, hide the dialogue window and call the endFunction
 		dialogueArea.visible = false # hides the dialogue box
-		call(endFunction)
+		endOfDialogue.emit()
+		call(endFunction) # NOTE if you're having a problem with endFunctions that change the
+			# game state not going, it's probably because these two lines are executing in the wrong
+			# order
 		
 func updateDialogueDisplay(newState : DialogueState) -> void:
 	dialogueArea.grab_focus() # Shift the focus to the dialogueArea so that it can receive inputs

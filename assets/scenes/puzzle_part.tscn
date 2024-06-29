@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://demakvrdx5qr8"]
+
+[ext_resource type="Script" path="res://assets/scripts/puzzle_part.gd" id="1_68t0x"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw8bf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_il85d"]
+
+[node name="PuzzlePart" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_68t0x")
+snap = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(100, 100)
+texture = SubResource("PlaceholderTexture2D_mw8bf")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -930.5
+offset_right = -960.0
+offset_bottom = -930.5
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_il85d")
+debug_color = Color(1, 1, 1, 1)
+
+[connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]

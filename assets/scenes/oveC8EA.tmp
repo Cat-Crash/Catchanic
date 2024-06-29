@@ -44,7 +44,6 @@ collision_mask = 2
 script = ExtResource("3_h1l2o")
 
 [node name="DialogueNode" parent="Crow" instance=ExtResource("4_sajw2")]
-speakerName = "Crow"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Crow"]
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
@@ -53,4 +52,3 @@ shape = SubResource("SphereShape3D_xbpe5")
 [connection signal="body_entered" from="Crow" to="Crow" method="_on_body_entered"]
 [connection signal="body_exited" from="Crow" to="Crow" method="_on_body_exited"]
 [connection signal="endOfDialogue" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_end_of_dialogue"]
-[connection signal="repositionDialogueArea" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_reposition_dialogue_area"]
