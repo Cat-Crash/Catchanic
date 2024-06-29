@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var snap: int
 
 @export_category("Part Behavior")
-@export var type: Enums.PartType = Enums.PartType.NEUTRAL
+@export var type: ProjectEnums.PartType = ProjectEnums.PartType.NEUTRAL
 @export var target_goal: int = -1
 
 
@@ -18,12 +18,14 @@ func _ready():
 	snap_vect = Vector2(snap, snap)
 
 func _process(delta):
+
 	if not selected: return
 	
 	var currPos: Vector2 = self.global_position
 	var mousePos: Vector2 = get_global_mouse_position().snapped(snap_vect)
 	
 	velocity = (mousePos - currPos) / delta
+
 	if not move_x: velocity.x = 0
 	if not move_y: velocity.y = 0
 	
@@ -33,7 +35,7 @@ func complete():
 	move_x = false
 	move_y = false
 	
-	if type == Enums.PartType.UNINSTALL: queue_free()
+	if type == ProjectEnums.PartType.UNINSTALL: queue_free()
 
 func _on_button_button_down():
 	selected = true

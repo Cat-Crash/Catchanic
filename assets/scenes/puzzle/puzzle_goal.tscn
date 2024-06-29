@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://assets/scripts/puzzle/goal.gd" id="1_2naso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrwgm"]
-size = Vector2(100, 100)
+size = Vector2(64, 64)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xotc2"]
-size = Vector2(100, 100)
+size = Vector2(64, 64)
 
 [node name="Goal" type="Area2D"]
 script = ExtResource("1_2naso")

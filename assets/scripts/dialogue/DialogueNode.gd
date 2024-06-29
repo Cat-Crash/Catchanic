@@ -1,19 +1,8 @@
 extends Node
 
-class DialogueState: # holds everything a single piece of dialogue needs (LIST LATER)
-	enum SpeakingParty {SPEAKER, PLAYER} # Designates who's speaking so that the DialogueNode knows
-		# which name and location to pull
-	
-	var speakingParty : SpeakingParty
-	var speechText : String # the text to be displayed
-	# var speechSound EVENTUALLY this will be a sound effect that can be played if not empty
-	
-	@warning_ignore("untyped_declaration") # literally impossible to put an output declaration for
-		# a constructor
-	func _init(_speakingParty : SpeakingParty, _speechText : String):
-		speakingParty = _speakingParty
-		speechText = _speechText
-	
+const GAMESTATE: ProjectEnums.GameState = ProjectEnums.GameState.DIALOGUE
+
+@export var next_scene : Node
 @export var speakerName : String = 'Default Name' # The name of the speaker or object this is
 	# attached to, to be set in the editor. Will be used for dialogue nametags
 static var playerName : String = "Meonthany" # Display name for the player, can be changed later
@@ -45,8 +34,6 @@ func backupFunc() -> void: # if not subbed, warns that you forgot to give it an 
 	
 signal repositionDialogueArea # A signal for the 3dSpeaker this is attached to to position the dialogue
 	# box over itself
-	
-signal endOfDialogue # A signal that the dialogue is over and the overworld should be interactable again
 	
 # NOTE FIGURE OUT A BETTER WAY TO STORE THIS LATER
 var testDialoguePath : Array[DialogueState] = [
@@ -93,8 +80,10 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 		updateDialogueDisplay(dialoguePath[pathPosition])
 	else: # if at the end of the dialoguePath, hide the dialogue window and call the endFunction
 		dialogueArea.visible = false # hides the dialogue box
-		endOfDialogue.emit()
-		call(endFunction) # NOTE if you're having a problem with endFunctions that change the
+		
+		GlobalUtilities.switch_scene(self, next_scene)
+		
+		#call(endFunction) # NOTE if you're having a problem with endFunctions that change the
 			# game state not going, it's probably because these two lines are executing in the wrong
 			# order
 		
@@ -109,3 +98,17 @@ func updateDialogueDisplay(newState : DialogueState) -> void:
 	else: # if neither is speaking something has gone wrong, pushes an error
 		push_error('Undefined speaker for text, make sure that the speakingParty is set correctly in your DialogueState')
 	dialogueText.text = newState.speechText # updates the displayed text to that of the newState
+	
+class DialogueState: # holds everything a single piece of dialogue needs (LIST LATER)
+	enum SpeakingParty {SPEAKER, PLAYER} # Designates who's speaking so that the DialogueNode knows
+		# which name and location to pull
+
+	var speakingParty : SpeakingParty
+	var speechText : String # the text to be displayed
+	# var speechSound EVENTUALLY this will be a sound effect that can be played if not empty
+
+	@warning_ignore("untyped_declaration") # literally impossible to put an output declaration for
+		# a constructor
+	func _init(_speakingParty : SpeakingParty, _speechText : String):
+		speakingParty = _speakingParty
+		speechText = _speechText

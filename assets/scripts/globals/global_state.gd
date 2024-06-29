@@ -1,6 +1,12 @@
 class_name ProjectState
 extends Node
 
-static var currentGameState : ProjectEnums.GameState # tracks the state of the game
+var currentGameState : ProjectEnums.GameState: 
+	set(state):
+		currentGameState = state
+		state_change.emit(state)
+# tracks the state of the game
 
-static var playerPosition : Vector3 # tracks the position of the player
+signal state_change(state: ProjectEnums.GameState)
+
+var playerPosition : Vector3 # tracks the position of the player

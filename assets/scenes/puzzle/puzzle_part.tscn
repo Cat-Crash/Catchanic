@@ -3,15 +3,20 @@
 [ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle_part.gd" id="1_68t0x"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw8bf"]
-size = Vector2(100, 100)
+size = Vector2(62, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_il85d"]
-size = Vector2(100, 100)
+custom_solver_bias = 1.0
+size = Vector2(62, 62)
 
 [node name="PuzzlePart" type="CharacterBody2D"]
+z_index = 1
 motion_mode = 1
 script = ExtResource("1_68t0x")
-snap = 50
+move_x = true
+move_y = true
+snap = 32
+target_goal = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_mw8bf")
@@ -21,14 +26,14 @@ self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -930.5
-offset_right = -960.0
-offset_bottom = -930.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-metadata/_edit_use_anchors_ = true
+flat = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_il85d")
