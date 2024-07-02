@@ -3,6 +3,7 @@ extends AnimatableBody3D
 @onready var detection_zone = $DetectionZone
 @onready var interactable_parent = $Interactables
 
+var activeInteractable: int
 var interactables: Array[Node]
 var player_inside: bool
 
@@ -10,14 +11,13 @@ var player_inside: bool
 func _ready():
 	interactables = interactable_parent.get_children()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func _input(event):
 	if event.is_action("interact"):
-		pass
+		pass # activate interactable from here
 
 
 func _on_detection_zone_body_entered(body):
