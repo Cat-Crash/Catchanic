@@ -11,9 +11,9 @@
 
 [sub_resource type="Environment" id="Environment_r2l7l"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_xbpe5"]
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q3who"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xbpe5"]
 
 [node name="Overworld" type="Node3D"]
 script = ExtResource("1_8u4wf")
@@ -30,24 +30,6 @@ environment = SubResource("Environment_r2l7l")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.528438, 0.848972, 0, -0.848972, 0.528438, 3.59333, 3.99903, -0.0460261)
 
-[node name="Crow" parent="." instance=ExtResource("2_lkwgw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.941, 1.23355, -4.16366)
-collision_mask = 2
-script = ExtResource("3_h1l2o")
-
-[node name="DialogueNode" parent="Crow" node_paths=PackedStringArray("next_scene") instance=ExtResource("4_sajw2")]
-next_scene = NodePath("../Puzzle")
-speakerName = "Crow"
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Crow"]
-transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
-shape = SubResource("SphereShape3D_xbpe5")
-
-[node name="Puzzle" parent="Crow" node_paths=PackedStringArray("next_scene") instance=ExtResource("5_h6d2n")]
-process_mode = 4
-visible = false
-next_scene = NodePath("../..")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_xb4u5")
 autoplay = true
@@ -60,9 +42,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="first level forest/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_q3who")
 
-[connection signal="body_entered" from="Crow" to="Crow" method="_on_body_entered"]
-[connection signal="body_exited" from="Crow" to="Crow" method="_on_body_exited"]
-[connection signal="repositionDialogueArea" from="Crow/DialogueNode" to="Crow" method="_on_dialogue_node_reposition_dialogue_area"]
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Crow" parent="NPCs" instance=ExtResource("2_lkwgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.941, 1.23355, -4.16366)
+collision_mask = 2
+script = ExtResource("3_h1l2o")
+
+[node name="DialogueNode" parent="NPCs/Crow" node_paths=PackedStringArray("next_scene") instance=ExtResource("4_sajw2")]
+next_scene = NodePath("../Puzzle")
+speakerName = "Crow"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="NPCs/Crow"]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_xbpe5")
+
+[node name="Puzzle" parent="NPCs/Crow" instance=ExtResource("5_h6d2n")]
+process_mode = 4
+visible = false
+
+[connection signal="body_entered" from="NPCs/Crow" to="NPCs/Crow" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCs/Crow" to="NPCs/Crow" method="_on_body_exited"]
+[connection signal="repositionDialogueArea" from="NPCs/Crow/DialogueNode" to="NPCs/Crow" method="_on_dialogue_node_reposition_dialogue_area"]
 
 [editable path="Cat"]
-[editable path="Crow/DialogueNode"]
+[editable path="NPCs/Crow/DialogueNode"]
