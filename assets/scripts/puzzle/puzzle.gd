@@ -18,7 +18,6 @@ func _ready():
 			if childPart.type == ProjectEnums.PartType.INSTALL: newParts += 1
 			elif childPart.type == ProjectEnums.PartType.UNINSTALL: oldParts += 1
 
-
 # Remove completed part from count and check for completion
 func _on_exit_goal_part_complete(type: ProjectEnums.PartType):
 	if type == ProjectEnums.PartType.INSTALL: newParts -= 1
