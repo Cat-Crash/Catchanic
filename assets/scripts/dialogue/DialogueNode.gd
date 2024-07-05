@@ -31,6 +31,9 @@ var endFunction : String = '' # The name of the function to be called when the
 	# nametag
 @onready var dialogueText : RichTextLabel = $DialogueArea/DialogueText # The text displaying the
 	# current dialogue
+	
+var dialogueOffset : Vector2 = Vector2(0, 0) # the offset of the box to make it over the speaker's
+	# head instead of the center of them
 
 func _ready() -> void:
 	mode_type = ProjectEnums.GameState.DIALOGUE # marks the mode type for the game mode
@@ -75,6 +78,14 @@ func updateDialogueDisplay(newState : DialogueState) -> void:
 		dialogueArea.position = playerPos
 	else: # if neither is speaking something has gone wrong, pushes an error
 		push_error('Undefined speaker for text, make sure that the speakingParty is set correctly in your DialogueState')
+	
+	dialogueArea.position = dialogueArea.position - Vector2(dialogueArea.transform.size.x / 2, dialogueArea.transform.size.y)
+		# offsets it to be sitting centered speaker or player position
+	dialogueArea.position += dialogueOffset # offsets it by the vector set for placing it above the head
+	if dialogueArea.position.x < 0: # trims the position to the right of the left edge of the screen
+			dialogueArea.position.x = 0
+	if dialogueArea.position.y < 0: # trims the position below the top of the screen
+		dialogueArea.position.y = 0 
 	dialogueText.text = newState.speechText # updates the displayed text to that of the newState
 	
 class DialogueState: # holds everything a single piece of dialogue needs (LIST LATER)
