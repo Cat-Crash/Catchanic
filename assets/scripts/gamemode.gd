@@ -1,5 +1,5 @@
 class_name GameMode
-extends Node3D
+extends Node
 
 var mode_type: ProjectEnums.GameState
 

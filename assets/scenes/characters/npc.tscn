@@ -13,7 +13,6 @@ radius = 3.0
 
 [node name="NPC" type="AnimatableBody3D"]
 script = ExtResource("1_stnc4")
-active_interactable = null
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
@@ -32,6 +31,7 @@ shape = SubResource("SphereShape3D_cbqj2")
 
 [node name="Interactable 0" type="Node3D" parent="Interactables"]
 script = ExtResource("3_60cvo")
+effects = null
 
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

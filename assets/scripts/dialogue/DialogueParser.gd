@@ -7,7 +7,7 @@ static var nameDelimiter : String = ':' # what we're using to split the name fro
 
 static func stringToDialogue(script : String) -> Array[DialogueNode.DialogueState]:
 	var scriptLines : PackedStringArray
-	var dialoguePath : Array[DialogueNode.DialogueState] = Array()
+	var dialoguePath : Array[DialogueNode.DialogueState] = []
 	
 	scriptLines = script.split(lineDelimiter)
 	

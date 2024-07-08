@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bhtm63ajtk6oa" path="res://assets/art/sprites/npcs/crow/Crow_closed mouth.PNG" id="1_4qtg2"]
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_djlvv"]
-[ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueNode.gd" id="3_usc5j"]
 [ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="4_a08xv"]
+[ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_um8fo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
 animations = [{
@@ -21,8 +21,7 @@ animations = [{
 [node name="AnimatedSprite3D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_syuic")
 
-[node name="DialogueNode1" type="Node3D" parent="Interactables/Interactable 0" index="0"]
-script = ExtResource("3_usc5j")
+[node name="DialogueNode0" parent="Interactables/Interactable 0" index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "Crow: A little far from home, aren't you?
 PLAYER: Meow.
 Crow: Well, if that truck you were in is headed for the city, then the human with the moped was headed that way.
@@ -33,9 +32,9 @@ Crow: If you find it, return it to me, and I can deliver it to the human."
 
 [node name="Interactable1" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("4_a08xv")
+effects = null
 
-[node name="DialogueNode2" type="Node3D" parent="Interactables/Interactable1" index="0"]
-script = ExtResource("3_usc5j")
+[node name="DialogueNode1" parent="Interactables/Interactable1" index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "PLAYER: Meow?
 Crow: A battery in a nest? Sure, I'd be delighted to get it down for you.
 Crow: For a price, of course. That shiny ring is proving to be a pain in my beak.
@@ -46,9 +45,9 @@ Crow: Pleasure doing business with you, my feline friend."
 
 [node name="Interactable2" type="Node3D" parent="Interactables" index="2"]
 script = ExtResource("4_a08xv")
+effects = null
 
-[node name="DialogueNode3" type="Node3D" parent="Interactables/Interactable2" index="0"]
-script = ExtResource("3_usc5j")
+[node name="DialogueNode" parent="Interactables/Interactable2" index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "Crow: Hitching a ride outta here?
 Crow: What'd you do to it? It doesn't smell anymore!
 Crow: Nice working with you, meowchanic!"

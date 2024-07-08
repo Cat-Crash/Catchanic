@@ -10,7 +10,13 @@ var active_mode : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	game_modes = get_children() as Array[GameMode]
+	var children = get_children() #NOTE temp
+	for child in children: #NOTE temp
+		if child is GameMode:
+			game_modes.append(child)
+		else:
+			push_error('Non game mode object under interactable')
+	#game_modes = get_children() as Array[GameMode]
 	for mode in game_modes:
 		mode.mode_done.connect(_on_mode_done)
 

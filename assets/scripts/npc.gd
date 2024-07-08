@@ -8,7 +8,13 @@ var interactables : Array[Interactable]
 var player_inside : bool
 
 func _ready():
-	interactables = interactable_root.get_children() as Array[Interactable]
+	var children : Array[Node] = interactable_root.get_children() #NOTE temp
+	for child in children: #NOTE temp
+		if child is Interactable:
+			interactables.append(child)
+		else:
+			push_error('non interactable under interactables')
+	#interactables = interactable_root.get_children() as Array[Interactable]
 
 func _input(event):
 	if event.is_action("interact") and player_inside:
