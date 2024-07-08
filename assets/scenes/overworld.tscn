@@ -10,6 +10,8 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q3who"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_xbpe5"]
+
 [node name="Overworld" type="Node3D"]
 script = ExtResource("1_8u4wf")
 
