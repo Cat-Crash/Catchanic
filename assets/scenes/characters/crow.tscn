@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtob87t53ltfb"]
+[gd_scene load_steps=6 format=3 uid="uid://dtob87t53ltfb"]
 
-[ext_resource type="Texture2D" uid="uid://ls41n70j1cc0" path="res://assets/art/sprites/NPCs/Crow_closed mouth.PNG" id="1_4qtg2"]
+[ext_resource type="Texture2D" uid="uid://bhtm63ajtk6oa" path="res://assets/art/sprites/npcs/crow/Crow_closed mouth.PNG" id="1_4qtg2"]
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_djlvv"]
+[ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueNode.gd" id="3_usc5j"]
+[ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="4_a08xv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
 animations = [{
@@ -18,3 +20,35 @@ animations = [{
 
 [node name="AnimatedSprite3D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_syuic")
+
+[node name="DialogueNode1" type="Node3D" parent="Interactables/Interactable 0" index="0"]
+script = ExtResource("3_usc5j")
+dialogueRaw = "Crow: A little far from home, aren't you?
+PLAYER: Meow.
+Crow: Well, if that truck you were in is headed for the city, then the human with the moped was headed that way.
+Crow: Or rather, it was headed that way. This racket is interrupting my business.
+PLAYER: Meow?
+Crow: I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see. Won't even drive their moped out of here.
+Crow: If you find it, return it to me, and I can deliver it to the human."
+
+[node name="Interactable1" type="Node3D" parent="Interactables" index="1"]
+script = ExtResource("4_a08xv")
+
+[node name="DialogueNode2" type="Node3D" parent="Interactables/Interactable1" index="0"]
+script = ExtResource("3_usc5j")
+dialogueRaw = "PLAYER: Meow?
+Crow: A battery in a nest? Sure, I'd be delighted to get it down for you.
+Crow: For a price, of course. That shiny ring is proving to be a pain in my beak.
+PLAYER: Meow.
+Crow: Excellent, a fellow opportunist, I see.
+PLAYER: Meow!
+Crow: Pleasure doing business with you, my feline friend."
+
+[node name="Interactable2" type="Node3D" parent="Interactables" index="2"]
+script = ExtResource("4_a08xv")
+
+[node name="DialogueNode3" type="Node3D" parent="Interactables/Interactable2" index="0"]
+script = ExtResource("3_usc5j")
+dialogueRaw = "Crow: Hitching a ride outta here?
+Crow: What'd you do to it? It doesn't smell anymore!
+Crow: Nice working with you, meowchanic!"

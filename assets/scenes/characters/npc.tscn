@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://0fclbx6qanx2"]
+[gd_scene load_steps=6 format=3 uid="uid://0fclbx6qanx2"]
 
 [ext_resource type="Script" path="res://assets/scripts/npc.gd" id="1_stnc4"]
 [ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="3_60cvo"]
-[ext_resource type="Script" path="res://assets/scripts/gamemode.gd" id="4_320ql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfkr3"]
 
@@ -33,9 +32,6 @@ shape = SubResource("SphereShape3D_cbqj2")
 
 [node name="Interactable 0" type="Node3D" parent="Interactables"]
 script = ExtResource("3_60cvo")
-
-[node name="GameMode 0" type="Node3D" parent="Interactables/Interactable 0"]
-script = ExtResource("4_320ql")
 
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
