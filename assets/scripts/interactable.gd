@@ -1,6 +1,8 @@
 class_name Interactable
 extends Node3D
 
+# String -> Int
+# String is the name of the NPC Node, Int is the Interactable Number to change to
 @export var effects : Dictionary
 
 var game_modes : Array[GameMode]
