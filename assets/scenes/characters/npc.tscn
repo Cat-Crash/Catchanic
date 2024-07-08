@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://0fclbx6qanx2"]
+
+[ext_resource type="Script" path="res://assets/scripts/npc.gd" id="1_stnc4"]
+[ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="3_60cvo"]
+[ext_resource type="Script" path="res://assets/scripts/gamemode.gd" id="4_320ql"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfkr3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oxorr"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cbqj2"]
+radius = 3.0
+
+[node name="NPC" type="AnimatableBody3D"]
+script = ExtResource("1_stnc4")
+active_interactable = null
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_nfkr3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_oxorr")
+
+[node name="DetectionZone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionZone"]
+shape = SubResource("SphereShape3D_cbqj2")
+
+[node name="Interactables" type="Node3D" parent="."]
+
+[node name="Interactable 0" type="Node3D" parent="Interactables"]
+script = ExtResource("3_60cvo")
+
+[node name="GameMode 0" type="Node3D" parent="Interactables/Interactable 0"]
+script = ExtResource("4_320ql")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=3 uid="uid://uonn7pg0xbyj"]
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle.gd" id="1_fo14a"]
-[ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/puzzle_part.tscn" id="1_hg3m7"]
-[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/puzzle_exit_goal.tscn" id="3_c2wkm"]
+[ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/components/puzzle_part.tscn" id="1_hg3m7"]
+[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_exit_goal.tscn" id="3_c2wkm"]
 [ext_resource type="Texture2D" uid="uid://d7g4110fqggh" path="res://assets/art/sprites/puzzle/puzzle bg.png" id="3_o0ssr"]
 [ext_resource type="Texture2D" uid="uid://bu1s2ytjrxgq4" path="res://assets/art/sprites/puzzle/p4.png" id="3_snoyu"]
 [ext_resource type="Texture2D" uid="uid://11dvv6gxc6nh" path="res://assets/art/sprites/puzzle/p8.png" id="4_7v2ad"]
