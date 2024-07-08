@@ -6,20 +6,10 @@ var effects: Dictionary
 
 func _ready():
 	mode_type = ProjectEnums.GameState.OVERWORLD
-	var npcs = npc_parent.get_children() as Array[NPC]
+	var npc_nodes = npc_parent.get_children() as Array[NPC]
 	
-	for npc in npcs:
-		npc.interaction_done.connect(_on_interaction_done)
-
-func _on_interaction_done(npc: NPC, number: int):
-	pass
-
-class InteractionEffect:
-	var npc: NPC
-	var number: int
+	GlobalState.overworld = self
 	
-	var effects: Dictionary
-	
-	func apply_effects():
-		for npc in effects:
-			npc.activeInteractable = effects[npc]
+	GlobalState.npcs.clear()
+	for node in npc_nodes:
+		GlobalState.npcs[node.name] = node

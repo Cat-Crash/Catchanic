@@ -1,10 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2j74ifvul0pg"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_1daq2"]
-[ext_resource type="Texture2D" uid="uid://b3eit0jcgc11x" path="res://assets/art/sprites/Cat_closedmouth.PNG" id="1_vcv4y"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ji6i7"]
-size = Vector3(1.62, 1.385, 0.25)
+[ext_resource type="Texture2D" uid="uid://b3eit0jcgc11x" path="res://assets/art/sprites/NPCs/Cat_closedmouth.PNG" id="1_vcv4y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sldy3"]
 region = Rect2(0, 0, 2120, 1550)
@@ -23,13 +20,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_5m7kt"]
+radius = 1.0
+
 [node name="Cat" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_1daq2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.999961, 0.00863245, -0.00176752, -0.00863212, 0.999963, 0.000189, 0.00176908, -0.000173735, 0.999998, 0.00553884, 0.00362815, -6.07039e-05)
-shape = SubResource("BoxShape3D_ji6i7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -0.000127912, 2.9963, 2.00396)
@@ -38,3 +34,6 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -0.0001279
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_y7rpr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5m7kt")
