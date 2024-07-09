@@ -12,7 +12,6 @@ radius = 3.0
 
 [node name="NPC" type="AnimatableBody3D"]
 script = ExtResource("1_stnc4")
-active_interactable = null
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
