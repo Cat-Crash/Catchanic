@@ -17,11 +17,23 @@ animations = [{
 }]
 
 [node name="Crow" instance=ExtResource("1_djlvv")]
+active_interactable = 0
 
-[node name="AnimatedSprite3D" parent="." index="0"]
+[node name="Interactables_Interactable 0#DialogueNode0" parent="." index="0" instance=ExtResource("4_um8fo")]
+dialogueRaw = "Crow: A little far from home, aren't you?
+PLAYER: Meow.
+Crow: Well, if that truck you were in is headed for the city, then the human with the moped was headed that way.
+Crow: Or rather, it was headed that way. This racket is interrupting my business.
+PLAYER: Meow?
+Crow: I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see. Won't even drive their moped out of here.
+Crow: If you find it, return it to me, and I can deliver it to the human."
+
+[node name="AnimatedSprite3D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_syuic")
 
-[node name="DialogueNode0" parent="Interactables/Interactable 0" index="0" instance=ExtResource("4_um8fo")]
+[node name="Interactable0" type="Node3D" parent="Interactables" index="0"]
+
+[node name="DialogueNode0" parent="Interactables/Interactable0" index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "Crow: A little far from home, aren't you?
 PLAYER: Meow.
 Crow: Well, if that truck you were in is headed for the city, then the human with the moped was headed that way.

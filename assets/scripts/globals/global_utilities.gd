@@ -2,7 +2,7 @@ class_name ProjectUtilities
 extends Node
 
 # Disable and hide the current scene, then enable and show the next. Does not hide the overworld.
-func switch_scene(curr_scene: GameMode, next_scene: GameMode):
+func switch_scene(curr_scene: GameMode, next_scene: GameMode) -> void:
 # Assumes the root is the overworld. Might have to change later.
 	if !next_scene: next_scene = get_tree().get_current_scene()
 
