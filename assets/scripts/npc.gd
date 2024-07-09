@@ -9,7 +9,7 @@ var player_inside : bool
 
 func _ready():
 	var children : Array[Node] = interactable_root.get_children() #NOTE temp
-	for child in children: #NOTE temp
+	for child : Node in children: #NOTE temp
 		if child is Interactable:
 			interactables.append(child)
 		else:

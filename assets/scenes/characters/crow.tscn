@@ -32,7 +32,6 @@ Crow: If you find it, return it to me, and I can deliver it to the human."
 
 [node name="Interactable1" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("4_a08xv")
-effects = null
 
 [node name="DialogueNode1" parent="Interactables/Interactable1" index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "PLAYER: Meow?
@@ -45,7 +44,6 @@ Crow: Pleasure doing business with you, my feline friend."
 
 [node name="Interactable2" type="Node3D" parent="Interactables" index="2"]
 script = ExtResource("4_a08xv")
-effects = null
 
 [node name="DialogueNode" parent="Interactables/Interactable2" index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "Crow: Hitching a ride outta here?

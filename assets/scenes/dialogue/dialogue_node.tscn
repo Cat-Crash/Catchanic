@@ -4,7 +4,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gupek"]
 
-[node name="DialogueNode" type="Node"]
+[node name="DialogueNode" type="Node3D"]
 script = ExtResource("1_ixcqf")
 dialogueRaw = "PLAYER : Default text
 SPEAKER : Default text but again"

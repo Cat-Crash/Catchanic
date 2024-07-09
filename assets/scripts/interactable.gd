@@ -11,7 +11,7 @@ var active_mode : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var children = get_children() #NOTE temp
-	for child in children: #NOTE temp
+	for child : Node in children: #NOTE temp
 		if child is GameMode:
 			game_modes.append(child)
 		else:
