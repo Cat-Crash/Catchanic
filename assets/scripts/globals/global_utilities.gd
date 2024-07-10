@@ -19,7 +19,7 @@ func switch_scene(curr_scene: GameMode, next_scene: GameMode) -> void:
 func get_all_children(parent: Node) -> Array[Node]:
 	var children: Array[Node] = []
 	
-	for child in parent.get_children():
+	for child : Node in parent.get_children():
 		children.append(child)
 		
 		if child.get_child_count() > 0:

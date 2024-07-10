@@ -12,7 +12,7 @@ var active_mode : int = 0
 func _ready() -> void:
 	get_children().assign(game_modes)
 
-	for mode in game_modes:
+	for mode : GameMode in game_modes:
 		mode.mode_done.connect(_on_mode_done)
 
 func activate() -> void:
@@ -25,8 +25,8 @@ func _on_mode_done(done: GameMode) -> void:
 		GlobalUtilities.switch_scene(done, game_modes[active_mode])
 
 func _end_interaction() -> void:
-	for i_name in effects:
-		var npc : NPC = GlobalState.npcs[i_name] as NPC
-		npc.active_interactable = effects[i_name]
+	for interaction_name : String in effects:
+		var npc : NPC = GlobalState.npcs[interaction_name] as NPC
+		npc.active_interactable = effects[interaction_name]
 	
 	GlobalUtilities.switch_scene(game_modes[active_mode], GlobalState.overworld)
