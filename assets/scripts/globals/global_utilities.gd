@@ -6,14 +6,16 @@ func switch_scene(curr_scene: GameMode, next_scene: GameMode) -> void:
 # Assumes the root is the overworld. Might have to change later.
 	if !next_scene: next_scene = get_tree().get_current_scene()
 
-	GlobalState.currentGameState = next_scene.GAMESTATE
+	GlobalState.currentGameState = next_scene.mode_type
 	
 	next_scene.process_mode = Node.PROCESS_MODE_ALWAYS
 	next_scene.visible = true 
+	if next_scene.mode_type == ProjectEnums.GameState.DIALOGUE:
+		next_scene.beginDialoguePath()
 	
 	curr_scene.process_mode = Node.PROCESS_MODE_DISABLED
 	# Don't hide the overworld
-	if curr_scene.GAMESTATE != ProjectEnums.GameState.OVERWORLD: curr_scene.visible = false
+	if curr_scene.mode_type != ProjectEnums.GameState.OVERWORLD: curr_scene.visible = false
 
 # Recursively get all children to the specified node
 func get_all_children(parent: Node) -> Array[Node]:

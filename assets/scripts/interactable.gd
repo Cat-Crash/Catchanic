@@ -10,7 +10,7 @@ var active_mode : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_children().assign(game_modes)
+	game_modes.assign(get_children())
 
 	for mode : GameMode in game_modes:
 		mode.mode_done.connect(_on_mode_done)
