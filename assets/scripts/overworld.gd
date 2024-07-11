@@ -6,10 +6,8 @@ var effects: Dictionary
 
 func _ready() -> void:
 	mode_type = ProjectEnums.GameState.OVERWORLD
-	var npc_nodes : Array[NPC] = npc_parent.get_children() as Array[NPC]
-	
 	GlobalState.overworld = self
 	
 	GlobalState.npcs.clear()
-	for node : NPC in npc_nodes:
+	for node : NPC in npc_parent.get_children():
 		GlobalState.npcs[node.name] = node
