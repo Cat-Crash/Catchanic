@@ -17,7 +17,6 @@ animations = [{
 }]
 
 [node name="Crow" instance=ExtResource("1_djlvv")]
-active_interactable = 0
 
 [node name="Interactables_Interactable 0#DialogueNode0" parent="." index="0" instance=ExtResource("4_um8fo")]
 dialogueRaw = "Crow: A little far from home, aren't you?
