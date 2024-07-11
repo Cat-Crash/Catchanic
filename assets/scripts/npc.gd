@@ -16,7 +16,7 @@ func _ready() -> void:
 			push_error('Non interactable in interactables')
 
 func _input(event: InputEvent) -> void:
-	if event.is_action("interact") and player_inside:
+	if event.is_action("interact") and player_inside and GlobalState.currentGameState == GlobalEnums.GameState.OVERWORLD:
 		interactables[active_interactable].activate()
 
 func _on_detection_zone_body_entered(body : CollisionObject3D) -> void:

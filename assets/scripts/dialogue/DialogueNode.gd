@@ -41,6 +41,10 @@ func _ready() -> void:
 	
 	dialogueArea.visible = false # hides the dialogue box until we talk to someone
 
+func set_active(active: bool) -> void:
+	if active: beginDialoguePath()
+	super.set_active(active)
+
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
 	pathPosition = 0

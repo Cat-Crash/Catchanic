@@ -11,3 +11,6 @@ func _ready() -> void:
 	GlobalState.npcs.clear()
 	for node : NPC in npc_parent.get_children():
 		GlobalState.npcs[node.name] = node
+
+func set_active(active: bool) -> void:
+	process_mode = Node.PROCESS_MODE_INHERIT if active else PROCESS_MODE_DISABLED

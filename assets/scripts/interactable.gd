@@ -14,6 +14,7 @@ func _ready() -> void:
 
 	for mode : GameMode in game_modes:
 		mode.mode_done.connect(_on_mode_done)
+		mode.set_active(false)
 
 func activate() -> void:
 	GlobalUtilities.switch_scene(GlobalState.overworld, game_modes[0])
