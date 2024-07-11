@@ -3,6 +3,7 @@ extends GameMode
 var effects: Dictionary
 
 @onready var npc_parent: Node3D = $NPCs
+@onready var player : Player = $Player
 
 func _ready() -> void:
 	mode_type = ProjectEnums.GameState.OVERWORLD
@@ -13,4 +14,4 @@ func _ready() -> void:
 		GlobalState.npcs[node.name] = node
 
 func set_active(active: bool) -> void:
-	process_mode = Node.PROCESS_MODE_INHERIT if active else PROCESS_MODE_DISABLED
+	player.process_mode = Node.PROCESS_MODE_INHERIT if active else PROCESS_MODE_DISABLED

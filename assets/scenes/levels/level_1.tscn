@@ -17,32 +17,30 @@ dof_blur_far_enabled = true
 dof_blur_near_enabled = true
 
 [node name="Level 1" type="Node3D"]
-
-[node name="Overworld" type="Node3D" parent="."]
 script = ExtResource("1_mt01s")
 
-[node name="Terrain" parent="Overworld" instance=ExtResource("3_fd7c7")]
+[node name="Terrain" parent="." instance=ExtResource("3_fd7c7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
-[node name="Level Bounds" type="StaticBody3D" parent="Overworld/Terrain"]
+[node name="Level Bounds" type="StaticBody3D" parent="Terrain"]
 
-[node name="Floor" type="CollisionShape3D" parent="Overworld/Terrain/Level Bounds"]
+[node name="Floor" type="CollisionShape3D" parent="Terrain/Level Bounds"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826515, 0)
 shape = SubResource("WorldBoundaryShape3D_v7y37")
 
-[node name="Player" parent="Overworld" instance=ExtResource("2_eo3w2")]
+[node name="Player" parent="." instance=ExtResource("2_eo3w2")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Overworld"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r2l7l")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Overworld"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 3.59333, 12.4926, -0.0460261)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Overworld"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_gxidk")
 autoplay = true
 
-[node name="LightmapGI" type="LightmapGI" parent="Overworld"]
+[node name="LightmapGI" type="LightmapGI" parent="."]
 directional = true
 camera_attributes = SubResource("CameraAttributesPractical_r47e5")
 
