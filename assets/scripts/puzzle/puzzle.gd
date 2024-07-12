@@ -1,6 +1,6 @@
 extends GameMode
 
-@onready var center = $Center
+@onready var center : CenterContainer = $Center
 
 var oldParts: int
 var newParts: int
@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	var children: Array[Node] = GlobalUtilities.get_all_children(self)
 # Count all parts to be installed or uninstall in scene
-	for child in children:
+	for child : Node in children:
 		if child is PuzzlePart:
 			var childPart: PuzzlePart = child as PuzzlePart
 			if childPart.type == ProjectEnums.PartType.INSTALL: newParts += 1

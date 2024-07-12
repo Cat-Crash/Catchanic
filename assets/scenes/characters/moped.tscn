@@ -21,7 +21,10 @@ animations = [{
 [node name="AnimatedSprite3D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_cvaao")
 
-[node name="Puzzle 1" type="Node3D" parent="Interactables" index="0"]
+[node name="Inactive" type="Node3D" parent="Interactables" index="0"]
+script = ExtResource("3_6efun")
+
+[node name="Puzzle 1" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("3_6efun")
 
 [node name="Moped Puzzle 1" parent="Interactables/Puzzle 1" index="0" instance=ExtResource("4_367um")]

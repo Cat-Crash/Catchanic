@@ -23,6 +23,9 @@ sprite_frames = SubResource("SpriteFrames_syuic")
 
 [node name="Interactable0" type="Node3D" parent="Interactables" index="0"]
 script = ExtResource("4_a08xv")
+effects = {
+"Moped": 1
+}
 
 [node name="DialogueNode0" parent="Interactables/Interactable0" index="0" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"

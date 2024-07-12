@@ -17,7 +17,7 @@ var selected: bool = false
 func _ready() -> void:
 	snap_vect = Vector2(snap, snap)
 
-func _process(delta) -> void:
+func _process(delta: float) -> void:
 
 	if not selected: return
 	
