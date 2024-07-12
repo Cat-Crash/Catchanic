@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/level_1_BAKELESS.glb-90c945492904e2e6a827374b
 [params]
 
 nodes/root_type="Node3D"
-nodes/root_name="Level 1"
+nodes/root_name="Level 1 Terrain"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true

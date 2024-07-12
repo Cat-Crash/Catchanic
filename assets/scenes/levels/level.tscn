@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi7edqngpk0ra"]
+
+[ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_i3ffy"]
+[ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="3_lgo51"]
+[ext_resource type="AudioStream" uid="uid://c7h56kjphwgnn" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.wav" id="4_nji20"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v7y37"]
+
+[sub_resource type="Environment" id="Environment_r2l7l"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_r47e5"]
+auto_exposure_enabled = true
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_i3ffy")
+
+[node name="Player" parent="." instance=ExtResource("3_lgo51")]
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="Level Bounds" type="StaticBody3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="Floor" type="CollisionShape3D" parent="Terrain/Level Bounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826515, 0)
+shape = SubResource("WorldBoundaryShape3D_v7y37")
+
+[node name="Lights and Sound" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lights and Sound"]
+environment = SubResource("Environment_r2l7l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights and Sound"]
+transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 3.59333, 12.4926, -0.0460261)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Lights and Sound"]
+stream = ExtResource("4_nji20")
+autoplay = true
+
+[node name="LightmapGI" type="LightmapGI" parent="Lights and Sound"]
+directional = true
+camera_attributes = SubResource("CameraAttributesPractical_r47e5")
