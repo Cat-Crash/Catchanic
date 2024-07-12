@@ -7,7 +7,7 @@ static var nameDelimiter : String = ':' # what we're using to split the name fro
 
 static func stringToDialogue(script : String) -> Array[DialogueNode.DialogueState]:
 	var scriptLines : PackedStringArray
-	var dialoguePath : Array[DialogueNode.DialogueState] = Array()
+	var dialoguePath : Array[DialogueNode.DialogueState] = []
 	
 	scriptLines = script.split(lineDelimiter)
 	
@@ -24,7 +24,7 @@ static func stringToDialogue(script : String) -> Array[DialogueNode.DialogueStat
 		
 		lineText = line.get_slice(nameDelimiter, 1) # takes the second part of the line as the text
 		while lineText.begins_with(' '): # remove any spaces at the start of the line
-			lineText.erase(0) # erases the first character after position 0
+			lineText = lineText.erase(0) # erases the first character after position 0
 		
 		dialoguePath.append(DialogueNode.DialogueState.new(speakingParty, lineText))
 

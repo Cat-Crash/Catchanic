@@ -9,9 +9,7 @@ extends GameMode
 static var playerName : String = "Meonthany" # Display name for the player, can be changed later
 	# but will be held consistent across all dialogues
 	
-signal getGlobalSpeakerPos(dialogueNode : DialogueNode) # signal to send itself to parent 3dSpeaker
-	# and get position
-var globalSpeakerPos : Vector3 # The position of the speaker in 3d space
+
 var speakerPos : Vector2i # A vector with the x and y this needs to be over the head of the speaker
 var playerPos : Vector2i # A vector with the x and y this needs to be over the head of the player
 
@@ -38,12 +36,14 @@ var dialogueOffset : Vector2 = Vector2(0, 0) # the offset of the box to make it 
 func _ready() -> void:
 	mode_type = ProjectEnums.GameState.DIALOGUE # marks the mode type for the game mode
 	
-	getGlobalSpeakerPos.emit(self) # emit a signal to get the position of the npc it's attached to
-	
 	dialoguePath = DialogueParser.stringToDialogue(dialogueRaw) # converts the raw dialogue string
 		# inputted into a stored conversation
 	
 	dialogueArea.visible = false # hides the dialogue box until we talk to someone
+
+func set_active(active: bool) -> void:
+	if active: beginDialoguePath()
+	super.set_active(active)
 
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
@@ -70,6 +70,7 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 func updateDialogueDisplay(newState : DialogueState) -> void:
 	if newState.speakingParty == DialogueState.SpeakingParty.SPEAKER: # if speaker speaking, shows that
 		nameTag.text = speakerName
+		speakerPos = get_viewport().get_camera_3d().unproject_position(global_transform.origin) # gets its position
 		dialogueArea.position = speakerPos
 	elif newState.speakingParty == DialogueState.SpeakingParty.PLAYER: # if player speaking, shows that
 		nameTag.text = playerName
@@ -78,9 +79,6 @@ func updateDialogueDisplay(newState : DialogueState) -> void:
 		dialogueArea.position = playerPos
 	else: # if neither is speaking something has gone wrong, pushes an error
 		push_error('Undefined speaker for text, make sure that the speakingParty is set correctly in your DialogueState')
-	
-	dialogueArea.position = dialogueArea.position - Vector2(dialogueArea.transform.size.x / 2, dialogueArea.transform.size.y)
-		# offsets it to be sitting centered speaker or player position
 	dialogueArea.position += dialogueOffset # offsets it by the vector set for placing it above the head
 	if dialogueArea.position.x < 0: # trims the position to the right of the left edge of the screen
 			dialogueArea.position.x = 0

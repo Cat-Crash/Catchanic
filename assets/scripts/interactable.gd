@@ -9,23 +9,27 @@ var game_modes : Array[GameMode]
 var active_mode : int = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	game_modes = get_children() as Array[GameMode]
-	for mode in game_modes:
+func _ready() -> void:
+	game_modes.assign(get_children())
+
+	for mode : GameMode in game_modes:
 		mode.mode_done.connect(_on_mode_done)
+		mode.set_active(false)
 
-func activate():
-	GlobalUtilities.switch_scene(GlobalState.overworld, game_modes[0])
+func activate() -> void:
+	if game_modes.size() < 1: _end_interaction()
+	else: GlobalUtilities.switch_scene(GlobalState.overworld, game_modes[0])
 
-func _on_mode_done(done: GameMode):
+func _on_mode_done(done: GameMode) -> void:
 	if active_mode + 1 >= game_modes.size(): _end_interaction()
 	else: 
 		active_mode += 1
 		GlobalUtilities.switch_scene(done, game_modes[active_mode])
 
-func _end_interaction():
-	for i_name in effects:
-		var npc : NPC = GlobalState.npcs[i_name] as NPC
-		npc.active_interactable = effects[i_name]
+func _end_interaction() -> void:
+	for npc_name : String in effects:
+		var npc : NPC = GlobalState.npcs[npc_name] as NPC
+		npc.active_interactable = effects[npc_name]
 	
-	GlobalUtilities.switch_scene(game_modes[active_mode], GlobalState.overworld)
+	if game_modes.size() > 0:
+		GlobalUtilities.switch_scene(game_modes[active_mode], GlobalState.overworld)

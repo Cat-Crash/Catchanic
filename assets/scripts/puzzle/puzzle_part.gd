@@ -14,10 +14,10 @@ extends CharacterBody2D
 var snap_vect: Vector2
 var selected: bool = false
 
-func _ready():
+func _ready() -> void:
 	snap_vect = Vector2(snap, snap)
 
-func _process(delta):
+func _process(delta: float) -> void:
 
 	if not selected: return
 	
@@ -31,14 +31,14 @@ func _process(delta):
 	
 	move_and_slide()
 
-func complete():
+func complete() -> void:
 	move_x = false
 	move_y = false
 	
 	if type == ProjectEnums.PartType.UNINSTALL: queue_free()
 
-func _on_button_button_down():
+func _on_button_button_down() -> void:
 	selected = true
 
-func _on_button_button_up():
+func _on_button_button_up() -> void:
 	selected = false

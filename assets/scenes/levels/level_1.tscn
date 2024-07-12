@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://nysqqwonpiho"]
+
+[ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_mt01s"]
+[ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="2_eo3w2"]
+[ext_resource type="AudioStream" uid="uid://c7h56kjphwgnn" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.wav" id="2_gxidk"]
+[ext_resource type="PackedScene" uid="uid://8y1lqp3lqst4" path="res://assets/art/models/first level forest/level_1_BAKELESS.glb" id="3_fd7c7"]
+[ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
+[ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v7y37"]
+
+[sub_resource type="Environment" id="Environment_r2l7l"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_r47e5"]
+auto_exposure_enabled = true
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="Level 1" type="Node3D"]
+script = ExtResource("1_mt01s")
+
+[node name="Terrain" parent="." instance=ExtResource("3_fd7c7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="Level Bounds" type="StaticBody3D" parent="Terrain"]
+
+[node name="Floor" type="CollisionShape3D" parent="Terrain/Level Bounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826515, 0)
+shape = SubResource("WorldBoundaryShape3D_v7y37")
+
+[node name="Player" parent="." instance=ExtResource("2_eo3w2")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r2l7l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 3.59333, 12.4926, -0.0460261)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gxidk")
+autoplay = true
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+directional = true
+camera_attributes = SubResource("CameraAttributesPractical_r47e5")
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Moped" parent="NPCs" instance=ExtResource("4_ir5gq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+
+[node name="Crow" parent="NPCs" instance=ExtResource("5_crp37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64635, 0, -4.10077)

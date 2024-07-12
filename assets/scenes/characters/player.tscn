@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2j74ifvul0pg"]
+[gd_scene load_steps=9 format=3 uid="uid://c2j74ifvul0pg"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_1daq2"]
-[ext_resource type="Texture2D" uid="uid://b3eit0jcgc11x" path="res://assets/art/sprites/NPCs/Cat_closedmouth.PNG" id="1_vcv4y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n5bcf"]
+
+[sub_resource type="Sky" id="Sky_2spcs"]
+sky_material = SubResource("ProceduralSkyMaterial_n5bcf")
+
+[sub_resource type="Environment" id="Environment_ijesu"]
+background_mode = 2
+sky = SubResource("Sky_2spcs")
+ambient_light_color = Color(0.756863, 0.764706, 0.792157, 1)
+ssao_enabled = true
+ssil_enabled = true
+fog_enabled = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8hhc3"]
+load_path = "res://.godot/imported/Cat_closedmouth.PNG-036213f48b4716166c6ec1ebafbfdf71.s3tc.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sldy3"]
 region = Rect2(0, 0, 2120, 1550)
@@ -10,7 +25,7 @@ region = Rect2(0, 0, 2120, 1550)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vcv4y")
+"texture": SubResource("CompressedTexture2D_8hhc3")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sldy3")
@@ -23,12 +38,14 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_5m7kt"]
 radius = 1.0
 
-[node name="Cat" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_1daq2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -0.000127912, 2.9963, 2.00396)
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 3, 4.5)
+environment = SubResource("Environment_ijesu")
+current = true
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
