@@ -1,5 +1,7 @@
 extends GameMode
 
+@onready var center = $Center
+
 var oldParts: int
 var newParts: int
 
@@ -21,3 +23,7 @@ func _on_exit_goal_part_complete(type: ProjectEnums.PartType) -> void:
 	else: push_error("Unexpected Part Type has been Completed")
 	
 	if newParts < 1 and oldParts < 1: mode_done.emit(self)
+	
+func set_active(active: bool) -> void:
+	center.visible = active
+	super.set_active(active)

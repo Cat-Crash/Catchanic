@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ha6mrk5kxfmf"]
+[gd_scene load_steps=6 format=3 uid="uid://ha6mrk5kxfmf"]
 
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_0v4gn"]
 [ext_resource type="Texture2D" uid="uid://d2pux4tcsmtyl" path="res://assets/art/sprites/vehicles/moped.png" id="2_t8k8o"]
+[ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="3_6efun"]
+[ext_resource type="PackedScene" uid="uid://uonn7pg0xbyj" path="res://assets/scenes/puzzle/moped_puzzle_1.tscn" id="4_367um"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvaao"]
 animations = [{
@@ -18,3 +20,8 @@ animations = [{
 
 [node name="AnimatedSprite3D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_cvaao")
+
+[node name="Puzzle 1" type="Node3D" parent="Interactables" index="0"]
+script = ExtResource("3_6efun")
+
+[node name="Moped Puzzle 1" parent="Interactables/Puzzle 1" index="0" instance=ExtResource("4_367um")]
