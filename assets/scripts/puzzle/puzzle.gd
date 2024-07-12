@@ -9,9 +9,7 @@ func _ready() -> void:
 	var children: Array[Node] = GlobalUtilities.get_all_children(self)
 # Count all parts to be installed or uninstall in scene
 	for child in children:
-		print(child.name)
 		if child is PuzzlePart:
-			print("PuzzlePart Found")
 			var childPart: PuzzlePart = child as PuzzlePart
 			if childPart.type == ProjectEnums.PartType.INSTALL: newParts += 1
 			elif childPart.type == ProjectEnums.PartType.UNINSTALL: oldParts += 1
