@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://54op4aig8td6"]
+[gd_scene load_steps=3 format=3 uid="uid://54op4aig8td6"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_80w53"]
+[ext_resource type="PackedScene" uid="uid://dnwucd61p1eue" path="res://assets/art/models/second level dam/level_2.glb" id="2_dnf32"]
 
 [node name="Level" instance=ExtResource("1_80w53")]
+
+[node name="Level 2 Terrain" parent="." index="4" instance=ExtResource("2_dnf32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 6)
