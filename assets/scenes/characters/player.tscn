@@ -73,7 +73,8 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_y7rpr")
 animation = &"idle"
-frame_progress = 0.0119245
+autoplay = "idle"
+frame_progress = 0.286936
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_5m7kt")
