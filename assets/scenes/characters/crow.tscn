@@ -35,7 +35,12 @@ Crow: Well, if that truck you were in is headed for the city, then the human wit
 Crow: Or rather, it was headed that way. This racket is interrupting my business.
 PLAYER: Meow?
 Crow: I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see. Won't even drive their moped out of here.
-Crow: If you find it, return it to me, and I can deliver it to the human."
+Crow: If you find it, return it to me, and I can deliver it to the human.
+Crow: I'd make it worth your time, of course. Perhaps a shiny battery will persuade you?
+PLAYER: Meow!
+Crow: Excellent, a fellow opportunist, I see.
+PLAYER: Meow.
+Crow: Pleasure doing business with you, my feline friend."
 
 [node name="Interactable1" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("4_a08xv")
