@@ -17,7 +17,8 @@ func _ready() -> void:
 		mode.set_active(false)
 
 func activate() -> void:
-	GlobalUtilities.switch_scene(GlobalState.overworld, game_modes[0])
+	if game_modes.size() < 1: _end_interaction()
+	else: GlobalUtilities.switch_scene(GlobalState.overworld, game_modes[0])
 
 func _on_mode_done(done: GameMode) -> void:
 	if active_mode + 1 >= game_modes.size(): _end_interaction()
@@ -30,4 +31,5 @@ func _end_interaction() -> void:
 		var npc : NPC = GlobalState.npcs[interaction_name] as NPC
 		npc.active_interactable = effects[interaction_name]
 	
-	GlobalUtilities.switch_scene(game_modes[active_mode], GlobalState.overworld)
+	if game_modes.size() > 0:
+		GlobalUtilities.switch_scene(game_modes[active_mode], GlobalState.overworld)
