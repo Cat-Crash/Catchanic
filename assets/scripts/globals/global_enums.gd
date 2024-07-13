@@ -1,4 +1,4 @@
 class_name ProjectEnums
 extends Node
 
-enum GameState {OVERWORLD, DIALOGUE, PUZZLE,}
+enum GameState {OVERWORLD, DIALOGUE, PUZZLE, PICKUP,}
