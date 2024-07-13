@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://uonn7pg0xbyj"]
+[gd_scene load_steps=24 format=3 uid="uid://uonn7pg0xbyj"]
 
-[ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle.gd" id="1_nxkja"]
-[ext_resource type="Texture2D" uid="uid://qxj0r7puf24m" path="res://assets/art/sprites/puzzle/prototype/puzzle bg.png" id="2_1elsl"]
+[ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_2hvbq"]
 [ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_exit_goal.tscn" id="3_2j8h8"]
 [ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/components/puzzle_part.tscn" id="4_i5c2i"]
 [ext_resource type="Texture2D" uid="uid://dtw67vbs3reef" path="res://assets/art/sprites/puzzle/prototype/p4.png" id="5_wdvjh"]
@@ -15,142 +14,42 @@
 [ext_resource type="Texture2D" uid="uid://bt4psh1nd0qbh" path="res://assets/art/sprites/puzzle/prototype/p2.png" id="13_7tbim"]
 [ext_resource type="Texture2D" uid="uid://cm0tw1w1bae4y" path="res://assets/art/sprites/puzzle/prototype/p1.png" id="14_g0ah7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqko"]
-size = Vector2(512, 32)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v0g1q"]
-size = Vector2(512, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrih1"]
-size = Vector2(32, 448)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ul3c"]
-size = Vector2(32, 448)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kcj3"]
-size = Vector2(32, 160)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6hdhx"]
-size = Vector2(32, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae1f4"]
-size = Vector2(32, 224)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_moiwo"]
-size = Vector2(32, 224)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d74wf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bajoe"]
 size = Vector2(62, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn34l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ee0"]
 size = Vector2(62, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuqf5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikr0q"]
 size = Vector2(62, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k8yn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mepvk"]
 size = Vector2(62, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0mjr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wcl"]
 size = Vector2(62, 190)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbk2r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4erql"]
 size = Vector2(126, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsy4v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsfxw"]
 size = Vector2(126, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxn7f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6h6d"]
 size = Vector2(126, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp5pi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rprop"]
 size = Vector2(126, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pubrl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h45h4"]
 size = Vector2(254, 62)
 
-[node name="Moped Puzzle 1" type="Node3D"]
-script = ExtResource("1_nxkja")
+[node name="Moped Puzzle 1" instance=ExtResource("1_2hvbq")]
 
-[node name="Center" type="CenterContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Background" type="Node2D" parent="Center"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Center/Background"]
-scale = Vector2(0.42, 0.42)
-texture = ExtResource("2_1elsl")
-
-[node name="Floor" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-24, 208)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Floor"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_6jqko")
-
-[node name="Sprite2D" type="Sprite2D" parent="Center/Background/Floor"]
-visible = false
-texture = SubResource("PlaceholderTexture2D_v0g1q")
-
-[node name="Roof" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-24, -208)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Roof"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_6jqko")
-
-[node name="Sprite2D" type="Sprite2D" parent="Center/Background/Roof"]
-visible = false
-texture = SubResource("PlaceholderTexture2D_v0g1q")
-
-[node name="Left Wall" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-264, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Left Wall"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_yrih1")
-
-[node name="Sprite2D" type="Sprite2D" parent="Center/Background/Left Wall"]
-visible = false
-texture = SubResource("PlaceholderTexture2D_4ul3c")
-
-[node name="Right Upper Wall" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(216, -144)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Right Upper Wall"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_4kcj3")
-
-[node name="Sprite2D" type="Sprite2D" parent="Center/Background/Right Upper Wall"]
-visible = false
-texture = SubResource("PlaceholderTexture2D_6hdhx")
-
-[node name="Right Lower Wall" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(216, 112)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Right Lower Wall"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_ae1f4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Center/Background/Right Lower Wall"]
-visible = false
-texture = SubResource("PlaceholderTexture2D_moiwo")
-
-[node name="Goals" type="Node2D" parent="Center"]
-
-[node name="ExitGoal" parent="Center/Goals" instance=ExtResource("3_2j8h8")]
+[node name="ExitGoal" parent="Center/Goals" index="0" instance=ExtResource("3_2j8h8")]
 position = Vector2(272, 0)
 
-[node name="Parts" type="Node2D" parent="Center"]
-
-[node name="PuzzlePart2" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart2" parent="Center/Parts" index="0" instance=ExtResource("4_i5c2i")]
 position = Vector2(-216, 128)
 move_x = false
 
@@ -165,9 +64,9 @@ offset_right = -84.0
 offset_bottom = -159.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart2" index="1"]
-shape = SubResource("RectangleShape2D_d74wf")
+shape = SubResource("RectangleShape2D_bajoe")
 
-[node name="PuzzlePart3" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart3" parent="Center/Parts" index="1" instance=ExtResource("4_i5c2i")]
 position = Vector2(-88, 64)
 move_x = false
 
@@ -182,9 +81,9 @@ offset_right = -82.5
 offset_bottom = -159.5
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart3" index="1"]
-shape = SubResource("RectangleShape2D_hn34l")
+shape = SubResource("RectangleShape2D_q4ee0")
 
-[node name="PuzzlePart4" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart4" parent="Center/Parts" index="2" instance=ExtResource("4_i5c2i")]
 position = Vector2(-24, 128)
 move_x = false
 
@@ -199,9 +98,9 @@ offset_right = -83.5
 offset_bottom = -158.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart4" index="1"]
-shape = SubResource("RectangleShape2D_nuqf5")
+shape = SubResource("RectangleShape2D_ikr0q")
 
-[node name="PuzzlePart9" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart9" parent="Center/Parts" index="3" instance=ExtResource("4_i5c2i")]
 position = Vector2(40, -128)
 move_x = false
 
@@ -216,9 +115,9 @@ offset_right = -82.0
 offset_bottom = -158.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart9" index="1"]
-shape = SubResource("RectangleShape2D_3k8yn")
+shape = SubResource("RectangleShape2D_mepvk")
 
-[node name="PuzzlePart10" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart10" parent="Center/Parts" index="4" instance=ExtResource("4_i5c2i")]
 position = Vector2(104, 32)
 move_x = false
 
@@ -233,9 +132,9 @@ offset_right = -82.0
 offset_bottom = -231.5
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart10" index="1"]
-shape = SubResource("RectangleShape2D_b0mjr")
+shape = SubResource("RectangleShape2D_x4wcl")
 
-[node name="PuzzlePart5" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart5" parent="Center/Parts" index="5" instance=ExtResource("4_i5c2i")]
 position = Vector2(8, 32)
 move_y = false
 
@@ -250,9 +149,9 @@ offset_right = -160.0
 offset_bottom = -86.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart5" index="1"]
-shape = SubResource("RectangleShape2D_lbk2r")
+shape = SubResource("RectangleShape2D_4erql")
 
-[node name="PuzzlePart6" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart6" parent="Center/Parts" index="6" instance=ExtResource("4_i5c2i")]
 position = Vector2(136, 160)
 move_y = false
 
@@ -267,9 +166,9 @@ offset_right = -157.0
 offset_bottom = -84.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart6" index="1"]
-shape = SubResource("RectangleShape2D_nsy4v")
+shape = SubResource("RectangleShape2D_hsfxw")
 
-[node name="PuzzlePart7" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart7" parent="Center/Parts" index="7" instance=ExtResource("4_i5c2i")]
 position = Vector2(136, -96)
 move_y = false
 
@@ -284,9 +183,9 @@ offset_right = -162.0
 offset_bottom = -83.5
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart7" index="1"]
-shape = SubResource("RectangleShape2D_gxn7f")
+shape = SubResource("RectangleShape2D_g6h6d")
 
-[node name="PuzzlePart8" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart8" parent="Center/Parts" index="8" instance=ExtResource("4_i5c2i")]
 position = Vector2(136, -160)
 move_y = false
 
@@ -301,9 +200,9 @@ offset_right = -159.5
 offset_bottom = -86.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart8" index="1"]
-shape = SubResource("RectangleShape2D_fp5pi")
+shape = SubResource("RectangleShape2D_rprop")
 
-[node name="PuzzlePart" parent="Center/Parts" instance=ExtResource("4_i5c2i")]
+[node name="PuzzlePart" parent="Center/Parts" index="9" instance=ExtResource("4_i5c2i")]
 position = Vector2(-120, -32)
 move_y = false
 type = 1
@@ -320,9 +219,7 @@ offset_right = -312.5
 offset_bottom = -85.0
 
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart" index="1"]
-shape = SubResource("RectangleShape2D_pubrl")
-
-[connection signal="part_complete" from="Center/Goals/ExitGoal" to="." method="_on_exit_goal_part_complete"]
+shape = SubResource("RectangleShape2D_h45h4")
 
 [editable path="Center/Parts/PuzzlePart2"]
 [editable path="Center/Parts/PuzzlePart3"]
