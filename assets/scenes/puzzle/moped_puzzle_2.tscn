@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cyu5p42ggch0o" path="res://assets/scenes/puzzle/parts/1x3_part.tscn" id="2_txmvf"]
 [ext_resource type="PackedScene" uid="uid://cmp1uheqyqxdm" path="res://assets/scenes/puzzle/parts/2x1_part.tscn" id="3_uhu6i"]
 
-[node name="Puzzle" instance=ExtResource("1_jyij4")]
+[node name="Moped Puzzle 2" instance=ExtResource("1_jyij4")]
 
 [node name="Goal" parent="Center/Goals" index="0" instance=ExtResource("2_idrr1")]
 position = Vector2(-16, 0)

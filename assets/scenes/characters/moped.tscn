@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ha6mrk5kxfmf"]
+[gd_scene load_steps=8 format=3 uid="uid://ha6mrk5kxfmf"]
 
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_0v4gn"]
 [ext_resource type="Texture2D" uid="uid://d2pux4tcsmtyl" path="res://assets/art/sprites/vehicles/moped.png" id="2_t8k8o"]
 [ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="3_6efun"]
 [ext_resource type="PackedScene" uid="uid://uonn7pg0xbyj" path="res://assets/scenes/puzzle/moped_puzzle_1.tscn" id="4_367um"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_jvvon"]
+[ext_resource type="PackedScene" uid="uid://dnwnnlrj11ib" path="res://assets/scenes/puzzle/moped_puzzle_2.tscn" id="6_kt134"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvaao"]
 animations = [{
@@ -53,9 +54,7 @@ effects = {
 speakerName = "Moped"
 dialogueRaw = "Player: (Just need to get these parts all set up!)"
 
-[node name="PUZZLE2" parent="Interactables/Puzzle2A" index="1" instance=ExtResource("4_jvvon")]
-speakerName = "Unfinished"
-dialogueRaw = "Test: REPLACE THIS WITH MOPED PUZZLE 2"
+[node name="Moped Puzzle 2" parent="Interactables/Puzzle2A" index="1" instance=ExtResource("6_kt134")]
 
 [node name="Puzzle2B" type="Node3D" parent="Interactables" index="3"]
 script = ExtResource("3_6efun")
@@ -68,9 +67,7 @@ effects = {
 speakerName = "Moped"
 dialogueRaw = "Player: (Just need to get these parts all set up!)"
 
-[node name="PUZZLE2" parent="Interactables/Puzzle2B" index="1" instance=ExtResource("4_jvvon")]
-speakerName = "Unfinished"
-dialogueRaw = "Test: REPLACE THIS WITH MOPED PUZZLE 2"
+[node name="Moped Puzzle 2" parent="Interactables/Puzzle2B" index="1" instance=ExtResource("6_kt134")]
 
 [node name="After the Puzzles" type="Node3D" parent="Interactables" index="4"]
 script = ExtResource("3_6efun")
