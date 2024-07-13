@@ -1,12 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://uonn7pg0xbyj"]
+[gd_scene load_steps=25 format=3 uid="uid://uonn7pg0xbyj"]
 
 [ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_2hvbq"]
-[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_exit_goal.tscn" id="3_2j8h8"]
+[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_bound_goal.tscn" id="3_2j8h8"]
 [ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/components/puzzle_part.tscn" id="4_i5c2i"]
 [ext_resource type="Texture2D" uid="uid://dtw67vbs3reef" path="res://assets/art/sprites/puzzle/prototype/p4.png" id="5_wdvjh"]
 [ext_resource type="Texture2D" uid="uid://b5gj8fg6krmyn" path="res://assets/art/sprites/puzzle/prototype/p8.png" id="6_ov06f"]
 [ext_resource type="Texture2D" uid="uid://dxxadopbrnwoj" path="res://assets/art/sprites/puzzle/prototype/p9.png" id="7_1vc1y"]
 [ext_resource type="Texture2D" uid="uid://cjnfmccolctsd" path="res://assets/art/sprites/puzzle/prototype/p10.png" id="8_cqxx5"]
+[ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle_part.gd" id="8_dciu5"]
 [ext_resource type="Texture2D" uid="uid://esskpdn2r0q5" path="res://assets/art/sprites/puzzle/prototype/p5.png" id="9_0v3ij"]
 [ext_resource type="Texture2D" uid="uid://c1v7hb7jxu3iy" path="res://assets/art/sprites/puzzle/prototype/p7.png" id="10_5hc5k"]
 [ext_resource type="Texture2D" uid="uid://bbp46mwtuhmgm" path="res://assets/art/sprites/puzzle/prototype/p3.png" id="11_qdcfm"]
@@ -117,21 +118,34 @@ offset_bottom = -158.0
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart9" index="1"]
 shape = SubResource("RectangleShape2D_mepvk")
 
-[node name="PuzzlePart10" parent="Center/Parts" index="4" instance=ExtResource("4_i5c2i")]
+[node name="3x1 Part" type="CharacterBody2D" parent="Center/Parts" index="4"]
+z_index = 1
 position = Vector2(104, 32)
-move_x = false
+motion_mode = 1
+script = ExtResource("8_dciu5")
+move_y = true
+snap = 32
+target_goal = 0
 
-[node name="Sprite2D" parent="Center/Parts/PuzzlePart10" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Center/Parts/3x1 Part" index="0"]
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("9_0v3ij")
 
-[node name="Button" parent="Center/Parts/PuzzlePart10/Sprite2D" index="0"]
+[node name="Button" type="Button" parent="Center/Parts/3x1 Part/Sprite2D" index="0"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = -82.0
 offset_top = -231.5
 offset_right = -82.0
 offset_bottom = -231.5
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+flat = true
 
-[node name="CollisionShape2D" parent="Center/Parts/PuzzlePart10" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Parts/3x1 Part" index="1"]
 shape = SubResource("RectangleShape2D_x4wcl")
 
 [node name="PuzzlePart5" parent="Center/Parts" index="5" instance=ExtResource("4_i5c2i")]
@@ -221,11 +235,13 @@ offset_bottom = -85.0
 [node name="CollisionShape2D" parent="Center/Parts/PuzzlePart" index="1"]
 shape = SubResource("RectangleShape2D_h45h4")
 
+[connection signal="button_down" from="Center/Parts/3x1 Part/Sprite2D/Button" to="Center/Parts/3x1 Part" method="_on_button_button_down"]
+[connection signal="button_up" from="Center/Parts/3x1 Part/Sprite2D/Button" to="Center/Parts/3x1 Part" method="_on_button_button_up"]
+
 [editable path="Center/Parts/PuzzlePart2"]
 [editable path="Center/Parts/PuzzlePart3"]
 [editable path="Center/Parts/PuzzlePart4"]
 [editable path="Center/Parts/PuzzlePart9"]
-[editable path="Center/Parts/PuzzlePart10"]
 [editable path="Center/Parts/PuzzlePart5"]
 [editable path="Center/Parts/PuzzlePart6"]
 [editable path="Center/Parts/PuzzlePart7"]

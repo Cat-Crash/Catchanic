@@ -1,31 +1,36 @@
-[gd_scene load_steps=11 format=3 uid="uid://b75ub218wi27r"]
+[gd_scene load_steps=13 format=3 uid="uid://b75ub218wi27r"]
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle.gd" id="1_byxoa"]
 [ext_resource type="Texture2D" uid="uid://qxj0r7puf24m" path="res://assets/art/sprites/puzzle/prototype/puzzle bg.png" id="2_fa3yf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqko"]
-size = Vector2(512, 32)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jgsds"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v0g1q"]
 size = Vector2(512, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrih1"]
-size = Vector2(32, 448)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_upug5"]
+normal = Vector2(0, 2)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fotce"]
+normal = Vector2(1, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ul3c"]
 size = Vector2(32, 448)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kcj3"]
-size = Vector2(32, 160)
+size = Vector2(32, 128)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6hdhx"]
-size = Vector2(32, 160)
+size = Vector2(32, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae1f4"]
-size = Vector2(32, 224)
+size = Vector2(32, 192)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_moiwo"]
-size = Vector2(32, 224)
+size = Vector2(32, 192)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8b5wm"]
+normal = Vector2(-1, 0)
 
 [node name="Puzzle" type="Node3D"]
 script = ExtResource("1_byxoa")
@@ -47,33 +52,32 @@ scale = Vector2(0.42, 0.42)
 texture = ExtResource("2_fa3yf")
 
 [node name="Floor" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-24, 208)
+position = Vector2(-24, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Floor"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_6jqko")
+shape = SubResource("WorldBoundaryShape2D_jgsds")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Floor"]
 visible = false
 texture = SubResource("PlaceholderTexture2D_v0g1q")
 
 [node name="Roof" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-24, -208)
+position = Vector2(-24, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Roof"]
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_6jqko")
+shape = SubResource("WorldBoundaryShape2D_upug5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Roof"]
 visible = false
 texture = SubResource("PlaceholderTexture2D_v0g1q")
 
 [node name="Left Wall" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-264, 0)
+position = Vector2(-256, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Left Wall"]
 position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_yrih1")
+shape = SubResource("WorldBoundaryShape2D_fotce")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Left Wall"]
 visible = false
@@ -98,6 +102,17 @@ position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ae1f4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Right Lower Wall"]
+visible = false
+texture = SubResource("PlaceholderTexture2D_moiwo")
+
+[node name="Right Far Wall" type="StaticBody2D" parent="Center/Background"]
+position = Vector2(640, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Right Far Wall"]
+position = Vector2(1, 0)
+shape = SubResource("WorldBoundaryShape2D_8b5wm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Center/Background/Right Far Wall"]
 visible = false
 texture = SubResource("PlaceholderTexture2D_moiwo")
 
