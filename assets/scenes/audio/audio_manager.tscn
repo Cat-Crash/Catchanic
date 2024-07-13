@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmqrv5vugals5"]
+[gd_scene load_steps=12 format=3 uid="uid://cmqrv5vugals5"]
 
 [ext_resource type="Script" path="res://assets/scripts/audio/audio_manager.gd" id="1_vwcnv"]
 [ext_resource type="AudioStream" uid="uid://dbq2klxw4sxb7" path="res://assets/audio/sounds/SFX_Dialogue_click_mech.wav" id="2_rpvco"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://84bfwi8au07u" path="res://assets/audio/sounds/SFX_Success.wav" id="7_tfbhr"]
 [ext_resource type="AudioStream" uid="uid://bfxplffcqp11b" path="res://assets/audio/sounds/SFX_Block_Sliding.wav" id="8_46hvx"]
 [ext_resource type="AudioStream" uid="uid://dbbyeiu4efh7s" path="res://assets/audio/sounds/SFX_Motor_Engine_StartFail.wav" id="9_04fu3"]
+[ext_resource type="AudioStream" uid="uid://dvovlneup60il" path="res://assets/audio/sounds/SFX_Crow_Chill.wav" id="10_1y4d2"]
+[ext_resource type="AudioStream" uid="uid://bmoy5l37ib37x" path="res://assets/audio/sounds/SFX_Crow_Loud.wav" id="11_3hqnv"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_vwcnv")
@@ -36,3 +38,9 @@ stream = ExtResource("8_46hvx")
 
 [node name="SFX_Motor_Engine_StartFail" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_04fu3")
+
+[node name="SFX_Crow_Chill" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1y4d2")
+
+[node name="SFX_Crow_Loud" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_3hqnv")

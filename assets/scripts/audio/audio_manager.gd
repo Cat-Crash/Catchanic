@@ -8,3 +8,5 @@ extends Node
 @onready var sfx_success = $SFX_Success
 @onready var sfx_block_sliding = $SFX_Block_Sliding
 @onready var sfx_motor_engine_start_fail = $SFX_Motor_Engine_StartFail
+@onready var sfx_crow_chill = $SFX_Crow_Chill
+@onready var sfx_crow_loud = $SFX_Crow_Loud

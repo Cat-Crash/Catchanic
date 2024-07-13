@@ -45,7 +45,6 @@ func set_active(active: bool) -> void:
 
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
-	AudioManager.sfx_mewo.play()# player the mewo sound effect
 	pathPosition = 0
 	updateDialogueDisplay(dialoguePath[pathPosition])
 
@@ -70,6 +69,12 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 func updateDialogueDisplay(newState : DialogueState) -> void:
 	if newState.speakingParty == DialogueState.SpeakingParty.SPEAKER: # if speaker speaking, shows that
 		nameTag.text = speakerName
+		# 73-77 plays randomized crow sfx
+		if speakerName == "Crow":
+			if RandomNumberGenerator.new().randi_range(0,1) > 0:
+				AudioManager.sfx_crow_chill.play()
+			else :
+				AudioManager.sfx_crow_loud.play()
 		speakerPos = get_viewport().get_camera_3d().unproject_position(global_transform.origin) # gets its position
 		dialogueArea.position = speakerPos
 	elif newState.speakingParty == DialogueState.SpeakingParty.PLAYER: # if player speaking, shows that
