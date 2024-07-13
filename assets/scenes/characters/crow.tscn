@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhtm63ajtk6oa" path="res://assets/art/sprites/npcs/crow/Crow_closed mouth.PNG" id="1_4qtg2"]
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_djlvv"]
-[ext_resource type="Script" path="res://assets/scripts/interactable.gd" id="4_a08xv"]
+[ext_resource type="Script" path="res://assets/scripts/npc/interactable.gd" id="4_a08xv"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_um8fo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
