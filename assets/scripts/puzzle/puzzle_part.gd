@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var snap: int
 
 @export_category("Part Behavior")
-@export var type: ProjectEnums.PartType = ProjectEnums.PartType.NEUTRAL
+@export var goal_part: bool
 @export var target_goal: int = -1
 
 
@@ -34,8 +34,6 @@ func _process(delta: float) -> void:
 func complete() -> void:
 	move_x = false
 	move_y = false
-	
-	if type == ProjectEnums.PartType.UNINSTALL: queue_free()
 
 func _on_button_button_down() -> void:
 	selected = true

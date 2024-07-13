@@ -19,7 +19,6 @@ move_x = false
 position = Vector2(448, -32)
 rotation = 1.5708
 move_y = false
-type = 0
 target_goal = 1
 
 [node name="1x3 Part2" parent="Center/Parts" index="2" instance=ExtResource("2_txmvf")]
