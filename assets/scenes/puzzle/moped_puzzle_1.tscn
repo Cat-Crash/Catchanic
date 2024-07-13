@@ -92,6 +92,7 @@ texture = ExtResource("2_1elsl")
 position = Vector2(-24, 208)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Floor"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_6jqko")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Floor"]
@@ -102,6 +103,7 @@ texture = SubResource("PlaceholderTexture2D_v0g1q")
 position = Vector2(-24, -208)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Roof"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_6jqko")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Roof"]
@@ -112,6 +114,7 @@ texture = SubResource("PlaceholderTexture2D_v0g1q")
 position = Vector2(-264, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Left Wall"]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_yrih1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Left Wall"]
@@ -122,6 +125,7 @@ texture = SubResource("PlaceholderTexture2D_4ul3c")
 position = Vector2(216, -144)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Right Upper Wall"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_4kcj3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Right Upper Wall"]
@@ -132,6 +136,7 @@ texture = SubResource("PlaceholderTexture2D_6hdhx")
 position = Vector2(216, 112)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Right Lower Wall"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ae1f4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Center/Background/Right Lower Wall"]
