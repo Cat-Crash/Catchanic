@@ -25,6 +25,10 @@ sprite_frames = SubResource("SpriteFrames_cvaao")
 [node name="Inactive" type="Node3D" parent="Interactables" index="0"]
 script = ExtResource("3_6efun")
 
+[node name="DialogueNode" parent="Interactables/Inactive" index="0" instance=ExtResource("4_jvvon")]
+speakerName = "Moped"
+dialogueRaw = "Player: (Hmm, an old gas moped.)"
+
 [node name="Puzzle1" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("3_6efun")
 effects = {
