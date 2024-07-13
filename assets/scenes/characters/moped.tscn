@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ha6mrk5kxfmf"]
+[gd_scene load_steps=10 format=3 uid="uid://ha6mrk5kxfmf"]
 
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_0v4gn"]
 [ext_resource type="Texture2D" uid="uid://d2pux4tcsmtyl" path="res://assets/art/sprites/vehicles/moped.png" id="2_t8k8o"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://uonn7pg0xbyj" path="res://assets/scenes/puzzle/moped_puzzle_1.tscn" id="4_367um"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_jvvon"]
 [ext_resource type="PackedScene" uid="uid://dnwnnlrj11ib" path="res://assets/scenes/puzzle/moped_puzzle_2.tscn" id="6_kt134"]
+[ext_resource type="Script" path="res://assets/scripts/npc/level_change.gd" id="7_vggsj"]
+[ext_resource type="PackedScene" uid="uid://54op4aig8td6" path="res://assets/scenes/levels/level_2.tscn" id="8_gtphk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvaao"]
 animations = [{
@@ -75,3 +77,7 @@ script = ExtResource("3_6efun")
 [node name="DialogueNode" parent="Interactables/After the Puzzles" index="0" instance=ExtResource("4_jvvon")]
 speakerName = "Moped"
 dialogueRaw = "Player: (Now we just need the human. Maybe the crow would know where they are?)"
+
+[node name="LevelChange" type="Node3D" parent="Interactables/After the Puzzles" index="1"]
+script = ExtResource("7_vggsj")
+next_scene = ExtResource("8_gtphk")
