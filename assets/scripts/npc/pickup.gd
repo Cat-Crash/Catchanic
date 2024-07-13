@@ -9,9 +9,10 @@ func _ready() -> void:
 	pickups.assign(get_children())
 	_set_visible(not put_down)
 
-func _set_visible(visible: bool) -> void:
+func _set_visible(is_visible: bool) -> void:
+	visible = is_visible
 	for pickup in pickups:
-		pickup.visible = visible
+		pickup.visible = is_visible
 		
 func set_active(active: bool) -> void:
-	if active: _set_visible(put_down)
+	if active:  _set_visible(put_down)
