@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ivuyp1snyt2i"]
+[gd_scene load_steps=6 format=3 uid="uid://ivuyp1snyt2i"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_idlx4"]
 [ext_resource type="PackedScene" uid="uid://8y1lqp3lqst4" path="res://assets/art/models/first level forest/level_1_BAKELESS.glb" id="3_fd7c7"]
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_856n2"]
+size = Vector3(26.445, 4, 1)
 
 [node name="Level" instance=ExtResource("1_idlx4")]
 
@@ -18,3 +21,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.20444, 0)
 
 [node name="Floor" parent="Terrain/Level Bounds" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826516, 0)
+
+[node name="Borders" type="Node3D" parent="Terrain" index="2"]
+
+[node name="Wall1" type="StaticBody3D" parent="Terrain/Borders" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619, 0, -7.447)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall2" type="StaticBody3D" parent="Terrain/Borders" index="1"]
+transform = Transform3D(0.622638, 0, -0.78251, 0, 1, 0, 0.78251, 0, 0.622638, 9.8556, 0, -7.12185)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall2" index="0"]
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall3" type="StaticBody3D" parent="Terrain/Borders" index="2"]
+transform = Transform3D(-0.804189, 0, -0.594374, 0, 1, 0, 0.594374, 0, -0.804189, 7.15772, 0, 12.8999)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall4" type="StaticBody3D" parent="Terrain/Borders" index="3"]
+transform = Transform3D(0.0128976, 0, -0.999917, 0, 1, 0, 0.999917, 0, 0.0128976, 13.8405, 0, 6.89498)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall5" type="StaticBody3D" parent="Terrain/Borders" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90601, 0, 15.653)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall6" type="StaticBody3D" parent="Terrain/Borders" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.833, 0, 15.653)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall7" type="StaticBody3D" parent="Terrain/Borders" index="6"]
+transform = Transform3D(-0.00556757, 0, -0.999985, 0, 1, 0, 0.999985, 0, -0.00556757, -33.0648, 0, 12.3614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall8" type="StaticBody3D" parent="Terrain/Borders" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4228, 0, -0.0408983)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")
+
+[node name="Wall9" type="StaticBody3D" parent="Terrain/Borders" index="8"]
+transform = Transform3D(0.00404913, 0, 0.999992, 0, 1, 0, -0.999992, 0, 0.00404913, -14.1969, 0, -13.031)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
+shape = SubResource("BoxShape3D_856n2")

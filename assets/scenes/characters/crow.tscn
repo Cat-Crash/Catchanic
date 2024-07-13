@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtob87t53ltfb"]
+[gd_scene load_steps=8 format=3 uid="uid://dtob87t53ltfb"]
 
 [ext_resource type="Texture2D" uid="uid://bhtm63ajtk6oa" path="res://assets/art/sprites/npcs/crow/Crow_closed mouth.PNG" id="1_4qtg2"]
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_djlvv"]
 [ext_resource type="Script" path="res://assets/scripts/npc/interactable.gd" id="4_a08xv"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_um8fo"]
+[ext_resource type="Script" path="res://assets/scripts/npc/level_change.gd" id="5_kg7qb"]
+[ext_resource type="PackedScene" uid="uid://54op4aig8td6" path="res://assets/scenes/levels/level_2.tscn" id="6_sbpp7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
 animations = [{
@@ -93,9 +95,9 @@ dialogueRaw = "Crow: Hitching a ride outta here?
 Player: *Enthusiastic meow*
 Crow: Nice working with you, meowchanic!"
 
-[node name="ENDLEVEL" parent="Interactables/PostPuzzle2Convo" index="3" instance=ExtResource("4_um8fo")]
-speakerName = "Unfinished"
-dialogueRaw = "Test: REPLACE THIS WITH LEVEL TRANSITION"
+[node name="LevelChange" type="Node3D" parent="Interactables/PostPuzzle2Convo" index="3"]
+script = ExtResource("5_kg7qb")
+next_scene = ExtResource("6_sbpp7")
 
 [node name="PostBothPuzzlesConvo" type="Node3D" parent="Interactables" index="5"]
 script = ExtResource("4_a08xv")
@@ -117,6 +119,6 @@ dialogueRaw = "Crow: Hitching a ride outta here?
 Player: *Enthusiastic meow*
 Crow: Nice working with you, meowchanic!"
 
-[node name="ENDLEVEL" parent="Interactables/PostBothPuzzlesConvo" index="3" instance=ExtResource("4_um8fo")]
-speakerName = "Unfinished"
-dialogueRaw = "Test: REPLACE THIS WITH LEVEL TRANSITION"
+[node name="LevelChange" type="Node3D" parent="Interactables/PostBothPuzzlesConvo" index="3"]
+script = ExtResource("5_kg7qb")
+next_scene = ExtResource("6_sbpp7")

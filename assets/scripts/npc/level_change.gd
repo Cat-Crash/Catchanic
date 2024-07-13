@@ -8,4 +8,4 @@ func _ready():
 	mode_type = GlobalEnums.GameState.OVERWORLD
 
 func set_active(active: bool) -> void:
-	get_tree().change_scene_to_packed(next_scene)
+	if active == true: get_tree().change_scene_to_packed(next_scene)
