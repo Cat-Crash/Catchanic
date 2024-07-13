@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://0fclbx6qanx2"]
+[gd_scene load_steps=6 format=3 uid="uid://0fclbx6qanx2"]
 
-[ext_resource type="Script" path="res://assets/scripts/npc.gd" id="1_stnc4"]
+[ext_resource type="Script" path="res://assets/scripts/npc/npc.gd" id="1_stnc4"]
+[ext_resource type="Texture2D" uid="uid://dntaviqd1c3jh" path="res://assets/art/sprites/textbox/dialogue box.png" id="2_4o87l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfkr3"]
 
@@ -25,6 +26,41 @@ shape = SubResource("SphereShape3D_oxorr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionZone"]
 shape = SubResource("SphereShape3D_cbqj2")
+
+[node name="Popup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 65.0
+offset_bottom = 45.0
+
+[node name="TextureRect" type="TextureRect" parent="Popup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.5
+offset_right = 31.5
+offset_bottom = 51.0
+grow_horizontal = 2
+texture = ExtResource("2_4o87l")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_right = 23.0
+offset_bottom = 45.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+text = "Press
+Space"
+scroll_active = false
+shortcut_keys_enabled = false
 
 [node name="Interactables" type="Node3D" parent="."]
 
