@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2rsy4que0kdv"]
+
+[ext_resource type="PackedScene" uid="uid://cmp1uheqyqxdm" path="res://assets/scenes/puzzle/parts/2x1_part.tscn" id="1_icm6x"]
+[ext_resource type="Texture2D" uid="uid://dsydjqj3kcbm3" path="res://assets/art/sprites/puzzle/dam puzzle/Plank asset.PNG" id="2_ybnu1"]
+
+[node name="2x1 Plank" instance=ExtResource("1_icm6x")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.048, 0.09)
+texture = ExtResource("2_ybnu1")
+
+[node name="Button" parent="Sprite2D" index="0"]
+offset_left = -1315.0
+offset_top = -356.0
+offset_right = -1315.0
+offset_bottom = -356.0
