@@ -19,6 +19,7 @@ func _ready() -> void:
 func activate() -> void:
 	if game_modes.size() < 1: _end_interaction()
 	else: GlobalUtilities.switch_scene(GlobalState.overworld, game_modes[0])
+	
 
 func _on_mode_done(done: GameMode) -> void:
 	if active_mode + 1 >= game_modes.size(): _end_interaction()
