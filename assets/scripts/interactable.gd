@@ -33,3 +33,6 @@ func _end_interaction() -> void:
 	
 	if game_modes.size() > 0:
 		GlobalUtilities.switch_scene(game_modes[active_mode], GlobalState.overworld)
+
+	active_mode = 0
+

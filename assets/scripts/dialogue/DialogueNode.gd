@@ -23,8 +23,6 @@ var endFunction : String = '' # The name of the function to be called when the
 
 # Dialogue UI Elements
 @onready var dialogueArea : Control = $DialogueArea # The GUI control for the dialogue box
-@onready var dialogueBox : NinePatchRect = $DialogueArea/DialogueBox # the background for the
-	# dialogue box
 @onready var nameTag : RichTextLabel = $DialogueArea/NameTag # The text displaying the speaker's
 	# nametag
 @onready var dialogueText : RichTextLabel = $DialogueArea/DialogueText # The text displaying the

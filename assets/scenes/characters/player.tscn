@@ -1,6 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2j74ifvul0pg"]
+[gd_scene load_steps=14 format=3 uid="uid://c2j74ifvul0pg"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_1daq2"]
+[ext_resource type="Texture2D" uid="uid://c2tuomjummv72" path="res://assets/art/sprites/npcs/cat/Cat_closedmouth.PNG" id="2_bfk7w"]
+[ext_resource type="Texture2D" uid="uid://dqo7j2a15oqd4" path="res://assets/art/sprites/npcs/cat/Walk1.PNG" id="3_7xvd2"]
+[ext_resource type="Texture2D" uid="uid://7xrv7s82tvvt" path="res://assets/art/sprites/npcs/cat/Walk2.PNG" id="4_tbofb"]
+[ext_resource type="Texture2D" uid="uid://bn6ejgf66h2by" path="res://assets/art/sprites/npcs/cat/Walk3.PNG" id="5_oc164"]
+[ext_resource type="Texture2D" uid="uid://5l5okpixslxf" path="res://assets/art/sprites/npcs/cat/Walk4.PNG" id="6_q25gn"]
+[ext_resource type="Texture2D" uid="uid://dh7n4ike170b6" path="res://assets/art/sprites/npcs/cat/Walk5.PNG" id="7_80qmw"]
+[ext_resource type="Texture2D" uid="uid://kk3320yct8it" path="res://assets/art/sprites/npcs/cat/Walk6.PNG" id="8_1n3cr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n5bcf"]
 
@@ -15,24 +22,38 @@ ssao_enabled = true
 ssil_enabled = true
 fog_enabled = true
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8hhc3"]
-load_path = "res://.godot/imported/Cat_closedmouth.PNG-036213f48b4716166c6ec1ebafbfdf71.s3tc.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sldy3"]
-region = Rect2(0, 0, 2120, 1550)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7rpr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_8hhc3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sldy3")
+"texture": ExtResource("2_bfk7w")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7xvd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tbofb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oc164")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q25gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_80qmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1n3cr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5m7kt"]
@@ -51,6 +72,9 @@ current = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_y7rpr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.286936
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_5m7kt")
