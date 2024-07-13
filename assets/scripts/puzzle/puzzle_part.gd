@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var snap: int
 
 @export_category("Part Behavior")
-@export var type: ProjectEnums.PartType = ProjectEnums.PartType.NEUTRAL
+@export var goal_part: bool
 @export var target_goal: int = -1
 
 
@@ -35,8 +35,7 @@ func complete() -> void:
 	
 	move_x = false
 	move_y = false
-	
-	if type == ProjectEnums.PartType.UNINSTALL: queue_free()
+
 	AudioManager.sfx_success.play() # play puzzle success sfx
 
 func _on_button_button_down() -> void:

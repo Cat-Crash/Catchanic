@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyu5p42ggch0o"]
+
+[ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/components/puzzle_part.tscn" id="1_8inwb"]
+[ext_resource type="Texture2D" uid="uid://esskpdn2r0q5" path="res://assets/art/sprites/puzzle/prototype/p5.png" id="2_77552"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na5fx"]
+size = Vector2(62, 190)
+
+[node name="1x3 Part" instance=ExtResource("1_8inwb")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("2_77552")
+
+[node name="Button" parent="Sprite2D" index="0"]
+offset_left = -82.0
+offset_top = -231.5
+offset_right = -82.0
+offset_bottom = -231.5
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_na5fx")

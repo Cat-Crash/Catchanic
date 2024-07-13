@@ -2,8 +2,7 @@ extends GameMode
 
 @onready var center : CenterContainer = $Center
 
-var oldParts: int
-var newParts: int
+var goal_parts: int
 
 func _ready() -> void:
 	mode_type = ProjectEnums.GameState.PUZZLE
@@ -12,17 +11,17 @@ func _ready() -> void:
 # Count all parts to be installed or uninstall in scene
 	for child : Node in children:
 		if child is PuzzlePart:
-			var childPart: PuzzlePart = child as PuzzlePart
-			if childPart.type == ProjectEnums.PartType.INSTALL: newParts += 1
-			elif childPart.type == ProjectEnums.PartType.UNINSTALL: oldParts += 1
-
+			if child.goal_part : goal_parts += 1
+		
+		elif child is PuzzleGoal:
+			child.part_complete.connect(_on_goal_part_complete)
+	
 # Remove completed part from count and check for completion
-func _on_exit_goal_part_complete(type: ProjectEnums.PartType) -> void:
-	if type == ProjectEnums.PartType.INSTALL: newParts -= 1
-	elif type == ProjectEnums.PartType.UNINSTALL: oldParts -= 1
+func _on_goal_part_complete(type: bool) -> void:
+	if type: goal_parts -= 1
 	else: push_error("Unexpected Part Type has been Completed")
 	
-	if newParts < 1 and oldParts < 1: mode_done.emit(self)
+	if goal_parts < 1: mode_done.emit(self)
 	
 func set_active(active: bool) -> void:
 	center.visible = active

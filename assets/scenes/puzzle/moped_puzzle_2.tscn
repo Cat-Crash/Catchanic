@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnwnnlrj11ib"]
+
+[ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_jyij4"]
+[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_bound_goal.tscn" id="2_idrr1"]
+[ext_resource type="PackedScene" uid="uid://cyu5p42ggch0o" path="res://assets/scenes/puzzle/parts/1x3_part.tscn" id="2_txmvf"]
+[ext_resource type="PackedScene" uid="uid://cmp1uheqyqxdm" path="res://assets/scenes/puzzle/parts/2x1_part.tscn" id="3_uhu6i"]
+
+[node name="Moped Puzzle 2" instance=ExtResource("1_jyij4")]
+
+[node name="Goal" parent="Center/Goals" index="0" instance=ExtResource("2_idrr1")]
+position = Vector2(-16, 0)
+rotation = 3.14159
+
+[node name="1x3 Part" parent="Center/Parts" index="0" instance=ExtResource("2_txmvf")]
+position = Vector2(-192, -96)
+move_x = false
+
+[node name="Goal Part" parent="Center/Parts" index="1" instance=ExtResource("2_txmvf")]
+position = Vector2(448, -32)
+rotation = 1.5708
+move_y = false
+target_goal = 1
+
+[node name="1x3 Part2" parent="Center/Parts" index="2" instance=ExtResource("2_txmvf")]
+position = Vector2(0, -96)
+move_x = false
+
+[node name="1x3 Part3" parent="Center/Parts" index="3" instance=ExtResource("2_txmvf")]
+position = Vector2(128, -96)
+move_x = false
+
+[node name="2x1 Part" parent="Center/Parts" index="4" instance=ExtResource("3_uhu6i")]
+position = Vector2(64, -64)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Part3" parent="Center/Parts" index="5" instance=ExtResource("3_uhu6i")]
+position = Vector2(64, 64)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Part4" parent="Center/Parts" index="6" instance=ExtResource("3_uhu6i")]
+position = Vector2(-128, 64)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Part2" parent="Center/Parts" index="7" instance=ExtResource("3_uhu6i")]
+position = Vector2(-96, -32)
+move_y = false
+
+[node name="2x1 Part5" parent="Center/Parts" index="8" instance=ExtResource("3_uhu6i")]
+position = Vector2(-32, 32)
+move_y = false
+
+[node name="2x1 Part6" parent="Center/Parts" index="9" instance=ExtResource("3_uhu6i")]
+position = Vector2(-32, 160)
+move_y = false
+
+[node name="2x1 Part7" parent="Center/Parts" index="10" instance=ExtResource("3_uhu6i")]
+position = Vector2(96, 160)
+move_y = false
