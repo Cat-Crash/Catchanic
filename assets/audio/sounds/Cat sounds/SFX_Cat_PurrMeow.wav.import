@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4i34yudubfcm"
+path="res://.godot/imported/SFX_Cat_PurrMeow.wav-85d5eba4d8ea0a3daeb3dbb80de5ea11.sample"
+
+[deps]
+
+source_file="res://assets/audio/sounds/Cat sounds/SFX_Cat_PurrMeow.wav"
+dest_files=["res://.godot/imported/SFX_Cat_PurrMeow.wav-85d5eba4d8ea0a3daeb3dbb80de5ea11.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

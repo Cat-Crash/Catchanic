@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 GlobalEnums="*res://assets/scripts/globals/global_enums.gd"
 GlobalState="*res://assets/scripts/globals/global_state.gd"
 GlobalUtilities="*res://assets/scripts/globals/global_utilities.gd"
+AudioManager="*res://assets/scenes/audio/audio_manager.tscn"
 
 [debug]
 

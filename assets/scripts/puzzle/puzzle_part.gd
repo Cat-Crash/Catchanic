@@ -18,7 +18,7 @@ func _ready() -> void:
 	snap_vect = Vector2(snap, snap)
 
 func _process(delta: float) -> void:
-
+	
 	if not selected: return
 	
 	var currPos: Vector2 = self.global_position
@@ -32,13 +32,17 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func complete() -> void:
+	
 	move_x = false
 	move_y = false
 	
 	if type == ProjectEnums.PartType.UNINSTALL: queue_free()
+	AudioManager.sfx_success.play() # play puzzle success sfx
 
 func _on_button_button_down() -> void:
 	selected = true
+	AudioManager.sfx_pickup_general.play() #play sfx_pick_up
 
 func _on_button_button_up() -> void:
 	selected = false
+	AudioManager.sfx_drop_general.play() # play sfx_drop

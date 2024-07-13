@@ -27,3 +27,4 @@ func _on_exit_goal_part_complete(type: ProjectEnums.PartType) -> void:
 func set_active(active: bool) -> void:
 	center.visible = active
 	super.set_active(active)
+	

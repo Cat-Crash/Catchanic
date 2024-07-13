@@ -45,6 +45,7 @@ func set_active(active: bool) -> void:
 
 func beginDialoguePath() -> void:
 	dialogueArea.visible = true # shows the dialogue box
+	AudioManager.sfx_mewo.play()# player the mewo sound effect
 	pathPosition = 0
 	updateDialogueDisplay(dialoguePath[pathPosition])
 
@@ -57,6 +58,7 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 	pathPosition += 1
 	if pathPosition < dialoguePath.size(): # if not at the end go to the next DIalogueState in the path
 		updateDialogueDisplay(dialoguePath[pathPosition])
+		AudioManager.sfx_dialogue_click_mech.play() # player the dialogue click sound effect
 	else: # if at the end of the dialoguePath, hide the dialogue window and call the endFunction
 		dialogueArea.visible = false # hides the dialogue box
 		

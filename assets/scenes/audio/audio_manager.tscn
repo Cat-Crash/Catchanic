@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmqrv5vugals5"]
+
+[ext_resource type="Script" path="res://assets/scripts/audio/audio_manager.gd" id="1_vwcnv"]
+[ext_resource type="AudioStream" uid="uid://dbq2klxw4sxb7" path="res://assets/audio/sounds/SFX_Dialogue_click_mech.wav" id="2_rpvco"]
+[ext_resource type="AudioStream" uid="uid://duoghs43sp5r0" path="res://assets/audio/sounds/SFX_Drop_General.wav" id="3_7ro6s"]
+[ext_resource type="AudioStream" uid="uid://b2t5fqsgth7vu" path="res://assets/audio/sounds/SFX_Mewo.wav" id="4_dy014"]
+[ext_resource type="AudioStream" uid="uid://c66dtmnara2fb" path="res://assets/audio/sounds/SFX_Pickup_General.wav" id="5_niurp"]
+[ext_resource type="AudioStream" uid="uid://cytmlfxta0bdg" path="res://assets/audio/sounds/SFX_PurrMeow.wav" id="6_irtqw"]
+[ext_resource type="AudioStream" uid="uid://84bfwi8au07u" path="res://assets/audio/sounds/SFX_Success.wav" id="7_tfbhr"]
+[ext_resource type="AudioStream" uid="uid://bfxplffcqp11b" path="res://assets/audio/sounds/SFX_Block_Sliding.wav" id="8_46hvx"]
+[ext_resource type="AudioStream" uid="uid://dbbyeiu4efh7s" path="res://assets/audio/sounds/SFX_Motor_Engine_StartFail.wav" id="9_04fu3"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_vwcnv")
+
+[node name="SFX_Dialogue_click_mech" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rpvco")
+
+[node name="SFX_Drop_General" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7ro6s")
+
+[node name="SFX_Mewo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dy014")
+
+[node name="SFX_Pickup_General" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_niurp")
+
+[node name="SFX_PurrMeow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_irtqw")
+
+[node name="SFX_Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tfbhr")
+
+[node name="SFX_Block_Sliding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_46hvx")
+
+[node name="SFX_Motor_Engine_StartFail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_04fu3")
