@@ -31,6 +31,9 @@ var endFunction : String = '' # The name of the function to be called when the
 var dialogueOffset : Vector2 = Vector2(0, 0) # the offset of the box to make it over the speaker's
 	# head instead of the center of them
 
+signal playDialogueSound(sound : AudioStream) # a signal emitted when it needs to play a dialogue
+	# sound effect, picked up by DialogueSoundPlayer
+
 func _ready() -> void:
 	mode_type = ProjectEnums.GameState.DIALOGUE # marks the mode type for the game mode
 	
@@ -90,10 +93,11 @@ class DialogueState: # holds everything a single piece of dialogue needs (LIST L
 
 	var speakingParty : SpeakingParty
 	var speechText : String # the text to be displayed
-	# var speechSound EVENTUALLY this will be a sound effect that can be played if not empty
+	var sound : AudioStream # a sound to be played when this DialogueState is selected
 
 	@warning_ignore("untyped_declaration") # literally impossible to put an output declaration for
 		# a constructor
-	func _init(_speakingParty : SpeakingParty, _speechText : String):
+	func _init(_speakingParty : SpeakingParty, _speechText : String, _sound : AudioStream = null):
 		speakingParty = _speakingParty
 		speechText = _speechText
+		sound = _sound
