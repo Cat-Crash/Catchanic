@@ -32,18 +32,18 @@ effects = {
 
 [node name="DialogueNode0" parent="Interactables/GreetingConvo" index="0" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
-dialogueRaw = "Crow: A little far from home, aren't you?
+dialogueRaw = "Crow: A little far from home, aren't you?/Crow_Loud
 PLAYER: *Affirming meow*
 Crow: Well, if that truck you were in is headed for the city, then the human with the moped was headed that way.
-Crow: Or rather, it was headed that way. This racket is interrupting my business.
+Crow: Or rather, it was headed that way. This racket is interrupting my business./Crow_Chill
 PLAYER: *Questioning meow*
 Crow: I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see. Won't even drive their moped out of here.
 Crow: If you find it, return it to me, and I can deliver it to the human.
-Crow: I'd make it worth your time, of course. Perhaps a shiny battery will persuade you?
+Crow: I'd make it worth your time, of course. Perhaps a shiny battery will persuade you?/Crow_Chill
 PLAYER: *Understanding meow*
-Crow: Excellent, a fellow opportunist, I see.
+Crow: Excellent, a fellow opportunist, I see./Crow_Loud
 PLAYER: *Cat growl*
-Crow: Pleasure doing business with you, my feline friend."
+Crow: Pleasure doing business with you, my feline friend./Crow_Loud"
 
 [node name="NoPuzzlesDone" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("4_a08xv")

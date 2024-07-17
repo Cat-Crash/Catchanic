@@ -29,10 +29,12 @@ static func stringToDialogue(script : String) -> Array[DialogueNode.DialogueStat
 			speakingParty = DialogueNode.DialogueState.SpeakingParty.SPEAKER
 		
 		lineText = line.get_slice(nameDelimiter, 1) # takes the second part of the line as the text
+		lineText = lineText.get_slice(soundDelimiter, 0) # takes the section before the sound delimiter,
+			# if there isn't one present then just returns the same lineText
 		while lineText.begins_with(' '): # remove any spaces at the start of the line
 			lineText = lineText.erase(0) # erases the first character after position 0
 		
-		if '|'.is_subsequence_of(line):
+		if soundDelimiter.is_subsequence_of(line):
 			soundIDStr = line.get_slice(soundDelimiter, 1) # gets the name of the sound effect, returns
 				# empty if there is none
 			if soundIDStr:

@@ -2,8 +2,8 @@ extends AudioStreamPlayer
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	var dialogueNodes : Array[DialogueNode]
+func _ready() -> void:
+	var dialogueNodes : Array[DialogueNode] = []
 	
 	# collects all the dialoguenodes in the NPC this is attached to
 	var children : Array[Node] = GlobalUtilities.get_all_children(get_parent())

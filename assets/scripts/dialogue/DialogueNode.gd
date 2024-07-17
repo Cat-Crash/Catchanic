@@ -86,6 +86,8 @@ func updateDialogueDisplay(newState : DialogueState) -> void:
 	if dialogueArea.position.y < 0: # trims the position below the top of the screen
 		dialogueArea.position.y = 0 
 	dialogueText.text = newState.speechText # updates the displayed text to that of the newState
+	if newState.sound: # if the newState has an AudioStream attached
+		playDialogueSound.emit(newState.sound)
 	
 class DialogueState: # holds everything a single piece of dialogue needs (LIST LATER)
 	enum SpeakingParty {SPEAKER, PLAYER} # Designates who's speaking so that the DialogueNode knows
