@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://0fclbx6qanx2"]
+[gd_scene load_steps=7 format=3 uid="uid://0fclbx6qanx2"]
 
 [ext_resource type="Script" path="res://assets/scripts/npc/npc.gd" id="1_stnc4"]
 [ext_resource type="Texture2D" uid="uid://dntaviqd1c3jh" path="res://assets/art/sprites/textbox/dialogue box.png" id="2_4o87l"]
+[ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueSoundPlayer.gd" id="2_k38wa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfkr3"]
 
@@ -26,6 +27,9 @@ shape = SubResource("SphereShape3D_oxorr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionZone"]
 shape = SubResource("SphereShape3D_cbqj2")
+
+[node name="DialogueSoundPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_k38wa")
 
 [node name="Popup" type="Control" parent="."]
 layout_mode = 3
