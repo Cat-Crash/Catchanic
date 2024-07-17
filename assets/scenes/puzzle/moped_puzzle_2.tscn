@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnwnnlrj11ib"]
+[gd_scene load_steps=6 format=3 uid="uid://dnwnnlrj11ib"]
 
 [ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_jyij4"]
 [ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_bound_goal.tscn" id="2_idrr1"]
 [ext_resource type="PackedScene" uid="uid://cyu5p42ggch0o" path="res://assets/scenes/puzzle/parts/1x3_part.tscn" id="2_txmvf"]
 [ext_resource type="PackedScene" uid="uid://cmp1uheqyqxdm" path="res://assets/scenes/puzzle/parts/2x1_part.tscn" id="3_uhu6i"]
+[ext_resource type="Texture2D" uid="uid://dt7udg2xseujn" path="res://assets/art/sprites/puzzle/moped puzzle/IMG_3462.PNG" id="4_r23di"]
 
 [node name="Moped Puzzle 2" instance=ExtResource("1_jyij4")]
 
@@ -20,6 +21,10 @@ position = Vector2(448, -32)
 rotation = 1.5708
 move_y = false
 target_goal = 1
+
+[node name="Sprite2D" parent="Center/Parts/Goal Part" index="0"]
+scale = Vector2(0.075, 0.105)
+texture = ExtResource("4_r23di")
 
 [node name="1x3 Part2" parent="Center/Parts" index="2" instance=ExtResource("2_txmvf")]
 position = Vector2(0, -96)
@@ -59,3 +64,5 @@ move_y = false
 [node name="2x1 Part7" parent="Center/Parts" index="10" instance=ExtResource("3_uhu6i")]
 position = Vector2(96, 160)
 move_y = false
+
+[editable path="Center/Parts/Goal Part"]
