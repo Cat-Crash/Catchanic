@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Mx_Lvl2_Catchanic_76bpm.mp3-d8603a4f9f6e6c39f
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
