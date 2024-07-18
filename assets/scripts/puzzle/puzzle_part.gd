@@ -1,15 +1,20 @@
 class_name PuzzlePart
 extends CharacterBody2D
 
+@onready var sound_player : AudioStreamPlayer2D = $PuzzleSoundPlayer
+
 @export_category("Movement")
-@export var move_x: bool
-@export var move_y: bool
-@export var snap: int
+@export var move_x : bool
+@export var move_y : bool
+@export var snap : int
 
 @export_category("Part Behavior")
-@export var goal_part: bool
-@export var target_goal: int = -1
+@export var goal_part : bool
+@export var target_goal : int = -1
 
+@export_category("Sounds")
+@export var pickup_sound : AudioStream
+@export var drop_sound : AudioStream
 
 var snap_vect: Vector2
 var selected: bool = false
@@ -37,6 +42,12 @@ func complete() -> void:
 
 func _on_button_button_down() -> void:
 	selected = true
+	_play_sound(pickup_sound)
 
 func _on_button_button_up() -> void:
 	selected = false
+	_play_sound(drop_sound)
+
+func _play_sound(sound : AudioStream) -> void:
+	sound_player.stream = sound
+	sound_player.play()
