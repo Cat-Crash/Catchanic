@@ -1,7 +1,7 @@
 class_name PuzzlePart
 extends CharacterBody2D
 
-@onready var sound_player : AudioStreamPlayer2D = $PuzzleSoundPlayer
+@onready var sound_player : AudioStreamPlayer2D = $PartSoundPlayer
 
 @export_category("Movement")
 @export var move_x : bool

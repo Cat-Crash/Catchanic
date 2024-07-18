@@ -1,6 +1,9 @@
 extends GameMode
 
+@onready var puzzle_sound_player = $PuzzleSoundPlayer
 @onready var center : CenterContainer = $Center
+
+@export var puzzle_complete_delay : float = 0.5
 
 var goal_parts: int
 
@@ -21,7 +24,10 @@ func _on_goal_part_complete(type: bool) -> void:
 	if type: goal_parts -= 1
 	else: push_error("Unexpected Part Type has been Completed")
 	
-	if goal_parts < 1: mode_done.emit(self)
+	if goal_parts < 1: 
+		puzzle_sound_player.play()
+		await get_tree().create_timer(puzzle_complete_delay).timeout
+		mode_done.emit(self)
 	
 func set_active(active: bool) -> void:
 	center.visible = active

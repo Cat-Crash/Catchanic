@@ -42,7 +42,7 @@ flat = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_il85d")
 
-[node name="PuzzleSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="PartSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 5
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]

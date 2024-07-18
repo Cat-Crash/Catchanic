@@ -37,59 +37,41 @@ shape = SubResource("RectangleShape2D_h45h4")
 [node name="2x1 Part" parent="Center/Parts" index="1" instance=ExtResource("5_8jl0s")]
 position = Vector2(0, 28)
 move_y = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part2" parent="Center/Parts" index="2" instance=ExtResource("5_8jl0s")]
 position = Vector2(128, -100)
 move_y = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part3" parent="Center/Parts" index="3" instance=ExtResource("5_8jl0s")]
 position = Vector2(128, -164)
 move_y = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part4" parent="Center/Parts" index="4" instance=ExtResource("5_8jl0s")]
 position = Vector2(128, 156)
 move_y = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part5" parent="Center/Parts" index="5" instance=ExtResource("5_8jl0s")]
 position = Vector2(-32, 124)
 rotation = 1.5708
 move_x = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part8" parent="Center/Parts" index="6" instance=ExtResource("5_8jl0s")]
 position = Vector2(-224, 124)
 rotation = 1.5708
 move_x = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part6" parent="Center/Parts" index="7" instance=ExtResource("5_8jl0s")]
 position = Vector2(-96, 60)
 rotation = 1.5708
 move_x = false
-pickup_sound = null
-drop_sound = null
 
 [node name="2x1 Part7" parent="Center/Parts" index="8" instance=ExtResource("5_8jl0s")]
 position = Vector2(32, -132)
 rotation = 1.5708
 move_x = false
-pickup_sound = null
-drop_sound = null
 
 [node name="1x3 Part" parent="Center/Parts" index="9" instance=ExtResource("6_g1ptm")]
 position = Vector2(96, 28)
 move_x = false
-pickup_sound = null
-drop_sound = null
 
 [editable path="Center/Parts/Removal Part"]
