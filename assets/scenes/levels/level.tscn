@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi7edqngpk0ra"]
+[gd_scene load_steps=6 format=3 uid="uid://bi7edqngpk0ra"]
 
 [ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_i3ffy"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="3_lgo51"]
-[ext_resource type="AudioStream" uid="uid://c7h56kjphwgnn" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.wav" id="4_nji20"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v7y37"]
 
@@ -37,8 +36,10 @@ environment = SubResource("Environment_r2l7l")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights and Sound"]
 transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 3.59333, 12.4926, -0.0460261)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Lights and Sound"]
-stream = ExtResource("4_nji20")
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="Lights and Sound"]
+autoplay = true
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="Lights and Sound"]
 autoplay = true
 
 [node name="LightmapGI" type="LightmapGI" parent="Lights and Sound"]
