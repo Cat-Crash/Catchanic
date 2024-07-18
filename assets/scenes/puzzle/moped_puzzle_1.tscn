@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_2hvbq"]
 [ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_bound_goal.tscn" id="3_2j8h8"]
+[ext_resource type="Texture2D" uid="uid://573aqxtt1x8u" path="res://assets/art/sprites/puzzle/moped puzzle/IMG_3464.PNG" id="4_f6bco"]
 [ext_resource type="PackedScene" uid="uid://demakvrdx5qr8" path="res://assets/scenes/puzzle/components/puzzle_part.tscn" id="4_i5c2i"]
 [ext_resource type="PackedScene" uid="uid://cmp1uheqyqxdm" path="res://assets/scenes/puzzle/parts/2x1_part.tscn" id="5_8jl0s"]
 [ext_resource type="PackedScene" uid="uid://cyu5p42ggch0o" path="res://assets/scenes/puzzle/parts/1x3_part.tscn" id="6_g1ptm"]
-[ext_resource type="Texture2D" uid="uid://cm0tw1w1bae4y" path="res://assets/art/sprites/puzzle/prototype/p1.png" id="14_g0ah7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h45h4"]
 size = Vector2(254, 62)
@@ -22,14 +22,14 @@ goal_part = true
 target_goal = 1
 
 [node name="Sprite2D" parent="Center/Parts/Removal Part" index="0"]
-scale = Vector2(0.405, 0.405)
-texture = ExtResource("14_g0ah7")
+scale = Vector2(0.095, 0.065)
+texture = ExtResource("4_f6bco")
 
 [node name="Button" parent="Center/Parts/Removal Part/Sprite2D" index="0"]
-offset_left = -312.5
-offset_top = -85.0
-offset_right = -312.5
-offset_bottom = -85.0
+offset_left = -1363.0
+offset_top = -532.5
+offset_right = -1363.0
+offset_bottom = -532.5
 
 [node name="CollisionShape2D" parent="Center/Parts/Removal Part" index="1"]
 shape = SubResource("RectangleShape2D_h45h4")
