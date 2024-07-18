@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ivuyp1snyt2i"]
+[gd_scene load_steps=7 format=3 uid="uid://ivuyp1snyt2i"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_idlx4"]
 [ext_resource type="PackedScene" uid="uid://8y1lqp3lqst4" path="res://assets/art/models/first level forest/level_1_BAKELESS.glb" id="3_fd7c7"]
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
+[ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_23da3"]
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_856n2"]
@@ -85,3 +86,6 @@ transform = Transform3D(0.00404913, 0, 0.999992, 0, 1, 0, -0.999992, 0, 0.004049
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Borders/Wall9" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
 shape = SubResource("BoxShape3D_856n2")
+
+[node name="AudioStreamPlayer" parent="Lights and Sound" index="2"]
+stream = ExtResource("5_23da3")
