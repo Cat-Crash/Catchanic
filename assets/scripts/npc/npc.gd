@@ -19,7 +19,7 @@ func _ready() -> void:
 			push_error('Non interactable in interactables')
 	popup.visible = false
 			
-func _process(delta):
+func _process(_delta: float) -> void:
 	popup.position = get_viewport().get_camera_3d().unproject_position(global_transform.origin)
 		# makes sure the popup is in the right place over the NPC relative to the camera
 

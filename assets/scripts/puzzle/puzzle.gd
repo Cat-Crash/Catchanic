@@ -1,9 +1,9 @@
 extends GameMode
 
-@onready var puzzle_sound_player = $PuzzleSoundPlayer
+@onready var puzzle_sound_player : AudioStreamPlayer2D = $PuzzleSoundPlayer
 @onready var center : CenterContainer = $Center
 
-@export var puzzle_complete_delay : float = 0.5
+@export var puzzle_complete_delay : float = 1
 
 var goal_parts: int
 
