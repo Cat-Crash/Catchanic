@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/npc/interactable.gd" id="4_a08xv"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_um8fo"]
 [ext_resource type="Script" path="res://assets/scripts/npc/level_change.gd" id="5_kg7qb"]
-[ext_resource type="PackedScene" uid="uid://bjqu5ojgobwk6" path="res://assets/scenes/menu/Menu.tscn" id="6_vlavd"]
+[ext_resource type="PackedScene" uid="uid://bjqu5ojgobwk6" path="res://assets/scenes/menu/main_menu.tscn" id="6_vlavd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
 animations = [{
