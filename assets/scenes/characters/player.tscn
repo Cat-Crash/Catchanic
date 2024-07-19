@@ -70,7 +70,10 @@ current = true
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-billboard = 1
+gi_mode = 2
+shaded = true
+double_sided = false
+alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_y7rpr")
 animation = &"idle"
 autoplay = "idle"

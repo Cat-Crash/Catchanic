@@ -1,14 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://ivuyp1snyt2i"]
+[gd_scene load_steps=12 format=3 uid="uid://ivuyp1snyt2i"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_idlx4"]
 [ext_resource type="PackedScene" uid="uid://8y1lqp3lqst4" path="res://assets/art/models/first level forest/level_1_BAKELESS.glb" id="3_fd7c7"]
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
 [ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_23da3"]
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
+[ext_resource type="Texture2D" uid="uid://ccjac5x0y1nrs" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_ClearBlueSky_Equirect.png" id="5_ewo7s"]
 [ext_resource type="AudioStream" uid="uid://da6eyhmfpmsdk" path="res://assets/audio/music/SFX_Ambience_Level1.wav" id="6_0w0jd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_856n2"]
 size = Vector3(26.445, 4, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yx5xk"]
+panorama = ExtResource("5_ewo7s")
+
+[sub_resource type="Sky" id="Sky_n8u2r"]
+sky_material = SubResource("PanoramaSkyMaterial_yx5xk")
+
+[sub_resource type="Environment" id="Environment_gou83"]
+background_mode = 2
+sky = SubResource("Sky_n8u2r")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ssao_enabled = true
+ssil_enabled = true
+glow_normalized = true
+fog_light_color = Color(0.619608, 0.815686, 0.956863, 1)
+fog_aerial_perspective = 1.0
+adjustment_enabled = true
 
 [node name="Level" instance=ExtResource("1_idlx4")]
 
@@ -88,8 +107,16 @@ transform = Transform3D(0.00404913, 0, 0.999992, 0, 1, 0, -0.999992, 0, 0.004049
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
 shape = SubResource("BoxShape3D_856n2")
 
+[node name="WorldEnvironment" parent="Lights and Sound" index="0"]
+environment = SubResource("Environment_gou83")
+
+[node name="Sun" parent="Lights and Sound" index="1"]
+transform = Transform3D(0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 3.59333, 12.4926, -0.0460261)
+
 [node name="BGMPlayer" parent="Lights and Sound" index="2"]
 stream = ExtResource("5_23da3")
 
 [node name="AmbiencePlayer" parent="Lights and Sound" index="3"]
 stream = ExtResource("6_0w0jd")
+
+[editable path="Player"]

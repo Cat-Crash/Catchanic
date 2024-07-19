@@ -33,6 +33,7 @@ _subresources={
 "nodes": {
 "PATH:Plane_010": {
 "generate/physics": true,
+"mesh_instance/cast_shadow": 0,
 "physics/shape_type": 2
 }
 }

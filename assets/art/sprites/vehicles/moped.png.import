@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2pux4tcsmtyl"
-path.s3tc="res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.s3tc.ctex"
+path.bptc="res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,12 +12,12 @@ metadata={
 [deps]
 
 source_file="res://assets/art/sprites/vehicles/moped.png"
-dest_files=["res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.s3tc.ctex"]
+dest_files=["res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
