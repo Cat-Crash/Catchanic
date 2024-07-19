@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://demakvrdx5qr8"]
+[gd_scene load_steps=6 format=3 uid="uid://demakvrdx5qr8"]
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle_part.gd" id="1_68t0x"]
+[ext_resource type="AudioStream" uid="uid://cfd0tme7a5lkn" path="res://assets/audio/sounds/SFX_Pickup_General.wav" id="2_rbllm"]
+[ext_resource type="AudioStream" uid="uid://dt7g3f6bwou8n" path="res://assets/audio/sounds/SFX_Drop_General.wav" id="3_51sii"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mw8bf"]
 size = Vector2(62, 62)
@@ -17,6 +19,8 @@ move_x = true
 move_y = true
 snap = 32
 target_goal = 0
+pickup_sound = ExtResource("2_rbllm")
+drop_sound = ExtResource("3_51sii")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_mw8bf")
@@ -37,6 +41,9 @@ flat = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_il85d")
+
+[node name="PartSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 5
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]

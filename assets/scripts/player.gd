@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-@onready var sprite = $AnimatedSprite3D
+@onready var sprite : AnimatedSprite3D = $AnimatedSprite3D
 
 @export var speed : float = 5.0
 @export var accel : float = 1
