@@ -1,8 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjqu5ojgobwk6"]
+[gd_scene load_steps=7 format=3 uid="uid://bjqu5ojgobwk6"]
 
 [ext_resource type="Script" path="res://assets/scripts/Menu/menu.gd" id="1_1buv7"]
 [ext_resource type="Texture2D" uid="uid://by27delas5ckx" path="res://assets/art/sprites/title_placeholder.png" id="2_bn2e4"]
-[ext_resource type="PackedScene" uid="uid://7ax5kvmjaqyl" path="res://assets/scenes/menu/scene_transition_fade.tscn" id="3_tt1o0"]
+
+[sub_resource type="Animation" id="Animation_4qo46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yv57n"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_quu38"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6mju"]
+_data = {
+"RESET": SubResource("Animation_4qo46"),
+"fade_in": SubResource("Animation_yv57n"),
+"fade_out": SubResource("Animation_quu38")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -24,10 +75,17 @@ texture = ExtResource("2_bn2e4")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Fade Transition" parent="." instance=ExtResource("3_tt1o0")]
+[node name="Fade Transition" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 0)
 
-[node name="Fade Timer" type="Timer" parent="Fade Transition"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_l6mju")
+}
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 1
@@ -62,6 +120,5 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = " Exit "
 
-[connection signal="timeout" from="Fade Transition/Fade Timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
