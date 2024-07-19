@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ivuyp1snyt2i"]
+[gd_scene load_steps=13 format=3 uid="uid://ivuyp1snyt2i"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_idlx4"]
 [ext_resource type="PackedScene" uid="uid://8y1lqp3lqst4" path="res://assets/art/models/first level forest/level_1_BAKELESS.glb" id="3_fd7c7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
 [ext_resource type="Texture2D" uid="uid://ccjac5x0y1nrs" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_ClearBlueSky_Equirect.png" id="5_ewo7s"]
 [ext_resource type="AudioStream" uid="uid://da6eyhmfpmsdk" path="res://assets/audio/music/SFX_Ambience_Level1.wav" id="6_0w0jd"]
+[ext_resource type="PackedScene" uid="uid://syfbflf0ml8s" path="res://assets/art/models/first level forest/forest v2.glb" id="8_862sc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_856n2"]
 size = Vector3(26.445, 4, 1)
@@ -39,6 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.524995, -4.13554)
 
 [node name="Level 1 Terrain" parent="Terrain" index="0" instance=ExtResource("3_fd7c7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.20444, 0)
+visible = false
 
 [node name="Floor" parent="Terrain/Level Bounds" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826516, 0)
@@ -107,6 +109,9 @@ transform = Transform3D(0.00404913, 0, 0.999992, 0, 1, 0, -0.999992, 0, 0.004049
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619353, 0, 0.343392)
 shape = SubResource("BoxShape3D_856n2")
 
+[node name="forest v2" parent="Terrain" index="3" instance=ExtResource("8_862sc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.936685, 0)
+
 [node name="WorldEnvironment" parent="Lights and Sound" index="0"]
 environment = SubResource("Environment_gou83")
 
@@ -118,5 +123,3 @@ stream = ExtResource("5_23da3")
 
 [node name="AmbiencePlayer" parent="Lights and Sound" index="3"]
 stream = ExtResource("6_0w0jd")
-
-[editable path="Player"]
