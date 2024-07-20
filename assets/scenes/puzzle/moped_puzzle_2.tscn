@@ -9,56 +9,63 @@
 [node name="Moped Puzzle 2" instance=ExtResource("1_jyij4")]
 
 [node name="Goal" parent="Center/Goals" index="0" instance=ExtResource("2_idrr1")]
-position = Vector2(-16, 0)
+position = Vector2(-152, -12)
 rotation = 3.14159
 
-[node name="1x3 Part" parent="Center/Parts" index="0" instance=ExtResource("2_txmvf")]
-position = Vector2(-192, -96)
-move_x = false
-
-[node name="Goal Part" parent="Center/Parts" index="1" instance=ExtResource("2_txmvf")]
-position = Vector2(448, -32)
+[node name="Goal Part" parent="Center/Parts" index="0" instance=ExtResource("2_txmvf")]
+position = Vector2(448, -36)
 rotation = 1.5708
 move_y = false
+goal_part = true
 target_goal = 1
 
 [node name="Sprite2D" parent="Center/Parts/Goal Part" index="0"]
 scale = Vector2(0.075, 0.105)
 texture = ExtResource("4_r23di")
 
+[node name="Button" parent="Center/Parts/Goal Part/Sprite2D" index="0"]
+offset_left = -426.0
+offset_top = -908.0
+offset_right = -426.0
+offset_bottom = -908.0
+
+[node name="1x3 Part" parent="Center/Parts" index="1" instance=ExtResource("2_txmvf")]
+position = Vector2(-192, -100)
+move_x = false
+
 [node name="1x3 Part3" parent="Center/Parts" index="2" instance=ExtResource("2_txmvf")]
-position = Vector2(128, -96)
+position = Vector2(128, -100)
 move_x = false
 
 [node name="2x1 Part" parent="Center/Parts" index="3" instance=ExtResource("3_uhu6i")]
-position = Vector2(64, -64)
+position = Vector2(64, -68)
 rotation = 1.5708
 move_x = false
 
 [node name="2x1 Part3" parent="Center/Parts" index="4" instance=ExtResource("3_uhu6i")]
-position = Vector2(64, 64)
+position = Vector2(64, 60)
 rotation = 1.5708
 move_x = false
 
 [node name="2x1 Part4" parent="Center/Parts" index="5" instance=ExtResource("3_uhu6i")]
-position = Vector2(-128, 64)
+position = Vector2(-128, 60)
 rotation = 1.5708
 move_x = false
 
 [node name="2x1 Part2" parent="Center/Parts" index="6" instance=ExtResource("3_uhu6i")]
-position = Vector2(-96, -32)
+position = Vector2(-96, -36)
 move_y = false
 
 [node name="2x1 Part5" parent="Center/Parts" index="7" instance=ExtResource("3_uhu6i")]
-position = Vector2(-32, 32)
+position = Vector2(-32, 28)
 move_y = false
 
 [node name="2x1 Part6" parent="Center/Parts" index="8" instance=ExtResource("3_uhu6i")]
-position = Vector2(-32, 160)
+position = Vector2(-32, 156)
 move_y = false
 
 [node name="2x1 Part7" parent="Center/Parts" index="9" instance=ExtResource("3_uhu6i")]
-position = Vector2(96, 160)
+position = Vector2(96, 156)
 move_y = false
 
 [editable path="Center/Parts/Goal Part"]
