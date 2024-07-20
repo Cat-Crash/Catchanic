@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cddkpalfejycy"
-path.s3tc="res://.godot/imported/level_2_Cliff.png-e52bb5d1a5877563f1080d4ea184dab2.s3tc.ctex"
+uid="uid://cvjk2b24r70cb"
+path.s3tc="res://.godot/imported/dam_v2_untextured_first level forest v2.png-0c3eba47eb8ef7a527e64dc1636cfe90.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "782603e947fbe77586dd35bed1c177f2"
+"md5": "2142520ac58ae94232d9bb70e035f15f"
 }
 
 [deps]
 
-source_file="res://assets/art/models/second level dam/level_2_Cliff.png"
-dest_files=["res://.godot/imported/level_2_Cliff.png-e52bb5d1a5877563f1080d4ea184dab2.s3tc.ctex"]
+source_file="res://assets/art/models/second level dam/dam_v2_untextured_first level forest v2.png"
+dest_files=["res://.godot/imported/dam_v2_untextured_first level forest v2.png-0c3eba47eb8ef7a527e64dc1636cfe90.s3tc.ctex"]
 
 [params]
 

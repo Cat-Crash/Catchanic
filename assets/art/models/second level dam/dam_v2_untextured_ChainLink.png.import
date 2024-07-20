@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw4edwd6t24ga"
-path.s3tc="res://.godot/imported/level_2_Dam.png-21c0df68044fa38b21196b3427402d5b.s3tc.ctex"
+uid="uid://dus0ckmdyr20v"
+path.s3tc="res://.godot/imported/dam_v2_untextured_ChainLink.png-f38a33eba1c803b4efa9f3ba58af9ced.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e3c619959d8037b1742ffa9c570f2f89"
+"md5": "4eab39ad42e99847525a3ff179d4b954"
 }
 
 [deps]
 
-source_file="res://assets/art/models/second level dam/level_2_Dam.png"
-dest_files=["res://.godot/imported/level_2_Dam.png-21c0df68044fa38b21196b3427402d5b.s3tc.ctex"]
+source_file="res://assets/art/models/second level dam/dam_v2_untextured_ChainLink.png"
+dest_files=["res://.godot/imported/dam_v2_untextured_ChainLink.png-f38a33eba1c803b4efa9f3ba58af9ced.s3tc.ctex"]
 
 [params]
 
