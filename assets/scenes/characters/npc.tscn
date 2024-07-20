@@ -21,7 +21,6 @@ gi_mode = 2
 billboard = 1
 shaded = true
 double_sided = false
-alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_nfkr3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

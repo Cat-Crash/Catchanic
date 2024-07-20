@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7ftr6vs1j65u"
-path="res://.godot/imported/fences.glb-a596d6cd3d7782ffa6446b69c45c60c0.scn"
+uid="uid://bnpbt1qscsqcg"
+path="res://.godot/imported/bush1.glb-dfaf4249eb4249e026396f81a0b650bc.scn"
 
 [deps]
 
-source_file="res://assets/art/models/first level forest/fences.glb"
-dest_files=["res://.godot/imported/fences.glb-a596d6cd3d7782ffa6446b69c45c60c0.scn"]
+source_file="res://assets/art/sprites/foliage/bush1.glb"
+dest_files=["res://.godot/imported/bush1.glb-dfaf4249eb4249e026396f81a0b650bc.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Fence"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
@@ -29,14 +29,6 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:fence": {
-"generate/occluder": 1,
-"generate/physics": true,
-"physics/shape_type": 1
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
