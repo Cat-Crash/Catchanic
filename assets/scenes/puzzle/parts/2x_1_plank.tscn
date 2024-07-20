@@ -6,6 +6,7 @@
 [node name="2x1 Plank" instance=ExtResource("1_icm6x")]
 
 [node name="Sprite2D" parent="." index="0"]
+rotation = 0.0
 scale = Vector2(0.048, 0.09)
 texture = ExtResource("2_ybnu1")
 

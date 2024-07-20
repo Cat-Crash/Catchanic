@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2rsy4que0kdv" path="res://assets/scenes/puzzle/parts/2x_1_plank.tscn" id="4_w05os"]
 [ext_resource type="Texture2D" uid="uid://bhu0leq814s7v" path="res://assets/art/sprites/puzzle/dam puzzle/Fish asset.PNG" id="5_uhogc"]
 
-[node name="Puzzle" instance=ExtResource("1_wotc3")]
+[node name="Dam Puzzle" instance=ExtResource("1_wotc3")]
 
 [node name="Background" parent="Center" index="0"]
 position = Vector2(-8, -4)
@@ -31,6 +31,12 @@ target_goal = 1
 [node name="Sprite2D" parent="Center/Parts/Fish" index="0"]
 scale = Vector2(0.053, 0.06)
 texture = ExtResource("5_uhogc")
+
+[node name="Button" parent="Center/Parts/Fish/Sprite2D" index="0"]
+offset_left = -1188.0
+offset_top = -560.5
+offset_right = -1188.0
+offset_bottom = -560.5
 
 [node name="2x1 Plank2" parent="Center/Parts" index="1" instance=ExtResource("4_w05os")]
 position = Vector2(-192, 28)
