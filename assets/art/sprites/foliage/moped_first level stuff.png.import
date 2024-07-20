@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq0bdqevb0wul"
-path.s3tc="res://.godot/imported/level_1_BAKELESS_first level stuff.png-09c88ac6d913a650acf96057c2de3809.s3tc.ctex"
+uid="uid://dsca0oeoos7c7"
+path.s3tc="res://.godot/imported/moped_first level stuff.png-53a96c0b3351517d316ebc43013b974d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/art/models/first level forest/level_1_BAKELESS_first level stuff.png"
-dest_files=["res://.godot/imported/level_1_BAKELESS_first level stuff.png-09c88ac6d913a650acf96057c2de3809.s3tc.ctex"]
+source_file="res://assets/art/sprites/foliage/moped_first level stuff.png"
+dest_files=["res://.godot/imported/moped_first level stuff.png-53a96c0b3351517d316ebc43013b974d.s3tc.ctex"]
 
 [params]
 

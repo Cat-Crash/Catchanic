@@ -2,22 +2,25 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pux4tcsmtyl"
-path.bptc="res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"
+uid="uid://dvjj13wk76kpr"
+path.s3tc="res://.godot/imported/bush3_first level stuff.png-e3d4905e40109111ab8c9ca43317ec43.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "03110f651c085e1d8e7f7a2d1e6726a2"
+}
 
 [deps]
 
-source_file="res://assets/art/sprites/vehicles/moped.png"
-dest_files=["res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"]
+source_file="res://assets/art/sprites/foliage/bush3_first level stuff.png"
+dest_files=["res://.godot/imported/bush3_first level stuff.png-e3d4905e40109111ab8c9ca43317ec43.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

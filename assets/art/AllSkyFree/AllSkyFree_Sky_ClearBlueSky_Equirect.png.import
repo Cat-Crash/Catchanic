@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pux4tcsmtyl"
-path.bptc="res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"
+uid="uid://ccjac5x0y1nrs"
+path.s3tc="res://.godot/imported/AllSkyFree_Sky_ClearBlueSky_Equirect.png-fc6966f7a5dce1df41b7e67e40c9c489.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/sprites/vehicles/moped.png"
-dest_files=["res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"]
+source_file="res://assets/art/AllSkyFree/AllSkyFree_Sky_ClearBlueSky_Equirect.png"
+dest_files=["res://.godot/imported/AllSkyFree_Sky_ClearBlueSky_Equirect.png-fc6966f7a5dce1df41b7e67e40c9c489.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

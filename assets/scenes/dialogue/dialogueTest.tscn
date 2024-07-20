@@ -25,5 +25,3 @@ shape = SubResource("CapsuleShape3D_jjy2j")
 mesh = SubResource("CapsuleMesh_bxdjo")
 
 [node name="DialogueNode" parent="." instance=ExtResource("2_1qgit")]
-
-[connection signal="repositionDialogueArea" from="DialogueNode" to="3dSpeaker" method="_on_dialogue_node_reposition_dialogue_area"]
