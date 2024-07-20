@@ -23,6 +23,10 @@ sprite_frames = SubResource("SpriteFrames_feg2c")
 
 [node name="FirstMeeting" type="Node3D" parent="Interactables" index="0"]
 script = ExtResource("3_qgvjq")
+effects = {
+"DamControls": 1,
+"beaver": 1
+}
 
 [node name="DialogueNode" parent="Interactables/FirstMeeting" index="0" instance=ExtResource("4_p2bic")]
 dialogueRaw = "Beaver: Dam's closed!
@@ -40,6 +44,9 @@ dialogueRaw = "Beaver: You should be able to access everything from the dam cont
 
 [node name="AfterFirstPuzzle" type="Node3D" parent="Interactables" index="2"]
 script = ExtResource("3_qgvjq")
+effects = {
+"Beaver": 3
+}
 
 [node name="DialogueNode" parent="Interactables/AfterFirstPuzzle" index="0" instance=ExtResource("4_p2bic")]
 dialogueRaw = "Player: *Trills to the beaver*
@@ -53,7 +60,13 @@ Player: *Enthusiastic meow*
 Beaver: A fish ladder would work! Bring me some planks and I can help fix it right up!
 Player: *Affirmative meow*"
 
-[node name="AfterAllPlanksCollected" type="Node3D" parent="Interactables" index="3"]
+[node name="WaitingOnPlanks" type="Node3D" parent="Interactables" index="3"]
+script = ExtResource("3_qgvjq")
+
+[node name="DialogueNode" parent="Interactables/WaitingOnPlanks" index="0" instance=ExtResource("4_p2bic")]
+dialogueRaw = "Beaver: A fish ladder would work! Bring me some planks and I can help fix it right up!"
+
+[node name="AfterAllPlanksCollected" type="Node3D" parent="Interactables" index="4"]
 script = ExtResource("3_qgvjq")
 
 [node name="DialogueNode" parent="Interactables/AfterAllPlanksCollected" index="0" instance=ExtResource("4_p2bic")]

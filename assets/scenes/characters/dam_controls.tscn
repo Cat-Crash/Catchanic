@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="3_wbh5m"]
 [ext_resource type="PackedScene" uid="uid://b6tbiw8ucl8t7" path="res://assets/scenes/puzzle/dam_puzzle.tscn" id="4_ok0om"]
 
-[node name="Dam Controls" instance=ExtResource("1_5rhp8")]
+[node name="DamControls" instance=ExtResource("1_5rhp8")]
 
 [node name="BeforeBeaver" type="Node3D" parent="Interactables" index="0"]
 script = ExtResource("2_cbftl")
@@ -15,6 +15,10 @@ dialogueRaw = "PLAYER: (It doesn't seem to be working right now. Maybe I should 
 
 [node name="RemovingFish" type="Node3D" parent="Interactables" index="1"]
 script = ExtResource("2_cbftl")
+effects = {
+"Beaver": 2,
+"DamControls": 2
+}
 
 [node name="DialogueNode" parent="Interactables/RemovingFish" index="0" instance=ExtResource("3_wbh5m")]
 dialogueRaw = "PLAYER: (Looks like fish and sticks got stuck in the dam. We need to help them out.)"
