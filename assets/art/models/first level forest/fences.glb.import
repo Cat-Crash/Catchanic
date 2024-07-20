@@ -34,7 +34,8 @@ _subresources={
 "PATH:fence": {
 "generate/occluder": 1,
 "generate/physics": true,
-"physics/shape_type": 1
+"physics/shape_type": 3,
+"primitive/size": Vector3(2, 0.1, 1)
 }
 }
 }
