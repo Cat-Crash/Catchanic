@@ -5,7 +5,7 @@ const STATE_CHANGE_DELAY: float = 0.5
 
 var playerPosition : Vector3 = Vector3(0, 0, 0) # tracks the position of the player
 
-var overworld : GameMode
+var overworld : Overworld
 
 var currentGameState : ProjectEnums.GameState:
 	set(state):

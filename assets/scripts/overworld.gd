@@ -1,3 +1,4 @@
+class_name Overworld
 extends GameMode
 
 var effects: Dictionary
@@ -7,7 +8,7 @@ var effects: Dictionary
 @onready var fade_transition = $"Lights and Sound/Fade Transition"
 
 func _ready() -> void:
-	fade_transition.fade_out()
+	fade_transition.fade_in()
 	
 	mode_type = ProjectEnums.GameState.OVERWORLD
 	GlobalState.overworld = self
