@@ -2,8 +2,8 @@
 
 [resource]
 resource_name = "Camera Attributes"
-dof_blur_far_distance = 20.0
+dof_blur_far_distance = 15.0
 dof_blur_far_transition = -1.0
-dof_blur_near_distance = 5.0
+dof_blur_near_distance = 7.5
 dof_blur_near_transition = -1.0
 dof_blur_amount = 0.05
