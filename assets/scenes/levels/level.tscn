@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi7edqngpk0ra"]
+[gd_scene load_steps=7 format=3 uid="uid://bi7edqngpk0ra"]
 
 [ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_i3ffy"]
+[ext_resource type="PackedScene" uid="uid://cs1ajxueeitf8" path="res://assets/scenes/menu/fade_transition.tscn" id="3_d4n1a"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="3_lgo51"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v7y37"]
@@ -45,3 +46,5 @@ autoplay = true
 [node name="LightmapGI" type="LightmapGI" parent="Lights and Sound"]
 directional = true
 camera_attributes = SubResource("CameraAttributesPractical_r47e5")
+
+[node name="Fade Transition" parent="Lights and Sound" instance=ExtResource("3_d4n1a")]
