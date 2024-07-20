@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b75ub218wi27r"]
+[gd_scene load_steps=14 format=3 uid="uid://b75ub218wi27r"]
 
 [ext_resource type="Script" path="res://assets/scripts/puzzle/puzzle.gd" id="1_byxoa"]
 [ext_resource type="Texture2D" uid="uid://qxj0r7puf24m" path="res://assets/art/sprites/puzzle/prototype/puzzle bg.png" id="2_fa3yf"]
+[ext_resource type="AudioStream" uid="uid://cgmdy0p53atal" path="res://assets/audio/sounds/SFX_Success__Block.wav" id="3_wcgvn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jgsds"]
 
@@ -34,6 +35,9 @@ normal = Vector2(-1, 0)
 
 [node name="Puzzle" type="Node3D"]
 script = ExtResource("1_byxoa")
+
+[node name="PuzzleSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wcgvn")
 
 [node name="Center" type="CenterContainer" parent="."]
 anchors_preset = 8
