@@ -26,3 +26,9 @@ script = ExtResource("2_cbftl")
 
 [node name="DialogueNode" parent="Interactables/WaitingOnParts" index="0" instance=ExtResource("3_wbh5m")]
 dialogueRaw = "PLAYER: (Maybe I can help the fish over the dam in the future?)"
+
+[node name="WithAllParts" type="Node3D" parent="Interactables" index="3"]
+script = ExtResource("2_cbftl")
+
+[node name="DialogueNode" parent="Interactables/WithAllParts" index="0" instance=ExtResource("3_wbh5m")]
+dialogueRaw = "PLAYER: (I just need to get these boards to the beaver, and then the beaver can build it!)"
