@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6tbiw8ucl8t7"]
+[gd_scene load_steps=6 format=3 uid="uid://b6tbiw8ucl8t7"]
 
 [ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_wotc3"]
+[ext_resource type="Texture2D" uid="uid://ceigla7sr5kgw" path="res://assets/art/sprites/puzzle/dam puzzle/control pane puzzle bg.png" id="2_7sqs7"]
 [ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_bound_goal.tscn" id="2_ufowi"]
 [ext_resource type="PackedScene" uid="uid://d2rsy4que0kdv" path="res://assets/scenes/puzzle/parts/2x_1_plank.tscn" id="4_w05os"]
 [ext_resource type="Texture2D" uid="uid://bhu0leq814s7v" path="res://assets/art/sprites/puzzle/dam puzzle/Fish asset.PNG" id="5_uhogc"]
@@ -8,7 +9,12 @@
 [node name="Dam Puzzle" instance=ExtResource("1_wotc3")]
 
 [node name="Background" parent="Center" index="0"]
-position = Vector2(-8, -4)
+position = Vector2(-24, 12)
+
+[node name="Sprite2D" parent="Center/Background" index="0"]
+position = Vector2(64, -24)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_7sqs7")
 
 [node name="CollisionShape2D" parent="Center/Background/Right Upper Wall" index="0"]
 position = Vector2(8, 0)
@@ -17,10 +23,13 @@ position = Vector2(8, 0)
 position = Vector2(8, 0)
 
 [node name="Goals" parent="Center" index="1"]
-position = Vector2(-8, -4)
+position = Vector2(-24, 12)
 
 [node name="ExitGoal" parent="Center/Goals" index="0" instance=ExtResource("2_ufowi")]
 position = Vector2(328, -32)
+
+[node name="Parts" parent="Center" index="2"]
+position = Vector2(-16, 16)
 
 [node name="Fish" parent="Center/Parts" index="0" instance=ExtResource("4_w05os")]
 position = Vector2(-128, -36)
