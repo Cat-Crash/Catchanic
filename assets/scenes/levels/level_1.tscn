@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
 [ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_23da3"]
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
-[ext_resource type="PackedScene" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
+[ext_resource type="PackedScene" uid="uid://b7ftr6vs1j65u" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
 [ext_resource type="AudioStream" uid="uid://b6mt5kvhvvdyu" path="res://assets/audio/music/SFX_Ambience_Level1.mp3" id="6_0w0jd"]
-[ext_resource type="PackedScene" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
+[ext_resource type="PackedScene" uid="uid://1w8hektl6u0a" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ve34c"]
 plane = Plane(1, 0, 1, 0)
@@ -17,7 +17,6 @@ plane = Plane(1, 0, 1, 0)
 size = Vector3(6, 5, 1.095)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8jc4g"]
-load_path = "res://.godot/imported/AllSkyFree_Sky_ClearBlueSky_Equirect.png-fc6966f7a5dce1df41b7e67e40c9c489.s3tc.ctex"
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yx5xk"]
 panorama = SubResource("CompressedTexture2D_8jc4g")

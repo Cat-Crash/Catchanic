@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjqu5ojgobwk6"]
+[gd_scene load_steps=7 format=3 uid="uid://bjqu5ojgobwk6"]
 
 [ext_resource type="Script" path="res://assets/scripts/menu/main_menu.gd" id="1_3hbhb"]
+[ext_resource type="AudioStream" uid="uid://cfa51jlxuf3r2" path="res://assets/audio/sounds/SFX_Success_General.wav" id="2_cgqtp"]
 [ext_resource type="Texture2D" uid="uid://d4gskw33pv2c5" path="res://assets/art/sprites/title art v2.png" id="2_usywx"]
 [ext_resource type="PackedScene" uid="uid://cs1ajxueeitf8" path="res://assets/scenes/menu/fade_transition.tscn" id="3_0eyl6"]
 [ext_resource type="Theme" uid="uid://cbyvucdm7g3vm" path="res://assets/theme.tres" id="4_rwbu0"]
+[ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_bb47w"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3hbhb")
+start_sound = ExtResource("2_cgqtp")
 
 [node name="Title Art" type="TextureRect" parent="."]
 layout_mode = 1
@@ -62,6 +65,10 @@ grow_vertical = 0
 theme = ExtResource("4_rwbu0")
 theme_override_font_sizes/font_size = 48
 text = " Exit "
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bb47w")
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
