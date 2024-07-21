@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ivuyp1snyt2i"]
+[gd_scene load_steps=15 format=3 uid="uid://ivuyp1snyt2i"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_idlx4"]
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
 [ext_resource type="PackedScene" uid="uid://b7ftr6vs1j65u" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
 [ext_resource type="AudioStream" uid="uid://b6mt5kvhvvdyu" path="res://assets/audio/music/SFX_Ambience_Level1.mp3" id="6_0w0jd"]
+[ext_resource type="Texture2D" uid="uid://dwky14jbdwnb2" path="res://assets/settings/s_curve.tres" id="6_h3pry"]
 [ext_resource type="Texture2D" uid="uid://7jn2itatpypd" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_EpicGloriousPink_Equirect.png" id="6_lbk45"]
 [ext_resource type="PackedScene" uid="uid://1w8hektl6u0a" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
 
@@ -27,13 +28,12 @@ sky = SubResource("Sky_n8u2r")
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
-glow_enabled = true
-glow_normalized = true
 fog_enabled = true
 fog_light_color = Color(0.366667, 0, 0.5, 1)
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.0
 adjustment_enabled = true
+adjustment_color_correction = ExtResource("6_h3pry")
 
 [node name="Level" instance=ExtResource("1_idlx4")]
 
