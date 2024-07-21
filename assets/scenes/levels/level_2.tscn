@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://54op4aig8td6"]
+[gd_scene load_steps=13 format=3 uid="uid://54op4aig8td6"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_80w53"]
 [ext_resource type="AudioStream" uid="uid://7yy02op77n3l" path="res://assets/audio/music/Mx_Lvl2_Catchanic_76bpm.mp3" id="2_clwx0"]
 [ext_resource type="PackedScene" uid="uid://6ice7wedpgjv" path="res://assets/art/models/second level dam/dam_v2_untextured.glb" id="2_d5fpf"]
+[ext_resource type="PackedScene" uid="uid://3n7iajvggf6" path="res://assets/scenes/levels/light_stand.tscn" id="3_0lwsu"]
 [ext_resource type="AudioStream" uid="uid://cfqk4satk2jg7" path="res://assets/audio/music/SFX_Ambience_Level2.mp3" id="3_awg4v"]
 [ext_resource type="Texture2D" uid="uid://bybgwspv6qtdd" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_CartoonNightSky_Equirect.png" id="3_ispe0"]
 [ext_resource type="Texture2D" uid="uid://dwky14jbdwnb2" path="res://assets/settings/s_curve.tres" id="3_yqf0r"]
@@ -26,10 +27,13 @@ ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
+glow_enabled = true
+glow_intensity = 1.0
 fog_enabled = true
 fog_light_color = Color(0.270588, 0.403922, 0.623529, 1)
 fog_density = 0.02
 fog_sky_affect = 0.0
+adjustment_enabled = true
 adjustment_color_correction = ExtResource("3_yqf0r")
 
 [node name="Level" instance=ExtResource("1_80w53")]
@@ -48,11 +52,33 @@ shape = SubResource("BoxShape3D_4e1yt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1894, 2.02405, -6.24536)
 shape = SubResource("BoxShape3D_xykdo")
 
+[node name="Lights" type="Node3D" parent="Terrain" index="2"]
+
+[node name="Light Stand" parent="Terrain/Lights" index="0" instance=ExtResource("3_0lwsu")]
+transform = Transform3D(0.861549, 0, 0.507674, 0, 1, 0, -0.507674, 0, 0.861549, 0, -0.0508953, -4)
+
+[node name="Light Stand2" parent="Terrain/Lights" index="1" instance=ExtResource("3_0lwsu")]
+transform = Transform3D(0.934205, 0, -0.356738, 0, 1, 0, 0.356738, 0, 0.934205, -6.35751, -0.0508955, 0.117679)
+
+[node name="Light Stand3" parent="Terrain/Lights" index="2" instance=ExtResource("3_0lwsu")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 9.04261, -0.0508953, -4.58946)
+
+[node name="Light Stand4" parent="Terrain/Lights" index="3" instance=ExtResource("3_0lwsu")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 26, -0.0508953, -5)
+
+[node name="Light Stand5" parent="Terrain/Lights" index="4" instance=ExtResource("3_0lwsu")]
+transform = Transform3D(0.950716, 0, 0.310063, 0, 1, 0, -0.310063, 0, 0.950716, 33, 0.0275446, -1)
+
+[node name="Light Stand6" parent="Terrain/Lights" index="5" instance=ExtResource("3_0lwsu")]
+transform = Transform3D(0.903046, 0.00278973, -0.429534, -0.00308923, 0.999995, -1.60023e-11, 0.429532, 0.00132693, 0.903051, 38, 0.240649, 3.15899)
+
 [node name="WorldEnvironment" parent="Lights and Sound" index="0"]
 environment = SubResource("Environment_ippq2")
 
 [node name="Sun" parent="Lights and Sound" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984807, 0, -0.984807, 0.173648, 3.59333, 12.4926, -0.0460261)
 light_color = Color(0.95, 0.965833, 1, 1)
+light_energy = 0.5
 
 [node name="BGMPlayer" parent="Lights and Sound" index="2"]
 stream = ExtResource("2_clwx0")

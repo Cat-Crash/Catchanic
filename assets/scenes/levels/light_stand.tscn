@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://3n7iajvggf6"]
+
+[ext_resource type="Texture2D" uid="uid://cb7el7qvyvgjw" path="res://assets/art/sprites/lights/lights on.png" id="1_0riyf"]
+
+[node name="Light Stand" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+layers = 2
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_0riyf")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.989656, 0.143458, 0, -0.143458, -0.989656, 0, 0.874185, 0.0393131)
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 80.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.958108, 0.091974)
+light_bake_mode = 1
+light_cull_mask = 4294967294
+shadow_enabled = true
+omni_range = 1.0

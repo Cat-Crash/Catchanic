@@ -57,6 +57,7 @@ fov = 60.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+layers = 7
 gi_mode = 2
 billboard = 1
 shaded = true
