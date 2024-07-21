@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsa32tl1vasm3"]
+
+[ext_resource type="Script" path="res://assets/scripts/pickups/plank.gd" id="1_fm212"]
+[ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueSoundPlayer.gd" id="1_ooflx"]
+[ext_resource type="Texture2D" uid="uid://dntaviqd1c3jh" path="res://assets/art/sprites/textbox/dialogue box.png" id="2_di3kt"]
+[ext_resource type="AudioStream" uid="uid://cfd0tme7a5lkn" path="res://assets/audio/sounds/SFX_Pickup_General.wav" id="3_o153g"]
+[ext_resource type="Texture2D" uid="uid://dsydjqj3kcbm3" path="res://assets/art/sprites/puzzle/dam puzzle/Plank asset.PNG" id="3_weqyh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dclcr"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yjp2e"]
+radius = 3.0
+
+[node name="Plank" type="StaticBody3D"]
+script = ExtResource("1_fm212")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+texture = ExtResource("3_weqyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dclcr")
+
+[node name="DetectionZone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionZone"]
+shape = SubResource("SphereShape3D_yjp2e")
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o153g")
+script = ExtResource("1_ooflx")
+
+[node name="Popup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 65.0
+offset_bottom = 45.0
+
+[node name="TextureRect" type="TextureRect" parent="Popup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.5
+offset_right = 31.5
+offset_bottom = 51.0
+grow_horizontal = 2
+texture = ExtResource("2_di3kt")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_right = 23.0
+offset_bottom = 45.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+text = "Press
+Space"
+scroll_active = false
+shortcut_keys_enabled = false
