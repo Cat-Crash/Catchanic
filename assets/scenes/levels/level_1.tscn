@@ -32,7 +32,6 @@ fog_enabled = true
 fog_light_color = Color(0.366667, 0, 0.5, 1)
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.0
-adjustment_enabled = true
 adjustment_color_correction = ExtResource("6_h3pry")
 
 [node name="Level" instance=ExtResource("1_idlx4")]
