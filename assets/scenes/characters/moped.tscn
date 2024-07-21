@@ -39,7 +39,7 @@ effects = {
 
 [node name="DialogueNode" parent="Interactables/Puzzle1" index="0" instance=ExtResource("4_jvvon")]
 speakerName = "Moped"
-dialogueRaw = "Player: (The engine is broken. I can upgrade it, but I need to clear out the broken parts first.)"
+dialogueRaw = "Player: (The engine is broken. I can upgrade it, but I need to clear out the broken parts first.)/Motor_Engine_StartFail"
 
 [node name="Moped Puzzle 1" parent="Interactables/Puzzle1" index="1" instance=ExtResource("4_367um")]
 
@@ -52,7 +52,7 @@ effects = {
 
 [node name="DialogueNode" parent="Interactables/Puzzle2A" index="0" instance=ExtResource("4_jvvon")]
 speakerName = "Moped"
-dialogueRaw = "Player: (Just need to get these parts all set up!)"
+dialogueRaw = "Player: (Just need to get these parts all set up!)/Motor_Engine_StartFail_2"
 
 [node name="Moped Puzzle 2" parent="Interactables/Puzzle2A" index="1" instance=ExtResource("6_kt134")]
 
