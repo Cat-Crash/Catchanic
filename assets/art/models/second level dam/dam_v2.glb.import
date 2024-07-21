@@ -1,0 +1,149 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c7nm2pomne1tb"
+path="res://.godot/imported/dam_v2.glb-6a9a6320d6285bdc519b68b3fb784235.scn"
+
+[deps]
+
+source_file="res://assets/art/models/second level dam/dam_v2.glb"
+dest_files=["res://.godot/imported/dam_v2.glb-6a9a6320d6285bdc519b68b3fb784235.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Bridge": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Control_Panel": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Control_Room": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Fence": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_001": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_002": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_003": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_004": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_005": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_006": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_007": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_008": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_009": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_010": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Forest_011": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Level": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Plane": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Plane_003": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Plane_004": {
+"generate/occluder": 1,
+"generate/physics": true
+},
+"PATH:Plane_005": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Plane_007": {
+"generate/occluder": 1,
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Scaffold": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

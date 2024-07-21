@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_80w53"]
 [ext_resource type="AudioStream" uid="uid://7yy02op77n3l" path="res://assets/audio/music/Mx_Lvl2_Catchanic_76bpm.mp3" id="2_clwx0"]
-[ext_resource type="PackedScene" uid="uid://6ice7wedpgjv" path="res://assets/art/models/second level dam/dam_v2_untextured.glb" id="2_d5fpf"]
+[ext_resource type="PackedScene" uid="uid://c7nm2pomne1tb" path="res://assets/art/models/second level dam/dam_v2.glb" id="2_d5fpf"]
 [ext_resource type="PackedScene" uid="uid://3n7iajvggf6" path="res://assets/scenes/levels/light_stand.tscn" id="3_0lwsu"]
 [ext_resource type="AudioStream" uid="uid://cfqk4satk2jg7" path="res://assets/audio/music/SFX_Ambience_Level2.mp3" id="3_awg4v"]
 [ext_resource type="Texture2D" uid="uid://bybgwspv6qtdd" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_CartoonNightSky_Equirect.png" id="3_ispe0"]
@@ -31,7 +31,6 @@ glow_enabled = true
 glow_intensity = 1.0
 fog_enabled = true
 fog_light_color = Color(0.270588, 0.403922, 0.623529, 1)
-fog_density = 0.02
 fog_sky_affect = 0.0
 adjustment_enabled = true
 adjustment_color_correction = ExtResource("3_yqf0r")
@@ -76,7 +75,7 @@ transform = Transform3D(0.903046, 0.00278973, -0.429534, -0.00308923, 0.999995, 
 environment = SubResource("Environment_ippq2")
 
 [node name="Sun" parent="Lights and Sound" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984807, 0, -0.984807, 0.173648, 3.59333, 12.4926, -0.0460261)
+transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 3.59333, 12.4926, -0.0460261)
 light_color = Color(0.95, 0.965833, 1, 1)
 light_energy = 0.5
 
