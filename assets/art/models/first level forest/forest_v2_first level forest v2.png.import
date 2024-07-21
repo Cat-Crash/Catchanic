@@ -2,22 +2,25 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pux4tcsmtyl"
-path.bptc="res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"
+uid="uid://cjmujb4dnb4a2"
+path.s3tc="res://.godot/imported/forest_v2_first level forest v2.png-fc01088d8a5edf7d424e1872cd9a4cf0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "2142520ac58ae94232d9bb70e035f15f"
+}
 
 [deps]
 
-source_file="res://assets/art/sprites/vehicles/moped.png"
-dest_files=["res://.godot/imported/moped.png-5f932d3ffa0a95ad6ed5dc7cd20fafb9.bptc.ctex"]
+source_file="res://assets/art/models/first level forest/forest_v2_first level forest v2.png"
+dest_files=["res://.godot/imported/forest_v2_first level forest v2.png-fc01088d8a5edf7d424e1872cd9a4cf0.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

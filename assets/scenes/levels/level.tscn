@@ -1,17 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi7edqngpk0ra"]
+[gd_scene load_steps=8 format=3 uid="uid://bi7edqngpk0ra"]
 
 [ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_i3ffy"]
 [ext_resource type="PackedScene" uid="uid://cs1ajxueeitf8" path="res://assets/scenes/menu/fade_transition.tscn" id="3_d4n1a"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="3_lgo51"]
+[ext_resource type="CameraAttributesPractical" uid="uid://53rwh5iboxan" path="res://assets/settings/camera_attributes_practical.tres" id="4_oe38c"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v7y37"]
 
-[sub_resource type="Environment" id="Environment_r2l7l"]
+[sub_resource type="Sky" id="Sky_hdw5h"]
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_r47e5"]
-auto_exposure_enabled = true
-dof_blur_far_enabled = true
-dof_blur_near_enabled = true
+[sub_resource type="Environment" id="Environment_cqhsn"]
+background_mode = 2
+sky = SubResource("Sky_hdw5h")
+tonemap_mode = 2
+tonemap_exposure = 0.8
+fog_light_color = Color(0.7, 0.95, 1, 1)
+fog_density = 0.001
+fog_aerial_perspective = 0.5
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_i3ffy")
@@ -32,10 +37,14 @@ shape = SubResource("WorldBoundaryShape3D_v7y37")
 [node name="Lights and Sound" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lights and Sound"]
-environment = SubResource("Environment_r2l7l")
+environment = SubResource("Environment_cqhsn")
+camera_attributes = ExtResource("4_oe38c")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights and Sound"]
+[node name="Sun" type="DirectionalLight3D" parent="Lights and Sound"]
 transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 3.59333, 12.4926, -0.0460261)
+light_bake_mode = 1
+shadow_enabled = true
+directional_shadow_blend_splits = true
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="Lights and Sound"]
 autoplay = true
@@ -45,6 +54,6 @@ autoplay = true
 
 [node name="LightmapGI" type="LightmapGI" parent="Lights and Sound"]
 directional = true
-camera_attributes = SubResource("CameraAttributesPractical_r47e5")
+camera_attributes = ExtResource("4_oe38c")
 
 [node name="Fade Transition" parent="Lights and Sound" instance=ExtResource("3_d4n1a")]

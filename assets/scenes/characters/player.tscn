@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2j74ifvul0pg"]
+[gd_scene load_steps=11 format=3 uid="uid://c2j74ifvul0pg"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_1daq2"]
 [ext_resource type="Texture2D" uid="uid://c2tuomjummv72" path="res://assets/art/sprites/npcs/cat/Cat_closedmouth.PNG" id="2_bfk7w"]
@@ -8,19 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://5l5okpixslxf" path="res://assets/art/sprites/npcs/cat/Walk4.PNG" id="6_q25gn"]
 [ext_resource type="Texture2D" uid="uid://dh7n4ike170b6" path="res://assets/art/sprites/npcs/cat/Walk5.PNG" id="7_80qmw"]
 [ext_resource type="Texture2D" uid="uid://kk3320yct8it" path="res://assets/art/sprites/npcs/cat/Walk6.PNG" id="8_1n3cr"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n5bcf"]
-
-[sub_resource type="Sky" id="Sky_2spcs"]
-sky_material = SubResource("ProceduralSkyMaterial_n5bcf")
-
-[sub_resource type="Environment" id="Environment_ijesu"]
-background_mode = 2
-sky = SubResource("Sky_2spcs")
-ambient_light_color = Color(0.756863, 0.764706, 0.792157, 1)
-ssao_enabled = true
-ssil_enabled = true
-fog_enabled = true
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7rpr"]
 animations = [{
@@ -64,13 +51,16 @@ collision_layer = 3
 script = ExtResource("1_1daq2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 3, 4.5)
-environment = SubResource("Environment_ijesu")
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 3, 7)
 current = true
+fov = 60.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+gi_mode = 2
 billboard = 1
+shaded = true
+double_sided = false
 sprite_frames = SubResource("SpriteFrames_y7rpr")
 animation = &"idle"
 autoplay = "idle"
