@@ -37,11 +37,7 @@ effects = {
 "Moped": 2
 }
 
-[node name="DialogueNode" parent="Interactables/Puzzle1" index="0" instance=ExtResource("4_jvvon")]
-speakerName = "Moped"
-dialogueRaw = "Player: (The engine is broken. I can upgrade it, but I need to clear out the broken parts first.)"
-
-[node name="Moped Puzzle 1" parent="Interactables/Puzzle1" index="1" instance=ExtResource("4_367um")]
+[node name="Moped Puzzle 1" parent="Interactables/Puzzle1" index="0" instance=ExtResource("4_367um")]
 
 [node name="Puzzle2A" type="Node3D" parent="Interactables" index="2"]
 script = ExtResource("3_6efun")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtob87t53ltfb"]
+[gd_scene load_steps=9 format=3 uid="uid://bmk7xu3xv72le"]
 
 [ext_resource type="Texture2D" uid="uid://bhtm63ajtk6oa" path="res://assets/art/sprites/npcs/crow/Crow_closed mouth.PNG" id="1_4qtg2"]
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_djlvv"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://54op4aig8td6" path="res://assets/scenes/levels/level_2.tscn" id="6_vlavd"]
 [ext_resource type="Script" path="res://assets/scripts/fadeout_transition.gd" id="7_nbrdi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_67wc6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -22,7 +22,7 @@ animations = [{
 [node name="Crow" instance=ExtResource("1_djlvv")]
 
 [node name="AnimatedSprite3D" parent="." index="0"]
-sprite_frames = SubResource("SpriteFrames_syuic")
+sprite_frames = SubResource("SpriteFrames_67wc6")
 
 [node name="GreetingConvo" type="Node3D" parent="Interactables" index="0"]
 script = ExtResource("4_a08xv")

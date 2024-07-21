@@ -20,7 +20,8 @@ func _ready() -> void:
 	popup.visible = false
 			
 func _process(_delta: float) -> void:
-	popup.position = get_viewport().get_camera_3d().unproject_position(global_transform.origin)
+	if player_inside:
+		popup.position = get_viewport().get_camera_3d().unproject_position(global_transform.origin)
 		# makes sure the popup is in the right place over the NPC relative to the camera
 
 func _input(event: InputEvent) -> void:

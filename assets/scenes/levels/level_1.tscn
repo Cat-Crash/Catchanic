@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cbm0mc2ir60xo" path="res://assets/audio/sounds/SFX_Moped_Working.wav" id="3_q64c7"]
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
 [ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_23da3"]
-[ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
+[ext_resource type="PackedScene" uid="uid://bmk7xu3xv72le" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
 [ext_resource type="PackedScene" uid="uid://b7ftr6vs1j65u" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
 [ext_resource type="AudioStream" uid="uid://b6mt5kvhvvdyu" path="res://assets/audio/music/SFX_Ambience_Level1.mp3" id="6_0w0jd"]
 [ext_resource type="PackedScene" uid="uid://1w8hektl6u0a" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
