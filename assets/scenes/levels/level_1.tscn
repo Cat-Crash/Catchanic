@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
 [ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_23da3"]
 [ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
-[ext_resource type="Texture2D" uid="uid://ccjac5x0y1nrs" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_ClearBlueSky_Equirect.png" id="5_ewo7s"]
 [ext_resource type="PackedScene" uid="uid://b7ftr6vs1j65u" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
 [ext_resource type="AudioStream" uid="uid://b6mt5kvhvvdyu" path="res://assets/audio/music/SFX_Ambience_Level1.mp3" id="6_0w0jd"]
+[ext_resource type="Texture2D" uid="uid://7jn2itatpypd" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_EpicGloriousPink_Equirect.png" id="6_lbk45"]
 [ext_resource type="PackedScene" uid="uid://1w8hektl6u0a" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ve34c"]
@@ -16,7 +16,7 @@ plane = Plane(1, 0, 1, 0)
 size = Vector3(6, 5, 1.095)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yx5xk"]
-panorama = ExtResource("5_ewo7s")
+panorama = ExtResource("6_lbk45")
 
 [sub_resource type="Sky" id="Sky_n8u2r"]
 sky_material = SubResource("PanoramaSkyMaterial_yx5xk")
@@ -24,14 +24,14 @@ sky_material = SubResource("PanoramaSkyMaterial_yx5xk")
 [sub_resource type="Environment" id="Environment_gou83"]
 background_mode = 2
 sky = SubResource("Sky_n8u2r")
-ambient_light_source = 2
-ambient_light_color = Color(1, 0.9875, 0.95, 1)
 ssao_enabled = true
 ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
 glow_normalized = true
-fog_light_color = Color(0.619608, 0.815686, 0.956863, 1)
-fog_density = 0.35
-fog_aerial_perspective = 1.0
+fog_enabled = true
+fog_light_color = Color(0.366667, 0, 0.5, 1)
+fog_sky_affect = 0.0
 volumetric_fog_density = 0.0
 adjustment_enabled = true
 

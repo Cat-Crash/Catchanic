@@ -1,17 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi7edqngpk0ra"]
+[gd_scene load_steps=7 format=3 uid="uid://bi7edqngpk0ra"]
 
 [ext_resource type="Script" path="res://assets/scripts/overworld.gd" id="1_i3ffy"]
-[ext_resource type="Texture2D" uid="uid://ccjac5x0y1nrs" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_ClearBlueSky_Equirect.png" id="3_0wl16"]
 [ext_resource type="PackedScene" uid="uid://c2j74ifvul0pg" path="res://assets/scenes/characters/player.tscn" id="3_lgo51"]
 [ext_resource type="CameraAttributesPractical" uid="uid://53rwh5iboxan" path="res://assets/settings/camera_attributes_practical.tres" id="4_oe38c"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v7y37"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_x3g7o"]
-panorama = ExtResource("3_0wl16")
-
 [sub_resource type="Sky" id="Sky_hdw5h"]
-sky_material = SubResource("PanoramaSkyMaterial_x3g7o")
 
 [sub_resource type="Environment" id="Environment_cqhsn"]
 background_mode = 2
@@ -45,7 +40,7 @@ environment = SubResource("Environment_cqhsn")
 camera_attributes = ExtResource("4_oe38c")
 
 [node name="Sun" type="DirectionalLight3D" parent="Lights and Sound"]
-transform = Transform3D(0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 3.59333, 12.4926, -0.0460261)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 3.59333, 12.4926, -0.0460261)
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_blend_splits = true
