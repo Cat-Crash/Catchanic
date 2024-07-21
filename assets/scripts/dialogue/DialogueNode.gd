@@ -28,7 +28,7 @@ var endFunction : String = '' # The name of the function to be called when the
 @onready var dialogueText : RichTextLabel = $DialogueArea/DialogueText # The text displaying the
 	# current dialogue
 	
-var dialogueOffset : Vector2 = Vector2(0, 0) # the offset of the box to make it over the speaker's
+var dialogueOffset : Vector2 = Vector2(-150, -240) # the offset of the box to make it over the speaker's
 	# head instead of the center of them
 
 signal playDialogueSound(sound : AudioStream) # a signal emitted when it needs to play a dialogue
