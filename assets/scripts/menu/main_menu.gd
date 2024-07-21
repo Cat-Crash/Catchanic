@@ -1,7 +1,7 @@
 extends Node
 
 @onready var fade_transition : FadeTransition = $"Fade Transition"
-@onready var bgm = $BGM
+@onready var bgm : AudioStreamPlayer2D = $BGM
 
 @export var start_level : PackedScene
 @export var start_sound : AudioStream

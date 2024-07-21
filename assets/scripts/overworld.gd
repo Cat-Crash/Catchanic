@@ -3,8 +3,8 @@ extends GameMode
 
 @onready var npc_parent: Node3D = $NPCs
 @onready var player : Player = $Player
-@onready var fade_transition = $"Lights and Sound/Fade Transition"
-@onready var bgm_player = $"Lights and Sound/BGMPlayer"
+@onready var fade_transition : FadeTransition = $"Lights and Sound/Fade Transition"
+@onready var bgm_player : AudioStreamPlayer = $"Lights and Sound/BGMPlayer"
 
 @export var next_scene : PackedScene
 @export var exit_sound : AudioStream
