@@ -86,7 +86,7 @@ Player: *moped starting up sound*
 Crow: What'd you do to it? It doesn't smell anymore!
 Crow: I’ll get the human."
 
-[node name="Fadeout" parent="Interactables/PostPuzzle2Convo" index="1" instance=ExtResource("4_um8fo")]
+[node name="FadeOut" type="Node3D" parent="Interactables/PostPuzzle2Convo" index="1"]
 script = ExtResource("7_nbrdi")
 
 [node name="Cutscene2" parent="Interactables/PostPuzzle2Convo" index="2" instance=ExtResource("4_um8fo")]
@@ -109,7 +109,7 @@ Player: *moped starting up sound*
 Crow: What'd you do to it? It doesn't smell anymore!
 Crow: I’ll get the human."
 
-[node name="Fadeout" parent="Interactables/PostBothPuzzlesConvo" index="1" instance=ExtResource("4_um8fo")]
+[node name="FadeOut" type="Node3D" parent="Interactables/PostBothPuzzlesConvo" index="1"]
 script = ExtResource("7_nbrdi")
 
 [node name="Cutscene2" parent="Interactables/PostBothPuzzlesConvo" index="2" instance=ExtResource("4_um8fo")]

@@ -39,8 +39,6 @@ func _ready() -> void:
 	
 	dialoguePath = DialogueParser.stringToDialogue(dialogueRaw) # converts the raw dialogue string
 		# inputted into a stored conversation
-		
-	set_active(false)
 
 func set_active(active: bool) -> void:
 	if active: beginDialoguePath()
