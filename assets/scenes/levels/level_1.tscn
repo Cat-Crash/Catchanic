@@ -50,6 +50,7 @@ transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, -6.24169, 0.46607
 
 [node name="Moped" parent="NPCs" index="1" instance=ExtResource("4_ir5gq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0611, 0.456441, -4.39156)
+active_interactable = 1
 
 [node name="Level 1 Terrain" parent="Terrain" index="0" instance=ExtResource("8_862sc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.182121, -3)

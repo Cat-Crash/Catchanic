@@ -39,11 +39,10 @@ func _ready() -> void:
 	
 	dialoguePath = DialogueParser.stringToDialogue(dialogueRaw) # converts the raw dialogue string
 		# inputted into a stored conversation
-	
-	dialogueArea.visible = false # hides the dialogue box until we talk to someone
 
 func set_active(active: bool) -> void:
 	if active: beginDialoguePath()
+	dialogueArea.visible = active # hides the dialogue box until we talk to someone
 	super.set_active(active)
 
 func beginDialoguePath() -> void:
