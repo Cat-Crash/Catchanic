@@ -1,8 +1,8 @@
 [gd_resource type="CurveTexture" load_steps=2 format=3 uid="uid://dwky14jbdwnb2"]
 
 [sub_resource type="Curve" id="Curve_8wi4j"]
-_data = [Vector2(0, 0), 0.0, 0.849025, 0, 0, Vector2(1, 1), 0.775596, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.838278, 0, 0, Vector2(0.25, 0.2), 1.23067, 1.23067, 0, 0, Vector2(0.75, 0.8), 1.1878, 1.1878, 0, 0, Vector2(1, 1), 0.775596, 0.0, 0, 0]
+point_count = 4
 metadata/_snap_enabled = true
 metadata/_snap_count = 20
 
