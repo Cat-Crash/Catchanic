@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bybgwspv6qtdd"
-path.s3tc="res://.godot/imported/AllSkyFree_Sky_CartoonNightSky_Equirect.png-4a57d9e0ea1673a302ea9253aa43729f.s3tc.ctex"
+path.s3tc="res://.godot/imported/AllSkyFree_Sky_CartoonNightSky_Equirect.png-9a9e67036959f1e08556d797519cd061.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/AllSkyFree/AllSkyFree_Sky_CartoonNightSky_Equirect.png"
-dest_files=["res://.godot/imported/AllSkyFree_Sky_CartoonNightSky_Equirect.png-4a57d9e0ea1673a302ea9253aa43729f.s3tc.ctex"]
+source_file="res://assets/art/sprites/skyboxes/AllSkyFree_Sky_CartoonNightSky_Equirect.png"
+dest_files=["res://.godot/imported/AllSkyFree_Sky_CartoonNightSky_Equirect.png-9a9e67036959f1e08556d797519cd061.s3tc.ctex"]
 
 [params]
 

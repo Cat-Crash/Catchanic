@@ -19,6 +19,7 @@ animations = [{
 [node name="Beaver" instance=ExtResource("1_hbdx4")]
 
 [node name="AnimatedSprite3D" parent="." index="0"]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_feg2c")
 
 [node name="FirstMeeting" type="Node3D" parent="Interactables" index="0"]

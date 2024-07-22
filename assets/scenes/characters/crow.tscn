@@ -1,13 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtob87t53ltfb"]
+[gd_scene load_steps=9 format=3 uid="uid://bmk7xu3xv72le"]
 
 [ext_resource type="Texture2D" uid="uid://bhtm63ajtk6oa" path="res://assets/art/sprites/npcs/crow/Crow_closed mouth.PNG" id="1_4qtg2"]
 [ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_djlvv"]
 [ext_resource type="Script" path="res://assets/scripts/npc/interactable.gd" id="4_a08xv"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_um8fo"]
 [ext_resource type="Script" path="res://assets/scripts/npc/level_change.gd" id="5_kg7qb"]
-[ext_resource type="PackedScene" uid="uid://bjqu5ojgobwk6" path="res://assets/scenes/menu/Menu.tscn" id="6_vlavd"]
+[ext_resource type="PackedScene" uid="uid://54op4aig8td6" path="res://assets/scenes/levels/level_2.tscn" id="6_vlavd"]
+[ext_resource type="Script" path="res://assets/scripts/fadeout_transition.gd" id="7_nbrdi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_syuic"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_67wc6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -21,7 +22,7 @@ animations = [{
 [node name="Crow" instance=ExtResource("1_djlvv")]
 
 [node name="AnimatedSprite3D" parent="." index="0"]
-sprite_frames = SubResource("SpriteFrames_syuic")
+sprite_frames = SubResource("SpriteFrames_67wc6")
 
 [node name="GreetingConvo" type="Node3D" parent="Interactables" index="0"]
 script = ExtResource("4_a08xv")
@@ -33,16 +34,16 @@ effects = {
 [node name="DialogueNode0" parent="Interactables/GreetingConvo" index="0" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
 dialogueRaw = "Crow: A little far from home, aren't you?/Crow_Loud
-PLAYER: *Affirming meow*
+PLAYER: *Affirming meow*/Cat_Meow
 Crow: Well, if that truck you were in is headed for the city, then the human with the moped was headed that way.
 Crow: Or rather, it was headed that way. This racket is interrupting my business./Crow_Chill
-PLAYER: *Questioning meow*
+PLAYER: *Questioning meow*/Cat_Sad
 Crow: I'm looking for a shiny wedding ring. The human who lost it was just so distraught, you see. Won't even drive their moped out of here.
 Crow: If you find it, return it to me, and I can deliver it to the human.
 Crow: I'd make it worth your time, of course. Perhaps a shiny battery will persuade you?/Crow_Chill
-PLAYER: *Understanding meow*
+PLAYER: *Understanding meow*/Cat_Yip
 Crow: Excellent, a fellow opportunist, I see./Crow_Loud
-PLAYER: *Cat growl*
+PLAYER: *Purr*/Cat_Purr
 Crow: Pleasure doing business with you, my feline friend./Crow_Loud"
 
 [node name="NoPuzzlesDone" type="Node3D" parent="Interactables" index="1"]
@@ -61,9 +62,9 @@ effects = {
 
 [node name="DialogueNode1" parent="Interactables/PostPuzzle1Convo" index="0" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
-dialogueRaw = "Player: *Greeting meow*
+dialogueRaw = "Player: *Greeting meow*/Cat_Yip
 Crow: Ah, there's that ring. I'm sure the human will be delighted to get this back.
-Crow: If only their moped was working. I suppose they will be stuck here until it is."
+Crow: If only their moped was working. I suppose they will be stuck here until it is./Crow_Chill"
 
 [node name="NoPuzzle2Done" type="Node3D" parent="Interactables" index="3"]
 script = ExtResource("4_a08xv")
@@ -77,23 +78,22 @@ script = ExtResource("4_a08xv")
 
 [node name="Cutscene1A" parent="Interactables/PostPuzzle2Convo" index="0" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
-dialogueRaw = "Player: *Greeting meow*
+dialogueRaw = "Player: *Greeting meow*/Cat_Yip
 Crow: Ah, there's that ring. I'm sure the human will be delighted to get this back.
-Crow: If only their moped was working. I suppose they will be stuck here until it is.
+Crow: If only their moped was working. I suppose they will be stuck here until it is./Crow_Chill
 Crow: The moped is actually looking a lot better now.
 Player: *moped starting up sound*
 Crow: What'd you do to it? It doesn't smell anymore!
 Crow: I’ll get the human."
 
-[node name="FADEOUT" parent="Interactables/PostPuzzle2Convo" index="1" instance=ExtResource("4_um8fo")]
-speakerName = "Unfinished"
-dialogueRaw = "Test: REPLACE THIS WITH FADE OUT"
+[node name="FadeOut" type="Node3D" parent="Interactables/PostPuzzle2Convo" index="1"]
+script = ExtResource("7_nbrdi")
 
 [node name="Cutscene2" parent="Interactables/PostPuzzle2Convo" index="2" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
-dialogueRaw = "Crow: Hitching a ride outta here?
-Player: *Enthusiastic meow*
-Crow: Nice working with you, meowchanic!"
+dialogueRaw = "Crow: Hitching a ride outta here?/Crow_Chill
+Player: *Enthusiastic meow*/Cat_Yip
+Crow: Nice working with you, meowchanic!/Crow_Loud"
 
 [node name="LevelChange" type="Node3D" parent="Interactables/PostPuzzle2Convo" index="3"]
 script = ExtResource("5_kg7qb")
@@ -104,20 +104,19 @@ script = ExtResource("4_a08xv")
 
 [node name="Cutscene1B" parent="Interactables/PostBothPuzzlesConvo" index="0" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
-dialogueRaw = "Crow: The moped is actually looking a lot better now.
-Player: *moped starting up sound*
-Crow: What'd you do to it? It doesn't smell anymore!
+dialogueRaw = "Crow: The moped is actually looking a lot better now./Crow_Chill
+Player: *moped starting up sound*/Moped_Working
+Crow: What'd you do to it? It doesn't smell anymore!/Crow_Loud
 Crow: I’ll get the human."
 
-[node name="FADEOUT" parent="Interactables/PostBothPuzzlesConvo" index="1" instance=ExtResource("4_um8fo")]
-speakerName = "Unfinished"
-dialogueRaw = "Test: REPLACE THIS WITH FADE OUT"
+[node name="FadeOut" type="Node3D" parent="Interactables/PostBothPuzzlesConvo" index="1"]
+script = ExtResource("7_nbrdi")
 
 [node name="Cutscene2" parent="Interactables/PostBothPuzzlesConvo" index="2" instance=ExtResource("4_um8fo")]
 speakerName = "Crow"
-dialogueRaw = "Crow: Hitching a ride outta here?
-Player: *Enthusiastic meow*
-Crow: Nice working with you, meowchanic!"
+dialogueRaw = "Crow: Hitching a ride outta here?/Crow_Chill
+Player: *Enthusiastic meow*/Cat_Yip
+Crow: Nice working with you, meowchanic!/Crow_Loud"
 
 [node name="LevelChange" type="Node3D" parent="Interactables/PostBothPuzzlesConvo" index="3"]
 script = ExtResource("5_kg7qb")

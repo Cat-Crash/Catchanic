@@ -22,13 +22,13 @@ var endFunction : String = '' # The name of the function to be called when the
 	# dialoguePath ends, if empty runs no function
 
 # Dialogue UI Elements
-@onready var dialogueArea : Control = $DialogueArea # The GUI control for the dialogue box
+@onready var dialogue_area : Control = $DialogueArea
 @onready var nameTag : RichTextLabel = $DialogueArea/NameTag # The text displaying the speaker's
 	# nametag
 @onready var dialogueText : RichTextLabel = $DialogueArea/DialogueText # The text displaying the
 	# current dialogue
 	
-var dialogueOffset : Vector2 = Vector2(0, 0) # the offset of the box to make it over the speaker's
+var dialogueOffset : Vector2 = Vector2(-150, -240) # the offset of the box to make it over the speaker's
 	# head instead of the center of them
 
 signal playDialogueSound(sound : AudioStream) # a signal emitted when it needs to play a dialogue
@@ -39,15 +39,13 @@ func _ready() -> void:
 	
 	dialoguePath = DialogueParser.stringToDialogue(dialogueRaw) # converts the raw dialogue string
 		# inputted into a stored conversation
-	
-	dialogueArea.visible = false # hides the dialogue box until we talk to someone
 
 func set_active(active: bool) -> void:
 	if active: beginDialoguePath()
+	dialogue_area.visible = active
 	super.set_active(active)
 
 func beginDialoguePath() -> void:
-	dialogueArea.visible = true # shows the dialogue box
 	pathPosition = 0
 	updateDialogueDisplay(dialoguePath[pathPosition])
 
@@ -61,8 +59,6 @@ func nextDialogueState() -> void: # Moves to the next line of dialogue in the di
 	if pathPosition < dialoguePath.size(): # if not at the end go to the next DIalogueState in the path
 		updateDialogueDisplay(dialoguePath[pathPosition])
 	else: # if at the end of the dialoguePath, hide the dialogue window and call the endFunction
-		dialogueArea.visible = false # hides the dialogue box
-		
 		if endFunction: # if the string isn't empty
 			call(endFunction) # calls the arbitrary end function, if it has one
 		
@@ -72,19 +68,19 @@ func updateDialogueDisplay(newState : DialogueState) -> void:
 	if newState.speakingParty == DialogueState.SpeakingParty.SPEAKER: # if speaker speaking, shows that
 		nameTag.text = speakerName
 		speakerPos = get_viewport().get_camera_3d().unproject_position(global_transform.origin) # gets its position
-		dialogueArea.position = speakerPos
+		dialogue_area.position = speakerPos
 	elif newState.speakingParty == DialogueState.SpeakingParty.PLAYER: # if player speaking, shows that
 		nameTag.text = playerName
 		playerPos = get_viewport().get_camera_3d().unproject_position(GlobalState.playerPosition)
 			# sets the position of the player that the game manager has as the playerPos
-		dialogueArea.position = playerPos
+		dialogue_area.position = playerPos
 	else: # if neither is speaking something has gone wrong, pushes an error
 		push_error('Undefined speaker for text, make sure that the speakingParty is set correctly in your DialogueState')
-	dialogueArea.position += dialogueOffset # offsets it by the vector set for placing it above the head
-	if dialogueArea.position.x < 0: # trims the position to the right of the left edge of the screen
-			dialogueArea.position.x = 0
-	if dialogueArea.position.y < 0: # trims the position below the top of the screen
-		dialogueArea.position.y = 0 
+	dialogue_area.position += dialogueOffset # offsets it by the vector set for placing it above the head
+	if dialogue_area.position.x < 0: # trims the position to the right of the left edge of the screen
+			dialogue_area.position.x = 0
+	if dialogue_area.position.y < 0: # trims the position below the top of the screen
+		dialogue_area.position.y = 0 
 	dialogueText.text = newState.speechText # updates the displayed text to that of the newState
 	if newState.sound: # if the newState has an AudioStream attached
 		playDialogueSound.emit(newState.sound)
