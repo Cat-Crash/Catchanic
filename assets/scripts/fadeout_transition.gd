@@ -11,3 +11,4 @@ func set_active(active: bool) -> void:
 		fader.fade_out()
 		await fader.done
 		fader.fade_in()
+		mode_done.emit()
