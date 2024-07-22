@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://debfcashpx8jb"]
+[gd_scene load_steps=6 format=3 uid="uid://debfcashpx8jb"]
 
-[ext_resource type="Script" path="res://assets/scripts/menu/main_menu.gd" id="1_0csds"]
-[ext_resource type="PackedScene" uid="uid://ivuyp1snyt2i" path="res://assets/scenes/levels/level_1.tscn" id="2_gs2mp"]
-[ext_resource type="AudioStream" uid="uid://cfa51jlxuf3r2" path="res://assets/audio/sounds/SFX_Success_General.wav" id="3_1q5uh"]
+[ext_resource type="Script" path="res://assets/scripts/menu/end_screen.gd" id="1_no44m"]
 [ext_resource type="Texture2D" uid="uid://cbmhppkvlc12s" path="res://assets/art/sprites/title art v2.png" id="4_elrhj"]
+[ext_resource type="AudioStream" uid="uid://daitcx65p3bk1" path="res://assets/audio/music/Mx_Lvl2.1_Catchanic_70bpm.mp3" id="5_7h45r"]
 [ext_resource type="PackedScene" uid="uid://cs1ajxueeitf8" path="res://assets/scenes/menu/fade_transition.tscn" id="5_pg57b"]
 [ext_resource type="Theme" uid="uid://cbyvucdm7g3vm" path="res://assets/theme.tres" id="6_1u71m"]
-[ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="7_nvdsj"]
 
 [node name="Ending" type="Control"]
 layout_mode = 3
@@ -15,9 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0csds")
-start_level = ExtResource("2_gs2mp")
-start_sound = ExtResource("3_1q5uh")
+script = ExtResource("1_no44m")
 
 [node name="Title Art" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,7 +47,7 @@ theme_override_font_sizes/font_size = 48
 text = " Exit "
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_nvdsj")
+stream = ExtResource("5_7h45r")
 autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
