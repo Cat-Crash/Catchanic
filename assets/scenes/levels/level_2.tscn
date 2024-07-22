@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://54op4aig8td6"]
+[gd_scene load_steps=18 format=3 uid="uid://54op4aig8td6"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_80w53"]
+[ext_resource type="PackedScene" uid="uid://debfcashpx8jb" path="res://assets/scenes/menu/end_screen.tscn" id="2_37b3b"]
 [ext_resource type="PackedScene" uid="uid://cvo0boln88n4e" path="res://assets/scenes/characters/dam_controls.tscn" id="2_500vd"]
 [ext_resource type="AudioStream" uid="uid://7yy02op77n3l" path="res://assets/audio/music/Mx_Lvl2_Catchanic_76bpm.mp3" id="2_clwx0"]
 [ext_resource type="PackedScene" uid="uid://c7nm2pomne1tb" path="res://assets/art/models/second level dam/dam_v2.glb" id="2_d5fpf"]
 [ext_resource type="PackedScene" uid="uid://3n7iajvggf6" path="res://assets/scenes/levels/light_stand.tscn" id="3_0lwsu"]
 [ext_resource type="PackedScene" uid="uid://cckmhf71f6vut" path="res://assets/scenes/characters/beaver.tscn" id="3_75k8j"]
+[ext_resource type="AudioStream" uid="uid://25tyhjrn76r6" path="res://assets/audio/sounds/SFX_Dam_Success.wav" id="3_agall"]
 [ext_resource type="AudioStream" uid="uid://cfqk4satk2jg7" path="res://assets/audio/music/SFX_Ambience_Level2.mp3" id="3_awg4v"]
 [ext_resource type="Texture2D" uid="uid://bybgwspv6qtdd" path="res://assets/art/sprites/skyboxes/AllSkyFree_Sky_CartoonNightSky_Equirect.png" id="3_ispe0"]
 [ext_resource type="Texture2D" uid="uid://cx7mstv3vtrkr" path="res://assets/settings/s_curve.tres" id="3_yqf0r"]
@@ -39,6 +41,8 @@ adjustment_enabled = true
 adjustment_color_correction = ExtResource("3_yqf0r")
 
 [node name="Level" instance=ExtResource("1_80w53")]
+next_scene = ExtResource("2_37b3b")
+exit_sound = ExtResource("3_agall")
 effects = {
 "Beaver": 4,
 "DamControls": 3
