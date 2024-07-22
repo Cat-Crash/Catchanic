@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7jn2itatpypd"
-path.s3tc="res://.godot/imported/AllSkyFree_Sky_EpicGloriousPink_Equirect.png-d13ea58e0b26cee973afa0b4215cec6b.s3tc.ctex"
+path.s3tc="res://.godot/imported/AllSkyFree_Sky_EpicGloriousPink_Equirect.png-f04a96f9ec0c8c8a4349c20c802399e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/AllSkyFree/AllSkyFree_Sky_EpicGloriousPink_Equirect.png"
-dest_files=["res://.godot/imported/AllSkyFree_Sky_EpicGloriousPink_Equirect.png-d13ea58e0b26cee973afa0b4215cec6b.s3tc.ctex"]
+source_file="res://assets/art/sprites/skyboxes/AllSkyFree_Sky_EpicGloriousPink_Equirect.png"
+dest_files=["res://.godot/imported/AllSkyFree_Sky_EpicGloriousPink_Equirect.png-f04a96f9ec0c8c8a4349c20c802399e1.s3tc.ctex"]
 
 [params]
 
