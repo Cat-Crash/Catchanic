@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ivuyp1snyt2i"]
+[gd_scene load_steps=16 format=3 uid="uid://ivuyp1snyt2i"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_idlx4"]
+[ext_resource type="PackedScene" uid="uid://54op4aig8td6" path="res://assets/scenes/levels/level_2.tscn" id="2_3ny8b"]
+[ext_resource type="AudioStream" uid="uid://cbm0mc2ir60xo" path="res://assets/audio/sounds/SFX_Moped_Working.wav" id="3_q64c7"]
 [ext_resource type="PackedScene" uid="uid://ha6mrk5kxfmf" path="res://assets/scenes/characters/moped.tscn" id="4_ir5gq"]
 [ext_resource type="AudioStream" uid="uid://c8615d8pbksl8" path="res://assets/audio/music/MX_loop_MEOWCHANIC_80bpm.mp3" id="5_23da3"]
-[ext_resource type="PackedScene" uid="uid://dtob87t53ltfb" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
-[ext_resource type="Texture2D" uid="uid://ccjac5x0y1nrs" path="res://assets/art/AllSkyFree/AllSkyFree_Sky_ClearBlueSky_Equirect.png" id="5_ewo7s"]
+[ext_resource type="PackedScene" uid="uid://bmk7xu3xv72le" path="res://assets/scenes/characters/crow.tscn" id="5_crp37"]
 [ext_resource type="PackedScene" uid="uid://b7ftr6vs1j65u" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
 [ext_resource type="AudioStream" uid="uid://b6mt5kvhvvdyu" path="res://assets/audio/music/SFX_Ambience_Level1.mp3" id="6_0w0jd"]
 [ext_resource type="PackedScene" uid="uid://1w8hektl6u0a" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
@@ -15,8 +16,10 @@ plane = Plane(1, 0, 1, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4n54p"]
 size = Vector3(6, 5, 1.095)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8jc4g"]
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yx5xk"]
-panorama = ExtResource("5_ewo7s")
+panorama = SubResource("CompressedTexture2D_8jc4g")
 
 [sub_resource type="Sky" id="Sky_n8u2r"]
 sky_material = SubResource("PanoramaSkyMaterial_yx5xk")
@@ -36,6 +39,8 @@ volumetric_fog_density = 0.0
 adjustment_enabled = true
 
 [node name="Level" instance=ExtResource("1_idlx4")]
+next_scene = ExtResource("2_3ny8b")
+exit_sound = ExtResource("3_q64c7")
 
 [node name="Player" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93397, 0)
