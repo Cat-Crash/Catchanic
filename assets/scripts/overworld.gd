@@ -6,11 +6,20 @@ extends GameMode
 @onready var fade_transition : FadeTransition = $"Lights and Sound/Fade Transition"
 @onready var bgm_player : AudioStreamPlayer = $"Lights and Sound/BGMPlayer"
 
+@export_category("Scene Exit Controls")
 @export var next_scene : PackedScene
 @export var exit_sound : AudioStream
 
-var effects: Dictionary
+@export_category("Inventory")
+@export var effects : Dictionary
+@export var pieces_needed : int = 3
 
+var inventory : int = 0:
+	set(items):
+		inventory = items
+		if inventory >= pieces_needed:
+			_on_collection_complete()
+			
 func _ready() -> void:
 	fade_transition.fade_in()
 	
@@ -37,3 +46,8 @@ func exit_scene() -> void:
 		fade_transition.fade_out()
 	
 	get_tree().change_scene_to_packed(next_scene)
+	
+func _on_collection_complete() -> void:
+	for npc_name : String in effects:
+		var npc : NPC = GlobalState.npcs[npc_name] as NPC
+		npc.active_interactable = effects[npc_name]
