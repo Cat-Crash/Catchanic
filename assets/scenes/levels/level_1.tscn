@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7ftr6vs1j65u" path="res://assets/art/models/first level forest/fences.glb" id="5_onek6"]
 [ext_resource type="AudioStream" uid="uid://b6mt5kvhvvdyu" path="res://assets/audio/music/SFX_Ambience_Level1.mp3" id="6_0w0jd"]
 [ext_resource type="Texture2D" uid="uid://cx7mstv3vtrkr" path="res://assets/settings/s_curve.tres" id="6_h3pry"]
-[ext_resource type="Texture2D" uid="uid://7jn2itatpypd" path="res://assets/art/sprites/AllSkyFree_Sky_EpicGloriousPink_Equirect.png" id="6_lbk45"]
+[ext_resource type="Texture2D" uid="uid://7jn2itatpypd" path="res://assets/art/sprites/skyboxes/AllSkyFree_Sky_EpicGloriousPink_Equirect.png" id="6_lbk45"]
 [ext_resource type="PackedScene" uid="uid://1w8hektl6u0a" path="res://assets/art/models/first level forest/forest_v2.glb" id="8_862sc"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ve34c"]

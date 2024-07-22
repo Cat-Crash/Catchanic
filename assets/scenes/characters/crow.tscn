@@ -81,9 +81,9 @@ speakerName = "Crow"
 dialogueRaw = "Player: *Greeting meow*/Cat_Yip
 Crow: Ah, there's that ring. I'm sure the human will be delighted to get this back.
 Crow: If only their moped was working. I suppose they will be stuck here until it is./Crow_Chill
-Crow: The moped is actually looking a lot better now.
-Player: *moped starting up sound*
-Crow: What'd you do to it? It doesn't smell anymore!
+Crow: The moped is actually looking a lot better now./Crow_Chill
+Player: *moped starting up sound*/Moped_Working
+Crow: What'd you do to it? It doesn't smell anymore!/Crow_Loud
 Crow: I’ll get the human."
 
 [node name="FadeOut" type="Node3D" parent="Interactables/PostPuzzle2Convo" index="1"]
