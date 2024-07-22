@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/npc/interactable.gd" id="3_qgvjq"]
 [ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="4_p2bic"]
 [ext_resource type="Script" path="res://assets/scripts/npc/level_change.gd" id="5_cyic3"]
-[ext_resource type="PackedScene" uid="uid://bjqu5ojgobwk6" path="res://assets/scenes/menu/main_menu.tscn" id="6_3ewr2"]
+[ext_resource type="PackedScene" uid="uid://bjqu5ojgobwk6" path="res://assets/scenes/menu/main_menu.tscn" id="6_3hv4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_feg2c"]
 animations = [{
@@ -86,4 +86,4 @@ Beaver: Safe travels."
 
 [node name="LevelChange" type="Node3D" parent="Interactables/AfterAllPlanksCollected" index="1"]
 script = ExtResource("5_cyic3")
-next_scene = ExtResource("6_3ewr2")
+next_scene = ExtResource("6_3hv4l")
