@@ -56,7 +56,7 @@ scale = Vector2(0.42, 0.42)
 texture = ExtResource("2_fa3yf")
 
 [node name="Floor" type="StaticBody2D" parent="Center/Background"]
-position = Vector2(-24, 200)
+position = Vector2(-24, 188)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Background/Floor"]
 shape = SubResource("WorldBoundaryShape2D_jgsds")

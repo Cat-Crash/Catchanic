@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6tbiw8ucl8t7"]
+
+[ext_resource type="PackedScene" uid="uid://b75ub218wi27r" path="res://assets/scenes/puzzle/puzzle.tscn" id="1_wotc3"]
+[ext_resource type="Texture2D" uid="uid://ceigla7sr5kgw" path="res://assets/art/sprites/puzzle/dam puzzle/control pane puzzle bg.png" id="2_7sqs7"]
+[ext_resource type="PackedScene" uid="uid://mbwbk3kx4ixx" path="res://assets/scenes/puzzle/components/puzzle_bound_goal.tscn" id="2_ufowi"]
+[ext_resource type="PackedScene" uid="uid://d2rsy4que0kdv" path="res://assets/scenes/puzzle/parts/2x_1_plank.tscn" id="4_w05os"]
+[ext_resource type="Texture2D" uid="uid://bhu0leq814s7v" path="res://assets/art/sprites/puzzle/dam puzzle/Fish asset.PNG" id="5_uhogc"]
+
+[node name="Dam Puzzle" instance=ExtResource("1_wotc3")]
+
+[node name="Background" parent="Center" index="0"]
+position = Vector2(-24, 12)
+
+[node name="Sprite2D" parent="Center/Background" index="0"]
+position = Vector2(64, -24)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_7sqs7")
+
+[node name="CollisionShape2D" parent="Center/Background/Right Upper Wall" index="0"]
+position = Vector2(8, 0)
+
+[node name="CollisionShape2D" parent="Center/Background/Right Lower Wall" index="0"]
+position = Vector2(8, 0)
+
+[node name="Goals" parent="Center" index="1"]
+position = Vector2(-24, 12)
+
+[node name="ExitGoal" parent="Center/Goals" index="0" instance=ExtResource("2_ufowi")]
+position = Vector2(328, -32)
+
+[node name="Parts" parent="Center" index="2"]
+position = Vector2(-16, 16)
+
+[node name="Fish" parent="Center/Parts" index="0" instance=ExtResource("4_w05os")]
+position = Vector2(-128, -36)
+move_y = false
+goal_part = true
+target_goal = 1
+
+[node name="Sprite2D" parent="Center/Parts/Fish" index="0"]
+scale = Vector2(0.053, 0.06)
+texture = ExtResource("5_uhogc")
+
+[node name="Button" parent="Center/Parts/Fish/Sprite2D" index="0"]
+offset_left = -1188.0
+offset_top = -560.5
+offset_right = -1188.0
+offset_bottom = -560.5
+
+[node name="2x1 Plank2" parent="Center/Parts" index="1" instance=ExtResource("4_w05os")]
+position = Vector2(-192, 28)
+move_y = false
+
+[node name="2x1 Plank3" parent="Center/Parts" index="2" instance=ExtResource("4_w05os")]
+position = Vector2(-64, 92)
+move_y = false
+
+[node name="2x1 Plank4" parent="Center/Parts" index="3" instance=ExtResource("4_w05os")]
+position = Vector2(128, 28)
+move_y = false
+
+[node name="2x1 Plank5" parent="Center/Parts" index="4" instance=ExtResource("4_w05os")]
+position = Vector2(128, -164)
+move_y = false
+
+[node name="2x1 Plank6" parent="Center/Parts" index="5" instance=ExtResource("4_w05os")]
+position = Vector2(0, -164)
+move_y = false
+
+[node name="2x1 Plank7" parent="Center/Parts" index="6" instance=ExtResource("4_w05os")]
+position = Vector2(-96, -132)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Plank8" parent="Center/Parts" index="7" instance=ExtResource("4_w05os")]
+position = Vector2(-224, -68)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Plank9" parent="Center/Parts" index="8" instance=ExtResource("4_w05os")]
+position = Vector2(-32, -4)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Plank10" parent="Center/Parts" index="9" instance=ExtResource("4_w05os")]
+position = Vector2(32, 60)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Plank11" parent="Center/Parts" index="10" instance=ExtResource("4_w05os")]
+position = Vector2(96, -68)
+rotation = 1.5708
+move_x = false
+
+[node name="2x1 Plank12" parent="Center/Parts" index="11" instance=ExtResource("4_w05os")]
+position = Vector2(32, -68)
+rotation = 1.5708
+move_x = false
+
+[editable path="Center/Parts/Fish"]

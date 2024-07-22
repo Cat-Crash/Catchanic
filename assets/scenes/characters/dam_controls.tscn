@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvo0boln88n4e"]
+
+[ext_resource type="PackedScene" uid="uid://0fclbx6qanx2" path="res://assets/scenes/characters/npc.tscn" id="1_5rhp8"]
+[ext_resource type="Script" path="res://assets/scripts/npc/interactable.gd" id="2_cbftl"]
+[ext_resource type="PackedScene" uid="uid://cly2pwnf886wn" path="res://assets/scenes/dialogue/dialogue_node.tscn" id="3_wbh5m"]
+[ext_resource type="PackedScene" uid="uid://b6tbiw8ucl8t7" path="res://assets/scenes/puzzle/dam_puzzle.tscn" id="4_ok0om"]
+
+[node name="DamControls" instance=ExtResource("1_5rhp8")]
+
+[node name="BeforeBeaver" type="Node3D" parent="Interactables" index="0"]
+script = ExtResource("2_cbftl")
+
+[node name="DialogueNode" parent="Interactables/BeforeBeaver" index="0" instance=ExtResource("3_wbh5m")]
+dialogueRaw = "PLAYER: (It doesn't seem to be working right now. Maybe I should ask someone about it)"
+
+[node name="RemovingFish" type="Node3D" parent="Interactables" index="1"]
+script = ExtResource("2_cbftl")
+effects = {
+"Beaver": 2,
+"DamControls": 2
+}
+
+[node name="DialogueNode" parent="Interactables/RemovingFish" index="0" instance=ExtResource("3_wbh5m")]
+dialogueRaw = "PLAYER: (Looks like fish and sticks got stuck in the dam. We need to help them out.)"
+
+[node name="Puzzle" parent="Interactables/RemovingFish" index="1" instance=ExtResource("4_ok0om")]
+
+[node name="WaitingOnParts" type="Node3D" parent="Interactables" index="2"]
+script = ExtResource("2_cbftl")
+
+[node name="DialogueNode" parent="Interactables/WaitingOnParts" index="0" instance=ExtResource("3_wbh5m")]
+dialogueRaw = "PLAYER: (Maybe I can help the fish over the dam in the future?)"
+
+[node name="WithAllParts" type="Node3D" parent="Interactables" index="3"]
+script = ExtResource("2_cbftl")
+
+[node name="DialogueNode" parent="Interactables/WithAllParts" index="0" instance=ExtResource("3_wbh5m")]
+dialogueRaw = "PLAYER: (I just need to get these boards to the beaver, and then the beaver can build it!)"

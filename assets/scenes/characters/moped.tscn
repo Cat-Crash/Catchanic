@@ -65,7 +65,7 @@ effects = {
 
 [node name="DialogueNode" parent="Interactables/Puzzle2B" index="0" instance=ExtResource("4_jvvon")]
 speakerName = "Moped"
-dialogueRaw = "Player: (Just need to get these parts all set up!)"
+dialogueRaw = "Player: (Just need to get these parts all set up!)/Motor_Engine_StartFail_2"
 
 [node name="Moped Puzzle 2" parent="Interactables/Puzzle2B" index="1" instance=ExtResource("6_kt134")]
 
