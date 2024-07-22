@@ -9,7 +9,7 @@
 [node name="Moped Puzzle 2" instance=ExtResource("1_jyij4")]
 
 [node name="Goal" parent="Center/Goals" index="0" instance=ExtResource("2_idrr1")]
-position = Vector2(-152, -12)
+position = Vector2(-128, -12)
 rotation = 3.14159
 
 [node name="Goal Part" parent="Center/Parts" index="0" instance=ExtResource("2_txmvf")]
