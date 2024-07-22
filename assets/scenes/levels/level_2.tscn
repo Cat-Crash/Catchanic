@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://54op4aig8td6"]
+[gd_scene load_steps=16 format=3 uid="uid://54op4aig8td6"]
 
 [ext_resource type="PackedScene" uid="uid://bi7edqngpk0ra" path="res://assets/scenes/levels/level.tscn" id="1_80w53"]
 [ext_resource type="PackedScene" uid="uid://cvo0boln88n4e" path="res://assets/scenes/characters/dam_controls.tscn" id="2_500vd"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cfqk4satk2jg7" path="res://assets/audio/music/SFX_Ambience_Level2.mp3" id="3_awg4v"]
 [ext_resource type="Texture2D" uid="uid://bybgwspv6qtdd" path="res://assets/art/sprites/skyboxes/AllSkyFree_Sky_CartoonNightSky_Equirect.png" id="3_ispe0"]
 [ext_resource type="Texture2D" uid="uid://cx7mstv3vtrkr" path="res://assets/settings/s_curve.tres" id="3_yqf0r"]
+[ext_resource type="PackedScene" uid="uid://bsa32tl1vasm3" path="res://assets/scenes/pickups/plank.tscn" id="4_adqea"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4e1yt"]
 size = Vector3(30, 0.1, 4)
@@ -38,12 +39,27 @@ adjustment_enabled = true
 adjustment_color_correction = ExtResource("3_yqf0r")
 
 [node name="Level" instance=ExtResource("1_80w53")]
+effects = {
+"Beaver": 4,
+"DamControls": 3
+}
 
 [node name="DamControls" parent="NPCs" index="0" instance=ExtResource("2_500vd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35354, 0, -0.502613)
 
 [node name="Beaver" parent="NPCs" index="1" instance=ExtResource("3_75k8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.74, 0, 0.0630939)
+
+[node name="Pickups" type="Node3D" parent="." index="2"]
+
+[node name="Plank" parent="Pickups" index="0" instance=ExtResource("4_adqea")]
+transform = Transform3D(0.904492, 0, -0.42649, 0, 1, 0, 0.42649, 0, 0.904492, -7.80988, -0.485118, 1.05084)
+
+[node name="Plank2" parent="Pickups" index="1" instance=ExtResource("4_adqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0449, -0.708598, 10.9218)
+
+[node name="Plank3" parent="Pickups" index="2" instance=ExtResource("4_adqea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.809, -0.351461, 7.023)
 
 [node name="Level 2 Terrain" parent="Terrain" index="0" instance=ExtResource("2_d5fpf")]
 transform = Transform3D(0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 0, -0.935493, 0)

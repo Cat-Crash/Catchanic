@@ -1,13 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsa32tl1vasm3"]
+[gd_scene load_steps=7 format=3 uid="uid://bsa32tl1vasm3"]
 
 [ext_resource type="Script" path="res://assets/scripts/pickups/plank.gd" id="1_fm212"]
 [ext_resource type="Script" path="res://assets/scripts/dialogue/DialogueSoundPlayer.gd" id="1_ooflx"]
 [ext_resource type="Texture2D" uid="uid://dntaviqd1c3jh" path="res://assets/art/sprites/textbox/dialogue box.png" id="2_di3kt"]
 [ext_resource type="AudioStream" uid="uid://cfd0tme7a5lkn" path="res://assets/audio/sounds/SFX_Pickup_General.wav" id="3_o153g"]
 [ext_resource type="Texture2D" uid="uid://dsydjqj3kcbm3" path="res://assets/art/sprites/puzzle/dam puzzle/Plank asset.PNG" id="3_weqyh"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_dclcr"]
-radius = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yjp2e"]
 radius = 3.0
@@ -18,9 +15,6 @@ script = ExtResource("1_fm212")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 texture = ExtResource("3_weqyh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_dclcr")
 
 [node name="DetectionZone" type="Area3D" parent="."]
 
@@ -65,3 +59,6 @@ text = "Press
 Space"
 scroll_active = false
 shortcut_keys_enabled = false
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
