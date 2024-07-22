@@ -4,7 +4,6 @@ extends StaticBody3D
 @onready var sound_player = $SoundPlayer
 @onready var popup : Control = $Popup # a little popup displayed when the player is in range to show
 	# that the NPC can be interacted with
-@export var effects : Dictionary
 
 var player_inside : bool
 
@@ -17,11 +16,10 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("interact") and player_inside and GlobalState.currentGameState == GlobalEnums.GameState.OVERWORLD:
-
-		for npc_name : String in effects:
-			var npc : NPC = GlobalState.npcs[npc_name] as NPC
-			npc.active_interactable = effects[npc_name]
-
+		
+		var overworld : Overworld = GlobalState.overworld
+		overworld.inventory += 1
+		
 		popup.visible = false # we don't need to see the pop up if we're in another menu
 		sound_player.play()
 		queue_free()
